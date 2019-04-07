@@ -24,7 +24,18 @@ body {
   background-color: #fff;
   color: #000; }
 
-  li {font-size: 22px;}
+  h2 {
+    text-align: center;
+    }
+    
+  li {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    border: 3px solid brown;
+    }
 
 /*********************************************
  * VIEW FRAGMENTS
