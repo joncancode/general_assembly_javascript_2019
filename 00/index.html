@@ -59,11 +59,11 @@
                <section>
                   <h2>What you should know:</h2>
                   <ul>
-                     <li class="house">
+                     <li style="display: inline-block;">
                         HTML
                         <img height="350px" width="350px" src="house.jpg" alt="house" />
                      </li>
-                     <li class="house">
+                     <li style="display: inline-block;">
                         CSS
                         <img
                            height="350px"
@@ -287,7 +287,7 @@
             </section>
             <section>
                <section>
-                  <h2 class="title">Tools You'll Need</h2>
+                  <h2 class="title">Installfest Time</h2>
                </section>
                <section>
                   <h2>Slack</h2>
@@ -304,6 +304,84 @@
                   </ul>
                   <aside class="notes">join link: https://join.slack.com/t/ga-js-nyc-spring-2019/shared_invite/enQtNjAyNjQzNzc3NzgwLTQ0ZjZiZTYyMTEwM2RjY2ExOGFiOTBkNGViNWNmYjJiMDVhZGIxMDhmNDYwNjhmMmQ2MDAxMzFjMDAxZjQ4MWI/</aside>
                </section>
+               <section>
+                  <h2>Git and Github</h2>
+                  <ul>
+                     <li>
+                        <a href="https://git-scm.com/">Git </a> is a free and open source distributed version control system
+                     </li>
+                     <li>
+                        <a href="https://github.com/">Github</a> is a web-based hosting service for version control using Git 
+                     </li>
+                     <br>
+                     <li>
+                        <a href="https://help.github.com/en/articles/setting-your-username-in-git/">Setting up Git on your computer</a> 
+                     </li>
+
+                      <blockquote style="font-size: 22px;">git config --global user.name "YOUR NAME"</blockquote>
+                      <blockquote style="font-size: 22px;">git config --global user.email "YOUR EMAIL ADDRESS"</blockquote>
+                  </ul>
+               </section>
+               <section>
+                  <h2>SSH Key</h2>
+                  <ul>
+                    <li>
+                        <a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Get new SSH key</a>: a special, very secure, key which allows your laptop access to your github account without having to remember your github password
+                     </li>
+                     <li>Verify your key works:</li>
+                     <blockquote style="font-size: 22px;">ssh git@github.com</blockquote>
+                     <li>You should see something like:</li>
+                     <blockquote style="font-size: 22px;">Hi <you>! You've successfully authenticated, but GitHub does not provide shell access.
+                        Connection to github.com closed.</blockquote>
+                    </ul>
+               </section>
+               <section>
+                  <h2>Homebrew</h2>
+                  <ul>
+                    <li>
+                        <a href="https://brew.sh/">Brew</a> is a package manager that we use to install various command line applications to your computer
+                     </li>
+                     <blockquote style="font-size: 22px;">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</blockquote>
+                    </ul>
+               </section>
+               <section>
+                  <h2>Node</h2>
+                  <ul>
+                    <li>
+                        <a href="https://nodejs.org/en/">Node.js</a> is a JavaScript runtime built on Chrome's V8 JavaScript engine.  
+                     </li>
+                     <li>
+                        Then ensure <strong>npm</strong> in downloaded
+                     </li>
+                     <blockquote style="font-size: 22px;">npm install npm -g</blockquote>
+                    </ul>
+               </section>
+               <section>
+                  <h2>Checking versions</h2>
+                    <blockquote style="font-size: 22px;">git --version</blockquote>
+                    <blockquote style="font-size: 22px;">brew --version</blockquote>
+                    <blockquote style="font-size: 22px;">node -v</blockquote>
+                    <blockquote style="font-size: 22px;">npm -v</blockquote>
+               </section>
+               <section>
+                  <h2>Code Editors (IDE)</h2>
+                  <ul>
+                  <li>
+                      <a href="https://code.visualstudio.com/">VS Code</a> 
+                   </li>
+                   <li>
+                      <a href="http://www.sublimetext.com/3">Sublime Text</a> 
+                   </li>
+                   <li>
+                      <a href="https://atom.io/">Atom</a> 
+                   </li>
+                  </ul>
+                   <hr>
+                   <ul>
+                     <li><a href="https://www.codementor.io/mattgoldspink/best-text-editor-atom-sublime-vim-visual-studio-code-du10872i7">Comparison</a></li>
+                   </ul>
+               </section>
+
             </section>
             <section>
                <section>
@@ -337,10 +415,5 @@
            ]
          });
       </script>
-      <style>
-         .house {
-         display: inline-block;
-         }
-      </style>
    </body>
 </html>
