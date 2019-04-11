@@ -1,505 +1,491 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8" />
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-         />
-      <title>General Assembly</title>
-      <link rel="stylesheet" href="../css/reset.css" />
-      <link rel="stylesheet" href="../css/reveal.css" />
-      <link rel="stylesheet" href="../css/theme/black.css" />
-      <link rel="icon" type="image/png" href="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/5113/GA_Cog_Large_Red_RGB.png"/>
-      <!-- Theme used for syntax highlighting of code -->
-      <link rel="stylesheet" href="../lib/css/monokai.css" />
-      <!-- Printing and PDF exports -->
-      <script>
-         var link = document.createElement('link');
-         link.rel = 'stylesheet';
-         link.type = 'text/css';
-         link.href = window.location.search.match(/print-pdf/gi)
-           ? 'css/print/pdf.css'
-           : 'css/print/paper.css';
-         document.getElementsByTagName('head')[0].appendChild(link);
-      </script>
-   </head>
-   <body>
-      <div class="reveal">
-         <div class="slides">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>General Assembly</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/reveal.css" />
+    <link rel="stylesheet" href="../css/theme/black.css" />
+    <link rel="icon" type="image/png" href="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/5113/GA_Cog_Large_Red_RGB.png" />
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/monokai.css" />
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
             <section data-background="#003366">
-               <h2>GA class 00 - Installfest</h2>
-               <br />
-               <a href="../index.html">Back to TOCs</a>
+                <h2>JS class 00 - Installfest</h2>
+                <br />
+                <a href="../index.html">Back to TOCs</a>
             </section>
             <section>
-               <section>
-                  <h2 class="title">Welcome to JavaScript Development</h2>
-               </section>
-               <section>
-                  <h2>Class Overview</h2>
-                  <ul>
-                     <li>The course is 20 classes, including three projects</li>
-                     <li>
-                        The fundamentals of JavaScript (data types, variables, loops)
-                     </li>
-                     <li>How JS is used to manipulate websites (the DOM)</li>
-                     <li>OOP vs FP</li>
-                     <li>AJAX, NPM, Scope, CRUD, and other terms</li>
-                     <li>How to speak about JS for interviews, etc.</li>
-                  </ul>
-                  <aside class="notes">
-                     <p>Add any stuff you may want to do that's in scope</p>
-                  </aside>
-               </section>
-               <section>
-                  <h2>Class Overview</h2>
-                  <img width="100%" src="curriculum.png" alt="curriculum" />
-               </section>
-               <section>
-                  <h2>What you should know:</h2>
-                  <ul>
-                     <li style="display: inline-block;">
-                        HTML
-                        <img height="350px" width="350px" src="house.jpg" alt="house" />
-                     </li>
-                     <li style="display: inline-block;">
-                        CSS
-                        <img
-                           height="350px"
-                           width="350px"
-                           src="painted_house.jpg"
-                           alt="house"
-                           />
-                     </li>
-                  </ul>
-                  <hr />
-                  <ul>
-                     <li>
-                        <a href="https://dash.generalassemb.ly/" target="_blank">Dash for Review</a>
-                     </li>
-                  </ul>
-               </section>
-               <section>
-                  <h2>Objectives for the day</h2>
-                  <ul>
-                     <li>Get to know one another</li>
-                     <li>Front-End vs Back-End</li>
-                     <li>OOP vs FP</li>
-                     <li>
-                        The Internet vs the World Wide Web
-                     </li>
-                     <li>The client-server model and DNS lookup</li>
-                     <li>
-                        Install and configure Slack, Github, Node.js, npm, Git, and other command line
-                        tools
-                     </li>
-                     <li>Practice programmatic thinking by writing pseudocode</li>
-                  </ul>
-                  <aside class="notes">
-                     <p>Why are you here? Why interested in JS? code?</p>
-                     <ul>
-                        <li>want better job?</li>
-                        <li>you were forced?</li>
-                     </ul>
-                     <p>Today's class is especially vocab-heavy, but not much programming </p>
-                  </aside>
-               </section>
-            </section>
-            <section>
-               <section>
-                  <h2 class="title">What is code?</h2>
-                  <aside class="notes">
-                     <ul>
-                        <li>Making something automated</li>
-                        <li>JavaScript is specifically the language of the web</li>
-                     </ul>
-                  </aside>
-               </section>
-               <section>
-                  <h2>Some languages</h2>
-                  <ul>
-                     <li>
-                        JavaScript
-                     </li>
-                     <li>
-                        Python
-                     </li>
-                     <li>
-                        Java
-                     </li>
-                     <li>
-                        C/C++
-                     </li>
-                     <li>
-                        Ruby
-                     </li>
-                     <li>
-                        PHP
-                     </li>
-                     <li>
-                        SQL
-                     </li>
-                     <li>
-                        Swift
-                     </li>
-                  </ul>
-                  <aside class="notes">
-                     <ul>
+                <section>
+                    <h2 class="title">Welcome to JavaScript Development</h2>
+                </section>
+                <section>
+                    <h2>Class Overview</h2>
+                    <ul>
+                        <li>The course is 20 classes, including three projects</li>
                         <li>
-                           originally called Mocha. Called JS as marketing ploy to capitalize on Java popularity
+                            The fundamentals of JavaScript (data types, variables, loops)
                         </li>
+                        <li>How JS is used to manipulate websites (the DOM)</li>
+                        <li>OOP vs FP</li>
+                        <li>AJAX, NPM, Scope, CRUD, and other terms</li>
+                        <li>How to speak about JS for interviews, etc.</li>
+                    </ul>
+                    <aside class="notes">
+                        <p>Add any stuff you may want to do that's in scope</p>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Class Overview</h2>
+                    <img width="100%" src="curriculum.png" alt="curriculum" />
+                </section>
+                <section>
+                    <h2>What you should know</h2>
+                    <ul>
+                        <li style="display: inline-block;">
+                            HTML
+                            <img height="350px" width="350px" src="house.jpg" alt="house" />
+                        </li>
+                        <li style="display: inline-block;">
+                            CSS
+                            <img height="350px" width="350px" src="painted_house.jpg" alt="house" />
+                        </li>
+                    </ul>
+                    <hr />
+                    <ul>
                         <li>
-                           written in 10 days
+                            <a href="https://dash.generalassemb.ly/" target="_blank">Dash for Review</a>
                         </li>
-                     </ul>
-                  </aside>
-               </section>
-               <section>
-                  <h2>Fundamentals of the web</h2>
-                  <ul>
-                     <li>
-                        <u>Web Development</u>: The process of building sites and applications
-                        for the Web
-                     </li>
-                     <li>
-                        <u>Front-End Development</u>: The development of client/browser code
-                        (HTML, CSS, JS), i.e., what the user interacts with and sees
-                     </li>
-                     <li>
-                        <u>Back-End Development</u>: The development of server-side code that
-                        handles such functions as routing, data handling, and databases
-                        behind the scenes. Ruby, Python, and Java (+ Node!) are all useful
-                        here.
-                     </li>
-                  </ul>
-               </section>
-               <section>
-                  <h2>Object Oriented & Functional Programming</h2>
-                  <ul>
-                     <li>
-                        <u>OOP</u>: focuses on structuring imperative code. It creates models of various concepts in a given problem area, then applies them. These models ("objects") are given functionality ("methods") that enable them to perform various actions; each object can also hold information. The fundamental unit in OOP is the object, which can itself contain further objects, like a Russian Matryoshka doll. The idea is to make it easier for human programmers to visualize the program by tying the program to concrete things, which helps the programmer group things logically. The fundamental thing to remember is that in object-oriented programming, everything is an object and every object has methods that allow the programmer to access its functionality
-                     </li>
-                     <li>
-                        <u>FP</u>: treats the problem area as a sequence of equations ("functions")--essentially, a progression of definitions that lead to the answer. The information begins as a number of axioms and culminates in the answer. (Think of it as a logical argument that ends in what you see on the screen.) Functional programming borrows many concepts from formal mathematics, and, as in mathematics (and unlike imperative programming or OOP), it usually does not save data between steps. The fundamental unit in functional programming is the function, which can perform operations as well as produce further functions
-                     </li>
-                  </ul>
-               </section>
-               <section>
-                  <h2>Object Oriented & Functional Programming (simplified)</h2>
-                  <ul>
-                     <li>
-                        <u>OOP</u>:  Everything is contained within compact objects with methods that can do things
-                     </li>
-                     <li>
-                        <u>FP</u>: Everything runs through a series of procedures 
-                     </li>
-                  </ul>
-                  <hr>
-                  <ul>
-                     <li>
-                        <a href="https://www.quora.com/What-is-the-core-difference-in-laymans-terms-between-procedural-programming-and-object-oriented-programming" target="_blank">Quora debate</a>  
-                     </li>
-                     <li>
-                        <a href="https://medium.com/@sho.miyata.1/the-object-oriented-programming-vs-functional-programming-debate-in-a-beginner-friendly-nutshell-24fb6f8625cc" target="_blank">Medium article</a>  
-                     </li>
-                  </ul>
-                  <aside class="notes">
-                     <p>FP: pure functions and no state changing - not react</p>
-                  </aside>
-               </section>
-               <section>
-                  <h2>Internet vs. World Wide Web</h2>
-                  <ul>
-                     <li>
-                        <u>The Internet</u> is a big collection of computers and cables
-                     </li>
-                     <li>
-                        <u>The Web</u> is a big collection of HTML Pages on the Internet 
-                     </li>
-                  </ul>
-                  <img width="40%" src="world-wide-web.jpg" alt="world-wide-web" />
-                  <hr>
-                  <ul>
-                     <li>
-                        <a href="https://www.lifewire.com/difference-between-the-internet-and-the-web-2483335" target="_blank">Lifewire</a>  
-                     </li>
-                     <li>
-                        <a href="https://www.webopedia.com/TERM/H/HTTP.html" target="_blank">HTTP: from Webopedia</a>  
-                     </li>
-                     <li>
-                        <a href="https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177" target="_blank">HTTP: from Tuts</a>  
-                     </li>
-                  </ul>
-                  <aside class="notes">
-                     <p>internet:</p>
-                     <ul>
-                        <li>series of requests and responses</li>
-                        <li>no one owns it</li>
-                        the web:
-                        <li>contained within the internet based on HTTP</li>
-                     </ul>
-                  </aside>
-               </section>
-               <section>
-                  <h2>The Client - Server Model</h2>
-                  <img width="80%" src="client_server.png" alt="client_server" />
-                  <ul>
-                     <li>Client requests to the Server</li>
-                     <li>Server responds with data</li>
-                  </ul>
-                  <aside class="notes">
-                     <p>client requests, and gets a response from the server</p>
-                  </aside>
-               </section>
-               <section>
-                  <h2>Domain Name System (DNS)</h2>
-                  <p>In simplest terms, DNS is like a phone book for the Internet</p>
-                  <img width="60%" src="dns.png" alt="dns" />
-                  <aside class="notes">
-                     like finding a house 
-                  </aside>
-               </section>
-               <section>
-                  <img height="55%" src="internet1.png" alt="internet1" />
-                  <aside class="notes">
-                     <ul>
-                        <li>request to FB, server determines algorithm, then data is returned</li>
-                     </ul>
-                  </aside>
-               </section>
-               <section>
-                  <img height="55%" src="internet2.png" alt="internet2" />
-                  <aside class="notes">
-                     <ul>
-                        <li>request to FB, server determines algorithm, then data is returned</li>
-                     </ul>
-                  </aside>
-               </section>
-               <section>
-                  <img height="55%" src="internet3.png" alt="internet3" />
-                  <aside class="notes">
-                     <ul>
-                        <li>request to FB, server determines algorithm, then data is returned</li>
-                     </ul>
-                  </aside>
-               </section>
-            </section>
-            <section>
-               <section>
-                  <h2 class="title">Installfest Time</h2>
-               </section>
-               <section>
-                  <h2>Slack</h2>
-                  <ul>
-                     <li>
-                        <a href="https://slack.com/downloads/mac">Download Slack </a> - Get it on your phone, too!
-                     </li>
-                     <li>
-                        <a href="https://ga-nyc-ptstudents.slack.com/messages/C032VK2SJ/">GA - NYC part-time students Slack </a> - Connect with other PT-students in NY
-                     </li>
-                     <li>
-                        <a href="https://ga-js-nyc-spring-2019.slack.com/">ga-js-nyc-spring-2019</a> - Our class!
-                     </li>
-                  </ul>
-                  <aside class="notes">join link: https://join.slack.com/t/ga-js-nyc-spring-2019/shared_invite/enQtNjAyNjQzNzc3NzgwLTQ0ZjZiZTYyMTEwM2RjY2ExOGFiOTBkNGViNWNmYjJiMDVhZGIxMDhmNDYwNjhmMmQ2MDAxMzFjMDAxZjQ4MWI/</aside>
-               </section>
-               <section>
-                  <h2>Git and Github</h2>
-                  <ul>
-                     <li>
-                        <a href="https://git-scm.com/">Git </a> is a free and open source distributed version control system
-                     </li>
-                     <li>
-                        <a href="https://github.com/">Github</a> is a web-based hosting service for version control using Git 
-                     </li>
-                     <br>
-                     <li>
-                        <a href="https://help.github.com/en/articles/setting-your-username-in-git/">Setting up Git on your computer</a> 
-                     </li>
-                     <blockquote style="font-size: 22px;">git config --global user.name "YOUR NAME"</blockquote>
-                     <blockquote style="font-size: 22px;">git config --global user.email "YOUR EMAIL ADDRESS"</blockquote>
-                  </ul>
-                  <aside class="notes">
-                     <ul>
-                        <li>Terminal for Mac / Command prompt for Windows users</li>
-                        <li>Students experiencing an EACCES error should change directory permissions to install Node and npm without the need to use sudo: $ sudo chown -R $(whoami) /usr/local/lib/node_modules</li>
-                        <li>Mac users may run into the problem of an outdated version of Git installed with Xcode being given precedence in the terminal</li>
-                     </ul>
-                  </aside>
-               </section>
-               <section>
-                  <h2>SSH Key</h2>
-                  <ul>
-                     <li>
-                        <a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Get new SSH key</a>: a special, very secure, key which allows your laptop access to your github account without having to remember your github password
-                     </li>
-                     <li>Verify your key works:</li>
-                     <blockquote style="font-size: 22px;">ssh git@github.com</blockquote>
-                     <li>You should see something like:</li>
-                     <blockquote style="font-size: 22px;">Hi (NAME)! You've successfully authenticated, but GitHub does not provide shell access.
-                        Connection to github.com closed.
-                     </blockquote>
-                  </ul>
-               </section>
-               <section>
-                  <h2>Homebrew</h2>
-                  <ul>
-                     <li>
-                        <a href="https://brew.sh/">Brew</a> is a package manager that we use to install various command line applications to your computer
-                     </li>
-                     <blockquote style="font-size: 22px;">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</blockquote>
-                  </ul>
-               </section>
-               <section>
-                  <h2>Node</h2>
-                  <ul>
-                     <li>
-                        <a href="https://nodejs.org/en/">Node.js</a> is a JavaScript runtime built on Chrome's V8 JavaScript engine.  
-                     </li>
-                     <li>
-                        Then ensure <strong>npm</strong> in downloaded
-                     </li>
-                     <blockquote style="font-size: 22px;">npm install npm -g</blockquote>
-                  </ul>
-                  <aside class="notes"><p>probably a good idea to use Chrome</p></aside>
-               </section>
-               <section>
-                  <h2>Checking versions</h2>
-                  <blockquote style="font-size: 22px;">git --version</blockquote>
-                  <blockquote style="font-size: 22px;">brew --version</blockquote>
-                  <blockquote style="font-size: 22px;">node -v</blockquote>
-                  <blockquote style="font-size: 22px;">npm -v</blockquote>
-               </section>
-               <section>
-                  <h2>Code Editors (IDE)</h2>
-                  <ul>
-                     <li>
-                        <a href="https://code.visualstudio.com/">VS Code</a>: my choice  &#10004;
-                     </li>
-                     <li>
-                        <a href="http://www.sublimetext.com/3">Sublime Text</a> 
-                     </li>
-                     <li>
-                        <a href="https://atom.io/">Atom</a> 
-                     </li>
-                  </ul>
-                  <hr>
-                  <ul>
-                     <li><a href="https://www.codementor.io/mattgoldspink/best-text-editor-atom-sublime-vim-visual-studio-code-du10872i7">Comparison</a></li>
-                     <li>Make sure to get shortcuts like <a href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line" target="_blank">this</a> so you can access your code more easily</li>
-                  </ul>
-               </section>
-               <aside class="notes">
-                  <p>integrated development environment</p>
-               </aside>
-            </section>
-            <section>
-               <section>
-                  <h2 class="title">Pseudocoding: Think like a Programmer</h2>
-               </section>
-               <section>
-                  <p>In order to become a great programmer, you have to think like a computer. Essentially, you have to think in code. The first step, is to write down whatever you want your computer to do in plain English.</p>
-               </section>
-               <section>
-                  <h2>Exercise</h2>
-                     <ul>
-                        <li>Imagine a light with three different-colored buttons below it. When a user touches one of the buttons, the light changes to the corresponding color. If the selected color is touched again, the light turns off</li>
-                     </ul>
-                     <span class="dot"></span>
-                     <br>
-                     <button id="red" style="font-size: 24px;" onclick="addRed()">Red</button>
-                     <button style="font-size: 24px;" onclick="addYellow()">Yellow</button>
-                     <button style="font-size: 24px;" onclick="addBlue()">Blue</button>
-                  </section>
-                  <section>
-                        <h2>Sample Answer</h2>
-                        <p>If the red button is tapped (event listener)</p>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Objectives for the day</h2>
+                    <ul>
+                        <li>Get to know one another</li>
+                        <li>Front-End vs Back-End</li>
+                        <li>OOP vs FP</li>
+                        <li>
+                            The Internet vs the World Wide Web
+                        </li>
+                        <li>The client-server model and DNS lookup</li>
+                        <li>
+                            Install and configure Slack, Github, Node.js, npm, Git, and other command line tools
+                        </li>
+                        <li>Practice programmatic thinking by writing pseudocode</li>
+                    </ul>
+                    <aside class="notes">
+                        <p>Why are you here? Why interested in JS? code?</p>
                         <ul>
-                           <li>
-                                 Check to see if the light is red (conditional)
-                           </li>
-                           <li>
-                                 If the light is not red, turn the light red and set the light color (variable) to red
-                           </li>
-                           <li>
-                                 If the light is red, turn the light off and set the light color to off
-                           </li>
+                            <li>want better job?</li>
+                            <li>you were forced?</li>
                         </ul>
-                     </section>
+                        <p>Today's class is especially vocab-heavy, but not much programming </p>
+                    </aside>
+                </section>
             </section>
             <section>
-                  <section>
-                  <h2 class="title">Conclusion</h2>
-               </section>
-               <section>
-                     <p>The Client-Server model / Front-End vs Back-End</p>
+                <section>
+                    <h2 class="title">What is code?</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>Making something automated</li>
+                            <li>JavaScript is specifically the language of the web</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Some languages</h2>
+                    <ul>
+                        <li>
+                            JavaScript
+                        </li>
+                        <li>
+                            Python
+                        </li>
+                        <li>
+                            Java
+                        </li>
+                        <li>
+                            C/C++
+                        </li>
+                        <li>
+                            Ruby
+                        </li>
+                        <li>
+                            PHP
+                        </li>
+                        <li>
+                            SQL
+                        </li>
+                        <li>
+                            Swift
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>
+                                originally called Mocha. Called JS as marketing ploy to capitalize on Java popularity
+                            </li>
+                            <li>
+                                written in 10 days
+                            </li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Fundamentals of the web</h2>
+                    <ul>
+                        <li>
+                            <u>Web Development</u>: The process of building sites and applications for the Web
+                        </li>
+                        <li>
+                            <u>Front-End Development</u>: The development of client/browser code (HTML, CSS, JS), i.e., what the user interacts with and sees
+                        </li>
+                        <li>
+                            <u>Back-End Development</u>: The development of server-side code that handles such functions as routing, data handling, and databases behind the scenes. Ruby, Python, and Java (+ Node!) are all useful here.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Object Oriented & Functional Programming</h2>
+                    <ul>
+                        <li>
+                            <u>OOP</u>: focuses on structuring imperative code. It creates models of various concepts in a given problem area, then applies them. These models ("objects") are given functionality ("methods") that enable them to perform various actions; each object can also hold information. The fundamental unit in OOP is the object, which can itself contain further objects, like a Russian Matryoshka doll. The idea is to make it easier for human programmers to visualize the program by tying the program to concrete things, which helps the programmer group things logically. The fundamental thing to remember is that in object-oriented programming, everything is an object and every object has methods that allow the programmer to access its functionality
+                        </li>
+                        <li>
+                            <u>FP</u>: treats the problem area as a sequence of equations ("functions")--essentially, a progression of definitions that lead to the answer. The information begins as a number of axioms and culminates in the answer. (Think of it as a logical argument that ends in what you see on the screen.) Functional programming borrows many concepts from formal mathematics, and, as in mathematics (and unlike imperative programming or OOP), it usually does not save data between steps. The fundamental unit in functional programming is the function, which can perform operations as well as produce further functions
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Object Oriented & Functional Programming (simplified)</h2>
+                    <ul>
+                        <li>
+                            <u>OOP</u>: Everything is contained within compact objects with methods that can do things
+                        </li>
+                        <li>
+                            <u>FP</u>: Everything runs through a series of procedures
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li>
+                            <a href="https://www.quora.com/What-is-the-core-difference-in-laymans-terms-between-procedural-programming-and-object-oriented-programming" target="_blank">Quora debate</a>
+                        </li>
+                        <li>
+                            <a href="https://medium.com/@sho.miyata.1/the-object-oriented-programming-vs-functional-programming-debate-in-a-beginner-friendly-nutshell-24fb6f8625cc" target="_blank">Medium article</a>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <p>FP: pure functions and no state changing - not react</p>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Internet vs. World Wide Web</h2>
+                    <ul>
+                        <li>
+                            <u>The Internet</u> is a big collection of computers and cables
+                        </li>
+                        <li>
+                            <u>The Web</u> is a big collection of HTML Pages on the Internet
+                        </li>
+                    </ul>
+                    <img width="40%" src="world-wide-web.jpg" alt="world-wide-web" />
+                    <hr>
+                    <ul>
+                        <li>
+                            <a href="https://www.lifewire.com/difference-between-the-internet-and-the-web-2483335" target="_blank">Lifewire</a>
+                        </li>
+                        <li>
+                            <a href="https://www.webopedia.com/TERM/H/HTTP.html" target="_blank">HTTP: from Webopedia</a>
+                        </li>
+                        <li>
+                            <a href="https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177" target="_blank">HTTP: from Tuts</a>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <p>internet:</p>
+                        <ul>
+                            <li>series of requests and responses</li>
+                            <li>no one owns it</li>
+                            the web:
+                            <li>contained within the internet based on HTTP</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>The Client - Server Model</h2>
+                    <img width="80%" src="client_server.png" alt="client_server" />
+                    <ul>
+                        <li>Client requests to the Server</li>
+                        <li>Server responds with data</li>
+                    </ul>
+                    <aside class="notes">
+                        <p>client requests, and gets a response from the server</p>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Domain Name System (DNS)</h2>
+                    <p>In simplest terms, DNS is like a phone book for the Internet</p>
+                    <img width="60%" src="dns.png" alt="dns" />
+                    <aside class="notes">
+                        like finding a house
+                    </aside>
+                </section>
+                <section>
+                    <img height="55%" src="internet1.png" alt="internet1" />
+                    <aside class="notes">
+                        <ul>
+                            <li>request to FB, server determines algorithm, then data is returned</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <img height="55%" src="internet2.png" alt="internet2" />
+                    <aside class="notes">
+                        <ul>
+                            <li>request to FB, server determines algorithm, then data is returned</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <img height="55%" src="internet3.png" alt="internet3" />
+                    <aside class="notes">
+                        <ul>
+                            <li>request to FB, server determines algorithm, then data is returned</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2 class="title">Installfest Time</h2>
+                </section>
+                <section>
+                    <h2>Slack</h2>
+                    <ul>
+                        <li>
+                            <a href="https://slack.com/downloads/mac">Download Slack </a> - Get it on your phone, too!
+                        </li>
+                        <li>
+                            <a href="https://ga-nyc-ptstudents.slack.com/messages/C032VK2SJ/">GA - NYC part-time students Slack </a> - Connect with other PT-students in NY
+                        </li>
+                        <li>
+                            <a href="https://ga-js-nyc-spring-2019.slack.com/">ga-js-nyc-spring-2019</a> - Our class!
+                        </li>
+                    </ul>
+                    <aside class="notes">join link: https://join.slack.com/t/ga-js-nyc-spring-2019/shared_invite/enQtNjAyNjQzNzc3NzgwLTQ0ZjZiZTYyMTEwM2RjY2ExOGFiOTBkNGViNWNmYjJiMDVhZGIxMDhmNDYwNjhmMmQ2MDAxMzFjMDAxZjQ4MWI/</aside>
+                </section>
+                <section>
+                    <h2>Git and Github</h2>
+                    <ul>
+                        <li>
+                            <a href="https://git-scm.com/">Git </a> is a free and open source distributed version control system
+                        </li>
+                        <li>
+                            <a href="https://github.com/">Github</a> is a web-based hosting service for version control using Git
+                        </li>
+                        <br>
+                        <li>
+                            <a href="https://help.github.com/en/articles/setting-your-username-in-git/">Setting up Git on your computer</a>
+                        </li>
+                        <blockquote style="font-size: 22px;">git config --global user.name "YOUR NAME"</blockquote>
+                        <blockquote style="font-size: 22px;">git config --global user.email "YOUR EMAIL ADDRESS"</blockquote>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Terminal for Mac / Command prompt for Windows users</li>
+                            <li>Students experiencing an EACCES error should change directory permissions to install Node and npm without the need to use sudo: $ sudo chown -R $(whoami) /usr/local/lib/node_modules</li>
+                            <li>Mac users may run into the problem of an outdated version of Git installed with Xcode being given precedence in the terminal</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>SSH Key</h2>
+                    <ul>
+                        <li>
+                            <a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Get new SSH key</a>: a special, very secure, key which allows your laptop access to your github account without having to remember your github password
+                        </li>
+                        <li>Verify your key works:</li>
+                        <blockquote style="font-size: 22px;">ssh git@github.com</blockquote>
+                        <li>You should see something like:</li>
+                        <blockquote style="font-size: 22px;">Hi (NAME)! You've successfully authenticated, but GitHub does not provide shell access. Connection to github.com closed.
+                        </blockquote>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Homebrew</h2>
+                    <ul>
+                        <li>
+                            <a href="https://brew.sh/">Brew</a> is a package manager that we use to install various command line applications to your computer
+                        </li>
+                        <blockquote style="font-size: 22px;">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</blockquote>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Node</h2>
+                    <ul>
+                        <li>
+                            <a href="https://nodejs.org/en/">Node.js</a> is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+                        </li>
+                        <li>
+                            Then ensure <strong>npm</strong> in downloaded
+                        </li>
+                        <blockquote style="font-size: 22px;">npm install npm -g</blockquote>
+                    </ul>
+                    <aside class="notes">
+                        <p>probably a good idea to use Chrome</p>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Checking versions</h2>
+                    <blockquote style="font-size: 22px;">git --version</blockquote>
+                    <blockquote style="font-size: 22px;">brew --version</blockquote>
+                    <blockquote style="font-size: 22px;">node -v</blockquote>
+                    <blockquote style="font-size: 22px;">npm -v</blockquote>
+                </section>
+                <section>
+                    <h2>Code Editors (IDE)</h2>
+                    <ul>
+                        <li>
+                            <a href="https://code.visualstudio.com/">VS Code</a>: my choice &#10004;
+                        </li>
+                        <li>
+                            <a href="http://www.sublimetext.com/3">Sublime Text</a>
+                        </li>
+                        <li>
+                            <a href="https://atom.io/">Atom</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><a href="https://www.codementor.io/mattgoldspink/best-text-editor-atom-sublime-vim-visual-studio-code-du10872i7">Comparison</a></li>
+                        <li>Make sure to get shortcuts like <a href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line" target="_blank">this</a> so you can access your code more easily</li>
+                    </ul>
+                </section>
+                <aside class="notes">
+                    <p>integrated development environment</p>
+                </aside>
+            </section>
+            <section>
+                <section>
+                    <h2 class="title">Pseudocoding: Think like a Programmer</h2>
+                </section>
+                <section>
+                    <p>In order to become a great programmer, you have to think like a computer. Essentially, you have to think in code. The first step, is to write down whatever you want your computer to do in plain English.</p>
+                </section>
+                <section>
+                    <h2>Exercise</h2>
+                    <ul>
+                        <li>Imagine a dot with three different-colored buttons below it. When a user touches one of the buttons, the dot changes to the corresponding color. If the selected color is touched again, the dot turns off</li>
+                    </ul>
+                    <span class="dot"></span>
+                    <br>
+                    <button id="red" style="font-size: 24px;" onclick="addRed()">Red</button>
+                    <button style="font-size: 24px;" onclick="addYellow()">Yellow</button>
+                    <button style="font-size: 24px;" onclick="addBlue()">Blue</button>
+                <aside class="notes"><p>how can this be improved further?</p></aside>
                   </section>
-                  <section>
-                        <p>The Internet vs the Web</p>
-                     </section>
-                     <section>
-                           <p>Git vs Github</p>
-                        </section>
-                        <section>
-                              <p>Why JavaScript, knowing what you know now?</p>
-                           </section>
-            <section data-background="#003366">
-                  <p>Q&A</p>
-                  <a href="../index.html">Back to TOCs</a>
-               </section>
+                <section>
+                    <h2>Sample Answer</h2>
+                    <p>Conditional: If the red button is tapped (event listener):</p>
+                    <ul>
+                        <li>
+                            If the dot is not red, turn the dot red and set the dot color (variable) to red
+                        </li>
+                        <li>
+                            If the dot is red, turn the dot off and set the dot color to initial color
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                     <img width="60%" src="condit.png" alt="condit" />
+                 </section>
+            </section>
+            <section>
+                <section>
+                    <h2 class="title">Conclusion</h2>
+                </section>
+                <section>
+                    <p>The Client-Server model / Front-End vs Back-End</p>
+                    <p class="fragment">The Internet vs the Web</p>
+                    <p class="fragment">Git vs Github</p>
+                    <p class="fragment">Why JavaScript, knowing what you know now?</p>
+                </section>
+                <section data-background="#003366">
+                    <p>Q&A</p>
+                    <a href="../index.html">Back to TOCs</a>
+               ›</section>
             </section>
             </section>
-         </div>
-      </div>
-      <script src="../js/reveal.js"></script>
-      <script>
-         // More info about config & dependencies:
-         // - https://github.com/hakimel/reveal.js#configuration
-         // - https://github.com/hakimel/reveal.js#dependencies
-         Reveal.initialize({
-           slideNumber: true,
-           progress: true,
-           dependencies: [
-             { src: '../plugin/markdown/marked.js' },
-             { src: '../plugin/markdown/markdown.js' },
-             { src: '../plugin/notes/notes.js', async: true },
-             { src: '../plugin/highlight/highlight.js', async: true }
-           ]
-         });
+        </div>
+    </div>
+    <script src="../js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            slideNumber: true,
+            progress: true,
+            dependencies: [{
+                src: '../plugin/markdown/marked.js'
+            }, {
+                src: '../plugin/markdown/markdown.js'
+            }, {
+                src: '../plugin/notes/notes.js',
+                async: true
+            }, {
+                src: '../plugin/highlight/highlight.js',
+                async: true
+            }]
+        });
 
-         let dot = document.querySelector(".dot");
+        let dot = document.querySelector(".dot");
 
-         function addRed(){
-            dot.style.backgroundColor !== "red" ? 
-            dot.style.backgroundColor = "red" : 
-            dot.style.backgroundColor = "#bbb"
-         }
-         function addBlue(){
-            dot.style.backgroundColor !== "blue" ? 
-            dot.style.backgroundColor = "blue" : 
-            dot.style.backgroundColor = "#bbb"
-         }
-         function addYellow(){
-            dot.style.backgroundColor !== "yellow" ? 
-            dot.style.backgroundColor = "yellow" : 
-            dot.style.backgroundColor = "#bbb"
-         }
+        function addRed() {
+            dot.style.backgroundColor !== "red" ?
+                dot.style.backgroundColor = "red" :
+                dot.style.backgroundColor = "#bbb"
+        }
 
+        function addBlue() {
+            dot.style.backgroundColor !== "blue" ?
+                dot.style.backgroundColor = "blue" :
+                dot.style.backgroundColor = "#bbb"
+        }
 
-      </script>
-      <style>
-      .dot {
-         height: 75px;
-         width: 75px;
-         background-color: #bbb;
-         border-radius: 50%;
-         display: inline-block;
-      }
+        function addYellow() {
+            dot.style.backgroundColor !== "yellow" ?
+                dot.style.backgroundColor = "yellow" :
+                dot.style.backgroundColor = "#bbb"
+        }
 
-      .red {
-         background-color: red;
-      }
-</style>
-   </body>
+    </script>
+    <style>
+        .dot {
+            height: 75px;
+            width: 75px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+    </style>
+</body>
+
 </html>

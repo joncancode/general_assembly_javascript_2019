@@ -36,18 +36,125 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="#003366">
-          <h2>GA class 01 - command-line-JS</h2>
+          <h2>JS class 01 - The Command Line</h2>
           <br />
           <a href="../index.html">Back to TOCs</a>
         </section>
         <section>
           <section>
-            <h2 class="title">Under Construction</h2>
+            <h2 class="title">Review of Last Class</h2>
+          </section>
+          <section>
+              <p >The client-server model</p>
+              <p class="fragment">DNS lookup</p>
+              <p class="fragment">What is Pseudocode?</p>
           </section>
         </section>
         <section>
             <section>
-               <h2 class="title">Heading</h2>
+                <h2 class="title">Today's Objectives</h2>
+              </section>
+              <section>
+            <p>Run basic JavaScript script on the command line using Node</p>
+            <p class="fragment">Initialize a local Git repository and push/pull changes to a remote Git repository</p>
+            <p class="fragment">Navigating the Terminal</p>
+            </section>
+          </section>
+
+          <section>
+            <section>
+                <h2 class="title">The Power of JavaScript</h2>
+              </section>
+              <section>
+                <ul>
+            <li>JavaScript is used to add interactive elements like animations, buttons, and user input forms to the front-end. Increasingly, however, it is also being used to interact with APIs and databases and to perform back-end tasks</li>
+            <li class="fragment">You can add Javascript directly to HTML and it will run in your browser</li>
+            <li class="fragment">You can now run it outside of the browser as well, with Node.js, a JavaScript runtime environment</li>
+            <li class="fragment">JavaScript can load content into the document if and when the user needs it, without the need to reload the entire page. This is commonly referred to as <em>AJAX</em></li>
+            <li class="fragment">JavaScript can determine your browser’s functional limitations and react accordingly. This is referred to as principles of <em>unobtrusive JavaScript</em>, or <em>progressive enhancement</em></li>
+          </ul>
+          <hr class="fragment">
+          <li class="fragment"><a href="https://en.wikipedia.org/wiki/Unobtrusive_JavaScript">Unobtrusive JavaScript</a></li>
+          </section>
+          </section>
+          <section>
+              <section>
+                  <h2 class="title">JavaScript: the Bad Parts</h2>
+                </section>
+                <section>
+                  <ul>
+              <li>JavaScript can be functionally flaky because the environment in which it operates is unknown: You don’t know the capabilities of computer on the receiving end of your Web page, you don’t know how busy the computer is with other functions (runs through a single thread) </li>
+              <li class="fragment">JavaScript (or some of its functions) is occasionally turned off in browsers for security purposes or because it is often used for annoying pop-windows or intrusive advertising</li>
+            </ul>
+            
+            </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2 class="title">Node.js: Run JavaScript Anywhere!</h2>
+                  </section>
+                  <section>
+                    <ul>
+                <li>Node was developed to run JS outside of the browser. We can run Node directly in our Terminal</li>
+                <li class="fragment">Node uses an event-driven, non-blocking I/O model</li>
+              </ul>
+              <aside class="notes">
+                <blockquote>
+                      //  setTimeout(function () {
+                      //   console.log('zero')
+                      // }, 0)
+                      
+                      // setTimeout(function () {
+                      //   console.log('two')
+                      // }, 2000)
+                      
+                      // console.log('no timeout')
+                </blockquote>
+              </aside>
+              </section>
+
+
+              <section>
+                  <section>
+                      <p>Node.js: One Thread, but Non-blocking</p>
+                    </section>
+                    <section>
+                        <img width="55%" src="stack.png" alt="curriculum" />
+                
+                </section>
+                </section>
+              </section>
+
+              <section>
+                  <section>
+                      <h2 class="title">To the Terminal</h2>
+                    </section>
+                    <section>
+                      <ul>
+                  <li>We can run JS code in the Terminal</li>
+                  <li class="fragment">We can also create / edit / delete / open files</li>
+                </ul>
+                
+                </section>
+                <section>
+                    <section>
+                        <p>Terminal Commands</p>
+                      </section>
+                      <section>
+                          <img width="55%" src="terminal.png" alt="curriculum" />
+                </section>
+
+                <aside class="notes">
+                  <p>to open VS Code from Terminal: command/shift/p then Install 'code' command in PATH command</p>
+                </aside>
+
+                  </section>
+                  </section>
+
+        <section>
+            <section>
+               <h2 class="title">Conclusion</h2>
             </section>
             <section>
                <h2>some slide</h2>
