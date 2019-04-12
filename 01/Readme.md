@@ -1,6 +1,6 @@
 <h1>01 The Command Line</h1>
 
-[the slides](file:///Users/jonathanhaines/Desktop/GeneralAssembly/01/index.html "slides")
+[the slides](https://joncancode.github.io/general_assembly_javascript_2019/01/index.html "slides")
 
 <h2>Terminal</h2>
 

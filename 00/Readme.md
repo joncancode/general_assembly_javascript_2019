@@ -1,6 +1,6 @@
 <h1>00 Installfest</h1>
 
-[the slides](file:///Users/jonathanhaines/Desktop/GeneralAssembly/00/index.html "slides")
+[the slides](https://joncancode.github.io/general_assembly_javascript_2019/00/index.html "slides")
 
 <h2>Communication</h2>
 
