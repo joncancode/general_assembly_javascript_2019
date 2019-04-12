@@ -37,6 +37,10 @@ body {
     border: 3px solid brown;
     }
 
+    code {
+      background-color: #32323d;
+      padding: 8px;
+    }
 
 /*********************************************
  * VIEW FRAGMENTS

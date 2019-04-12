@@ -1,4 +1,7 @@
-<h1>00-Installfest Notes</h1>
+<h1>00 Installfest</h1>
+
+[the slides](file:///Users/jonathanhaines/Desktop/GeneralAssembly/00/index.html "slides")
+
 <h2>Communication</h2>
 
 [get Slack](https://slack.com/downloads/mac "slack")
