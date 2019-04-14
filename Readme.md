@@ -5,9 +5,10 @@
 [01-command-line-JS](https://joncancode.github.io/general_assembly_javascript_2019/01/index.html "command-line-JS")
 
 [02-data-types](https://joncancode.github.io/general_assembly_javascript_2019/02/index.html "data-types")
-<!-- 
+
 [03-conditionals-and-loops](https://joncancode.github.io/general_assembly_javascript_2019/03/index.html "conditionals-and-loops")
 
+<!-- 
 [04-functions-and-scope](https://joncancode.github.io/general_assembly_javascript_2019/04/index.html "functions-and-scope")
 
 [05-in-class-lab](https://joncancode.github.io/general_assembly_javascript_2019/05/index.html "in-class-lab")

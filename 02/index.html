@@ -41,6 +41,127 @@
           <a href="../index.html">Back to TOCs</a>
         </section>
         <section>
+            <section>
+              <h2 class="title">Review of Last Class</h2>
+            </section>
+            <section>
+                <p>Basic command line terms (cd, ls, pwd, mkdir, touch)</p>
+                <p class="fragment">Running JavaScript using Node</p>
+                <p class="fragment">Knowing the basics of Git</p>
+            </section>
+          </section>
+          <section>
+              <section>
+                  <h2 class="title">Today's Objectives</h2>
+                </section>
+                <section>
+              <p>-Describe the concept of a "data type" and how it relates to variables</p>
+              <p class="fragment">-Declare, assign to, and manipulate data stored in a variable</p>
+              <p class="fragment">-Create arrays and access values in them</p>
+              <p class="fragment">-Iterate over and manipulate values in an array</p>
+              </section>
+            </section>
+            <section>
+                <section>
+                  <h2 class="title">What is a Data Type?</h2>
+                </section>
+                <section>
+                  <ul>
+                    <li >A data type is an attribute of data which tells the compiler how the programmer intends to use the data</li>
+                    <li class="fragment">These are usually similar across different languages (string, number, etc.)</li>
+                    <li class="fragment">JavaScript is <a target="_blank" href="https://www.quora.com/Why-is-JavaScript-considered-a-loosely-typed-language">"loosely-typed"</a></li>
+                  </ul>
+                </section>
+                <section>
+                  <p>JavaScript has <a href="https://javascript.info/types" target="_blank">seven data types</a></p>
+                    <ol>
+                      <li class="fragment">Numbers</li>
+                      <li class="fragment">Strings</li>
+                      <li class="fragment">Booleans</li>
+                      <li class="fragment">Null</li>
+                      <li class="fragment">Undefined</li>
+                      <li class="fragment">Object</li>
+                      <li class="fragment">Symbols</li>
+                    </ol>
+                    <p class="fragment"><code>typeof</code> can be used to check</p>
+                  </section>
+                  <section>
+                      <p>Let's use Node to practice</p>
+                      <ul>
+                          <li class="fragment"><code>typeof(100) === 'number';</code></li>
+                          <li class="fragment"><code>typeof('some string') === 'string';</code></li>
+                          <li class="fragment"><code>typeof({}) === 'object';</code></li>
+                        </ul>
+                        <aside class="notes">do examples for array and undefined. Explain Number covers floats/integers. Show "1" is string</aside>
+                        </section>
+                        <section>
+                            <p>Arithmetic Operators for Numbers</p>
+                            <ul>
+                                <li class="fragment"><code>1 + 2</code> : addition</li>
+                                <li class="fragment"><code>2 - 5</code> : subtraction</li>
+                                <li class="fragment"><code>6 * 2</code> : multiplication</li>
+                                <li class="fragment"><code>6 / 2</code> : division</li>
+                                <li class="fragment"><code>5 % 2</code> : finds remainders (modulus operator)</li>
+                                <hr class="fragment">
+                                <li class="fragment"><code>Math.pow(3,2)</code> : is 3 to the 2nd power</li>
+                                <li class="fragment"><code>Math.sqrt(4)</code> : for √(4)</li>
+                                <li class="fragment"><code>Math.random()*10</code> : for a number between 1 and 10</li>
+                                <li class="fragment"><code>Math.floor(3.14)</code> : to round down</li>
+                                <li class="fragment"><code>Math.ceiling(3.14)</code> : to round up</li>
+                              </ul>
+                              </section>
+              </section>
+
+              <section>
+                  <section>
+                    <h2 class="title">The Variable</h2>
+                  </section>
+                  <section>
+                      <p>Variables are used to store data types in a computer’s memory, so that they can be referenced later</p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li><code>var color = "blue"</code></li>
+                            <li class="fragment"><code>let color = "blue"</code></li>
+                            <li class="fragment"><code>const color = "blue"</code></li>
+                      </ul>
+                      <aside class="notes">change color to a number to explain loosely typed</aside>
+                      </section>
+                      <section>
+                          <ul>
+                              <li><code>let myNum = 5</code></li>
+                              <li class="fragment"><code>myNum += 1</code></li>
+                        </ul>
+                        <aside class="notes">use (5).toString() to change number to string</aside>
+                        </section>
+                </section>
+
+                <section>
+                    <section>
+                      <h2 class="title">The Array</h2>
+                    </section>
+                    <section>
+                        <p>An array is a single variable that is used to store different elements in order</p>
+                      </section>
+                      <section>
+                          <ul>
+                              <li><code>var color = "blue"</code></li>
+                              <li class="fragment"><code>let color = "blue"</code></li>
+                              <li class="fragment"><code>const color = "blue"</code></li>
+                        </ul>
+                        <aside class="notes">change color to a number to explain loosely typed</aside>
+                        </section>
+                        <section>
+                            <ul>
+                                <li><code>let myNum = 5;</code></li>
+                                <li class="fragment"><code>myNum += 1</code></li>
+                          </ul>
+                          <aside class="notes">use (5).toString() to change number to string</aside>
+                          </section>
+                  </section>
+
+
+        <section>
           <section>
             <h2 class="title">Under Construction</h2>
           </section>
@@ -50,14 +171,14 @@
                <h2 class="title">Conclusion</h2>
             </section>
             <section>
-               <h2>some slide</h2>
-               <ul>
-                  <li>
-                     none
-                  </li>
-               </ul> 
+               <h2>Data Types</h2>
+                  <p class="fragment">Describe use cases of different "data types".</p>
+                  <p class="fragment">Why is iterating important when working with stored data?</p>
+                  <hr class="fragment">
+                  <a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">Data types from MDN</a>
             </section>
            <section data-background="#003366">
+              <p>Q&A</p>
               <a href="../index.html">Back to TOCs</a>
            </section>
         </section>
