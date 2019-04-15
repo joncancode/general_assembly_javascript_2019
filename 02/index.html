@@ -92,7 +92,7 @@
                           <li class="fragment"><code>typeof('some string') === 'string';</code></li>
                           <li class="fragment"><code>typeof({}) === 'object';</code></li>
                         </ul>
-                        <aside class="notes">do examples for array and undefined. Explain Number covers floats/integers. Show "1" is string</aside>
+                        <aside class="notes">1) do examples for array and undefined. 2)Explain Number covers floats/integers. 3)Show "1" is string. 4)show that Null is mistakedly an Obj</aside>
                         </section>
                         <section>
                             <p>Arithmetic Operators for Numbers</p>
@@ -120,6 +120,7 @@
                       <p>Variables are used to store data types in a computer’s memory, so that they can be referenced later</p>
                     </section>
                     <section>
+                      <p>Declaring a Variable</p>
                         <ul>
                             <li><code>var color = "blue"</code></li>
                             <li class="fragment"><code>let color = "blue"</code></li>
@@ -128,6 +129,7 @@
                       <aside class="notes">change color to a number to explain loosely typed</aside>
                       </section>
                       <section>
+                          <p>Updating Numbers</p>
                           <ul>
                               <li><code>let myNum = 5</code></li>
                               <li class="fragment"><code>myNum += 1</code></li>
@@ -144,22 +146,114 @@
                         <p>An array is a single variable that is used to store different elements in order</p>
                       </section>
                       <section>
+                          <p>All About Arrays</p>
                           <ul>
-                              <li><code>var color = "blue"</code></li>
-                              <li class="fragment"><code>let color = "blue"</code></li>
-                              <li class="fragment"><code>const color = "blue"</code></li>
+                              <li><code>let starks = new Array('robb', 'sansa', 'arya');</code></li>
+                              <li class="fragment"><code>let avengers = ['ironman', 'hulk', 'thor']</code> : array literal</li>
+                              
+                              <br>
+                              <li class="fragment"><code>avengers[0];</code> : index starts at 0</li>
+                              <li class="fragment"><code>avengers.length;</code></li>
+                              <li class="fragment"><code>let enemy = 'thanos';</code> : we can use strings like arrays</li>
+                              <li class="fragment"><code>enemy[0];</code></li>
+                              <li class="fragment"><code>enemy.length;</code></li>
                         </ul>
-                        <aside class="notes">change color to a number to explain loosely typed</aside>
                         </section>
                         <section>
+                            <p>More About Length</p>
                             <ul>
-                                <li><code>let myNum = 5;</code></li>
-                                <li class="fragment"><code>myNum += 1</code></li>
+                                <li><code>let avengers = ['ironman', 'hulk', 'thor'];</code></li>
+                                <li class="fragment"><code>avengers[10] = 'black panther';</code></li>
+                                <li class="fragment"><code>avengers.length;</code></li>
                           </ul>
-                          <aside class="notes">use (5).toString() to change number to string</aside>
                           </section>
                   </section>
+                  <section>
+                      <section>
+                        <h2 class="title">Array Practice</h2>
+                      </section>
+                      <section>
+                          <p>Instructions... Pt. 1</p>
+                          <ul>
+                            <li>Create two arrays: one using the new keyword; the other using an array literal</li>
+                            <li>The first array will contain <u>String</u> data values, representing goods a student consumes</li>
+                            <ul><li><code>let goods = new Array("water", "coffee")</code></li></ul>
+                            <li>The second array will contain <u>Number</u> data values, representing the quantity of the respective good they consume on a daily basis</li>
+                            <ul><li><code>let quantity = [8, 2]</code></li></ul>
+                          </ul>
+                          <hr>
+                          <li><a href="http://stackoverflow.com/questions/1094723/what-is-array-literal-notation-in-javascript-and-when-should-you-use-it" target="_blank">Array Differences</a></li>
+                        </section>
+                        <section>
+                            <p>Instructions... Pt. 2</p>
+                            <ul>
+                              <li>Use bracket notation to add values to the one of the arrays</li>
+                              <ul><li><code>goods[2] = "beer"</code></li></ul>
+                              <li>use the `.push()` method for the other</li>
+                              <ul><li><code>quantity.push(8)</code></li></ul>
+                            </ul>
+                          </section>
+                          <section>
+                              <p>Instructions... Pt. 3</p>
+                              <ul>
+                                <li>Accessing Elements from Arrays and Concatenating Them With Strings</li>
+                                <ul><li><code>'Today, I consumed ' + quantity[0] + ' cups of ' + goods[0]</code></li></ul>
+                                <hr class="fragment">
+                                <li class="fragment">template literal: </li>
+                                <ul class="fragment"><li><code>`Today, I consumed ${quantity[0]} cups of ${goods[0]}`</code></li></ul>
+                              </ul>
+                            </section>
+                    </section>
+                    <section>
+                        <section>
+                          <h2 class="title">Array Methods</h2>
+                        </section>
+                        <section>
+                            <p>Arrays come with plenty of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#" target="_blank">Methods</a> that act as helpers</p>
+                          <ul>
+                            <li class="fragment"><code>a.toString()</code> : Returns a string with the <code>toString()</code> of each element separated by commas</li>
+                            <li class="fragment"><code>a.pop()</code>: Removes and returns the last item</li>
+                            <li class="fragment"><code>a.push(item)</code> : Adds one or more items to the end</li>
+                            <li class="fragment"><code>a.reverse()</code> : Reverses the array</li>
+                            <li class="fragment"><code>a.shift()</code> : Removes and returns the first item</li>
+                            <li class="fragment"><code>a.unshift([item])</code> : Prepends items to the start of the array</li>
+                          </ul>
+                          </section>
 
+                          <section>
+                              <p>Crack the Array Code</p>
+                            <ul>
+                              <li><code>let message = []</code></li>
+                              <li><code>message.push(8)</code></li>
+                              <li><code>message.push('r', 'e', 'b', 'm', 'u')</code></li>
+                              <li><code>message.push('n', 's', 'i', 'A', 'G', 'K')</code></li>
+                              <hr>
+                              <li><code>message.pop()</code></li>
+                              <li><code>message.shift()</code></li>
+                              <li><code>message.unshift(1)</code></li>
+                              <li><code>message.reverse()</code></li>
+                              <hr>
+                              <li><code>message.join()</code></li>
+                              <li><code>message.join(' ')</code></li>
+                            </ul>
+                            </section>
+                      </section>
+
+                      <section>
+                          <section>
+                            <h2 class="title">Iterating Through Arrays</h2>
+                          </section>
+
+
+                          
+                        </section>
+
+                  <section>
+                      <section>
+                        <h2 class="title">Under Construction</h2>
+                        <img width="55%" src="bytes.png" alt="bytes" />
+                      </section>
+                    </section>
 
         <section>
           <section>
@@ -175,7 +269,7 @@
                   <p class="fragment">Describe use cases of different "data types".</p>
                   <p class="fragment">Why is iterating important when working with stored data?</p>
                   <hr class="fragment">
-                  <a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">Data types from MDN</a>
+                  <a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank">Data types from MDN</a>
             </section>
            <section data-background="#003366">
               <p>Q&A</p>
