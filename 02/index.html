@@ -55,10 +55,10 @@
                   <h2 class="title">Today's Objectives</h2>
                 </section>
                 <section>
-              <p>-Describe the concept of a "data type" and how it relates to variables</p>
-              <p class="fragment">-Declare, assign to, and manipulate data stored in a variable</p>
-              <p class="fragment">-Create arrays and access values in them</p>
-              <p class="fragment">-Iterate over and manipulate values in an array</p>
+              <li>Describe the concept of a "data type" and how it relates to variables</li>
+              <li class="fragment">Declare, assign to, and manipulate data stored in a variable</li>
+              <li class="fragment">Create arrays and access values in them</li>
+              <li class="fragment">Iterate over and manipulate values in an array</li>
               </section>
             </section>
             <section>
@@ -244,22 +244,70 @@
                             <h2 class="title">Iterating Through Arrays</h2>
                           </section>
 
+                          <section>
+                            <p>The 'For' Loop</p>
+                              <pre>let teams = ['Yankees', 'Mets', 'Red Sox', 'Dodgers'];
+for (let i = 0; i < teams.length; i++) {
+    console.log(teams[i]);
+}</pre>
+                     <hr class="fragment">
+                        <ul>
+                          <li class="fragment"><code>let i = 0</code> : 'i' is our starting point</li>
+                          <li class="fragment"><code>i < teams.length</code> : how long should we loop</li>
+                          <li class="fragment"><code>i++</code> : how 'i' changes after each instance</li>
+                        </ul>
+                        <aside class="notes">start 'i' from index 2; try i--</aside>
+                          </section>
 
-                          
+                          <section>
+                              <p>For Each: The Same, but Shorter</p>
+                                <pre>let teams = ['Yankees', 'Mets', 'Red Sox', 'Dodgers'];
+  teams.forEach(function(team) {
+      console.log(teams[team]);
+  })</pre>
+                       <hr class="fragment">
+                          <ul>
+                            <li class="fragment">Notice the callback</li>
+                            <li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">MDN</a> for Reference</li>
+                          </ul>
+                            </section>
+                            <section>
+                                <p>Other Iterator Methods</p>
+                            <ul>
+                              <li class="fragment"><code>Array.every()</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank">(MDN)</a> returns boolean that tests whether all elements in the array pass the test implemented by the provided function</li>
+                              <li class="fragment"><code>Array.some()</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank">(MDN)</a> same as every, but not for all elements</li>
+                              <li class="fragment"><code>Array.filter()</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">(MDN)</a> creates a new array with all elements that pass the test implemented by the provided function</li>
+                              <li class="fragment"><code>Array.map()</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">(MDN)</a> creates a new array with the results of calling a provided function on every element in this array</li>
+                            </ul>
+                              </section>
+
                         </section>
+                      </section>
+
 
                   <section>
                       <section>
-                        <h2 class="title">Under Construction</h2>
-                        <img width="55%" src="bytes.png" alt="bytes" />
+                        <h2 class="title">Extra Array <a href="https://gist.github.com/joncancode/9e222c9da1fca612051309f18e43df05" target="_blank">Practice</a></h2>
                       </section>
                     </section>
 
-        <section>
-          <section>
-            <h2 class="title">Under Construction</h2>
-          </section>
-        </section>
+                  <section>
+                      <section>
+                        <h2 class="title">Madlibs Homework</h2>
+                      </section>
+                      <section>
+                          <img width="40%" src="bytes.png" alt="bytes" />
+                        </section>
+                      <section>
+                    
+                      <p><a href="https://github.com/joncancode/madlibs" target="_blank">Your Mission</a></p>
+                    <ul>
+                      <li>This is not due until after the Intro to the DOM and jQuery lesson (07)</li>
+                      <li>We haven't tackled DOM manipulation yet, but feel free to try it on your own</li>
+                    </ul>
+                    </section>
+
+                  </section>
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
