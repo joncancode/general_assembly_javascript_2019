@@ -124,7 +124,7 @@
                         <ul>
                             <li><code>var color = "blue"</code></li>
                             <li class="fragment"><code>let color = "blue"</code></li>
-                            <li class="fragment"><code>const color = "blue"</code></li>
+                            <li class="fragment"><code>const color = "blue"</code> : constants are also containers, but cannoy be changed after declaration</li>
                       </ul>
                       <aside class="notes">change color to a number to explain loosely typed</aside>
                       </section>
@@ -148,15 +148,15 @@
                       <section>
                           <p>All About Arrays</p>
                           <ul>
-                              <li><code>let starks = new Array('robb', 'sansa', 'arya');</code></li>
-                              <li class="fragment"><code>let avengers = ['ironman', 'hulk', 'thor']</code> : array literal</li>
+                              <li><code>let starks = new Array('robb', 'sansa', 'arya');</code> : normal way of declaring</li>
+                              <li class="fragment"><code>let avengers = ['ironman', 'hulk', 'thor']</code> : "array literal" way of declaring</li>
                               
                               <br>
-                              <li class="fragment"><code>avengers[0];</code> : index starts at 0</li>
-                              <li class="fragment"><code>avengers.length;</code></li>
+                              <li class="fragment"><code>avengers[0];</code> : index starts at 0. This would be 'ironman'</li>
+                              <li class="fragment"><code>avengers.length;</code> : in this case, this is 3</li>
                               <li class="fragment"><code>let enemy = 'thanos';</code> : we can use strings like arrays</li>
-                              <li class="fragment"><code>enemy[0];</code></li>
-                              <li class="fragment"><code>enemy.length;</code></li>
+                              <li class="fragment"><code>enemy[0];</code> : this would be the first letter ('t')</li>
+                              <li class="fragment"><code>enemy.length;</code> : this would be the total number of characters</li>
                         </ul>
                         </section>
                         <section>
@@ -199,7 +199,7 @@
                                 <li>Accessing Elements from Arrays and Concatenating Them With Strings</li>
                                 <ul><li><code>'Today, I consumed ' + quantity[0] + ' cups of ' + goods[0]</code></li></ul>
                                 <hr class="fragment">
-                                <li class="fragment">template literal: </li>
+                                <li class="fragment">template literal: a shorter way of writing without plus signs </li>
                                 <ul class="fragment"><li><code>`Today, I consumed ${quantity[0]} cups of ${goods[0]}`</code></li></ul>
                               </ul>
                             </section>
