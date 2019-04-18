@@ -65,7 +65,63 @@
             </section>
           </section>
 
+          <section>
+            <section>
+                <h2 class="title">Conditional Statements</h2>
+              </section>
+              <section>
+            <p>Conditional statements are blocks of code that only run when a certain criteria is met</p>
+            <p class="fragment">JavaScript supports two conditional statements: <code>if...else</code> and <code>switch</code></p>
+            </section>
 
+            <section>
+              <p>If...</p>
+              <pre class="fragment">
+          if (1 > 0) {
+              console.log("This is a true statement");
+          }</pre>
+          <li class="fragment">This would run the statement because 1 is greater than 0</li>
+              </section>
+
+            <section>
+                <p>If... else</p>
+                <pre class="fragment">
+            if (0 > 1) {
+                console.log("This is a true statement");
+            } 
+            else {
+                console.log("The first statement did not run");
+            }</pre>
+            <li class="fragment">Since the first condition isn't met, we skip it and go to the 'else'</li>
+            <li class="fragment">Notice how the brackets line up so that it's easier to read</li>
+                </section>
+
+
+              <section>
+                  <p>If... else if... else</p>
+                  <pre class="fragment">
+              if (name === 'Harry') {
+                  console.log("You're a wizard");
+              } 
+              else if (name === 'Hedwig') {
+                  console.log("You're an owl");
+              }
+              else {
+                console.log("Why are you in Hogwarts?");
+              }</pre>
+                  <li class="fragment">We can have as many conditionals as we want</li>
+                  <li class="fragment">Notice the triple equal signs</li>
+                      </section>
+
+              <section>
+                <p>Equal signs</p>
+                <li class="fragment">Single <code>=</code> is used when assigning a value like we've done in the past</li>
+                <li class="fragment">Double <code>==</code> is used as a check, but it does not check type</li>
+                <li class="fragment">Triple <code>===</code> checks type</li> <br>
+                <li class="fragment">So basically <br><code>5 == '5'</code> is true <br><code>5 === '5'</code> is false</li>
+                  </section>
+
+          </section>
 
         <section>
           <section>
