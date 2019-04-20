@@ -233,41 +233,98 @@
                     <section>
                       <p><code>While</code> is a loop statement that will run while a condition is true</p>
                     <pre>
-                  while (true) {
-                    // an infinite loop!
-                  }
+      while (true) {
+        // an infinite loop!
+      }
                     </pre>
                     <li class="fragment">Be careful about conditions in <code>while</code> loops. Infinite loops will break your code</li>
                     </section>
                     <section>
                       <p>A way to counter this is with a <code>do-while</code> loop</p>
                     <pre>
-                      let input = 0;
-                      do {
-                          console.log(input++);
-                      } while (input < 10)
+      let input = 0;
+      do {
+          console.log(input++);
+      } while (input < 10)
                     </pre>
                     </section>
+                  </section>
+                  <section>
                     <section>
-                      <p>Please come back soon</p>
+                      <h2 class="title">For and ForEach</h2>
                     </section>
                     <section>
-                      <p>Please come back soon</p>
+                      <p>We touched the <code>for</code> and <code>forEach</code> loops already, but here's a refresher</p>
+                    </section>
+                    <section>
+                      <p>The <code>for</code> loop</p>
+<pre>
+  let a = [1, 2, 3, 4, 5];
+  for (var i = 0; i < a.length; i++) {
+      console.log(i);
+  }
+</pre>
+                <li>good for looping through arrays</li>
+                <li>more useful/common than while loops</li>
+                    </section>
+                    <section>
+                      <p>The <code>forEach</code> loop (ES6)</p>
+<pre>
+  ["sunny", "rainy", "windy"].forEach(function(currentValue, index, array) {
+    console.log("The current weather is ", currentValue);
+ });
+</pre>
+                <li><code>currentValue</code> can also be <code>array[index]</code></li>
                     </section>
                   </section>
+                </section>
 
 
-        <section>
-          <section>
-            <h2 class="title">Under Construction</h2>
-          </section>
-          <section>
-            <p>Please come back soon</p>
-          </section>
-        </section>
+
+                <section>
+                  <section>
+                    <h2 class="title">FizzBuzz</h2>
+                  </section>
+                  <section>
+                    <p class="fragment">You've learned about if/else, switch, forEach, etc.</p>
+                    <p class="fragment">Now is your chance to put it to practice</p>
+                  <a class="fragment" href="https://gist.github.com/joncancode/b00a8f542e22ddd5d4586dbbfb6f4c5a" target="_blank">FizzBuzz assignment</a>
+                  <hr class="fragment">
+                  <li class="fragment">Don't forget the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" target="_blank">Modulus</a> operator</li>
+                </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2 class="title">Homework</h2>
+                  </section>
+                  <section>
+                    <p>HW #1</p>
+                    <li>Write a script that prints the lyrics to <a href="http://www.99-bottles-of-beer.net/lyrics.html" target="_blank">99 Bottles of Beer on the Wall</a> in the terminal</li>
+                    <li>Make sure your program can handle both singular and plural cases (bottle vs bottles)</li>
+                  </section>
+                  <section>
+                    <p>HW #2</p>
+                    <li>Write a script that can generate random addresses</li>
+                    <li>As a first step, create arrays that contain dummy data for each of the following: street number, street name, city, state, and zip code</li>
+                    <li>For example, a dummy state array may look like this: <code>['new york', 'texas', 'florida'...]</code></li>
+                    <li>Your script should <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank">randomly</a> select one item from each of these arrays and then use them to construct a random address</li>
+                    <li>Each time you run the script, it should print a new randomly-generated address to the terminal. For example:</li>
+                    <li><code>node random-address.js</code></li>
+                    <li><code>10 E 21st St, New York, NY 10010</code></li>
+                  </section>
+                </section>
+
+
+
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
+            </section>
+            <section>
+              <li>We now have some fundamental skills and core <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" target="_blank">"control flow"</a> concepts</li>
+              <li>We should able to explain if/else and switch statements as well as use cases</li>
+              <li>We should able to differentiate between true, false, <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank">'truthy'</a>, and <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank">'falsey'</a></li>
             </section>
            <section data-background="#003366">
                 <p>Q&A</p>
