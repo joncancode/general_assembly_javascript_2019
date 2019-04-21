@@ -38,8 +38,12 @@
         <section data-background="#003366">
           <h2>JS class 04 - Functions and Scope</h2>
           <br />
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
           <a href="../index.html">Back to TOCs</a>
+          <hr>
+          <ul>
+          <li>press 'O' to navigate</li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a></li>
+          </ul>
         </section>
 
         <section>
@@ -47,10 +51,9 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p>-Last time we used conditionals to control program flow</p>
+              <p class="fragment">-We differentiated between true, false, 'truth-y', and 'false-y'</p>
+              <p class="fragment">-We used Boolean logic (!, &&, ||) to combine and manipulate conditionals</p>
           </section>
         </section>
         <section>
@@ -58,13 +61,80 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>-Define and call a function that accepts parameters</p>
+            <p class="fragment">-Determine the scope of local and global variables</p>
+            <p class="fragment">-Describe how parameters and arguments relate to functions</p>
+            <p class="fragment">-Return a value from a function using the return keyword</p>
+            <p class="fragment">-Create a program that hoists variables</p>
             </section>
           </section>
 
+          <section>
+            <section>
+              <h2 class="title">Functions</h2>
+            </section>
+            <section>
+              <p>-A <code>function</code> is a piece of reusable code</p>
+              <p class="fragment">-Functions address a key tenet of engineering: Don't Repeat Yourself, or DRY</p>
+              <p class="fragment">-They are similar to objects or strings in that they can be passed into other functions as an argument</p>
+              <p class="fragment">-If a <code>variable</code> is like a noun, a <code>function</code> would be a verb</p>
+            </section>
+            <section>
+              <p>Declaring a <code>function</code></p>
+ 
+                <pre class="fragment">
+                  function sayHello () {
+                    console.log("hello world");
+                  }
+                </pre>
+                <br>
+              <li class="fragment">We can also pass in arguments</li>
+              <pre class="fragment">
+                function sayHello (name) {
+                  console.log("hello " + name);
+                }
+              </pre>
+            </section>
+            <section>
+              <p>Calling a <code>function</code></p>
+              <li class="fragment">Since functions are reusable, they won't automatically run. You need to call them</li>
+              <code class="fragment">sayHello();</code><br><br>
+              <li class="fragment">And if you are using any arguments:</li>
+              <code class="fragment">sayHello("Bob");</code>
+            </section>
+            <section>
+              <p>Function Creation and <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank">Hoisting</a></p>
+              <li class="fragment">Function Declaration (can be called before declaration, due to hoisting)</li>
+              <pre class="fragment">
+                function sayHello (name) {
+                  console.log("hello " + name);
+                }</pre><br>
+              <li class="fragment">Function Expressions (must be defined before they are called)</li>
+              <pre class="fragment">
+                let greeting = function (name) {
+                  console.log("hello " + name);
+                }</pre>
+            </section>
+            <section>
+              <p>Call a <code>function</code> as a Method</p>
+              <li class="fragment">We haven't learned about Objects yet, but just know that a <code>function</code> can also be called from them</li>
+              <pre class="fragment">
+                let person = {
+                  name: 'Mr. Burns',
+                  speak: function () {
+                    console.log('Excellent...')
+                  }
+                }
+              
+              person.speak()
+              => 'Excellent...'</pre>
+              <li class="fragment">You've used a method before. <code>Log</code> is a method of the <code>Console</code></li>
+              <li class="fragment"><code>console.log("hello world")</code></li>
+            </section>
+          </section>
+
+
+          
         <section>
           <section>
             <h2 class="title">Under Construction</h2>

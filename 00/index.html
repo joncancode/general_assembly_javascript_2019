@@ -27,8 +27,12 @@
             <section data-background="#003366">
                 <h2>JS class 00 - Installfest</h2>
                 <br />
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
                 <a href="../index.html">Back to TOCs</a>
+                <hr>
+                <ul>
+                <li>press 'O' to navigate</li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a></li>
+                </ul>
             </section>
             <section>
                 <section>
@@ -37,14 +41,14 @@
                 <section>
                     <h2>Class Overview</h2>
                     <ul>
-                        <li>The course is 20 classes, including three projects</li>
-                        <li>
+                        <li class="fragment">The course is 20 classes, including three projects</li>
+                        <li class="fragment">
                             The fundamentals of JavaScript (data types, variables, loops)
                         </li>
-                        <li>How JS is used to manipulate websites (the DOM)</li>
-                        <li>OOP vs FP</li>
-                        <li>AJAX, NPM, Scope, CRUD, and other terms</li>
-                        <li>How to speak about JS for interviews, etc.</li>
+                        <li class="fragment">How JS is used to manipulate websites (the DOM)</li>
+                        <li class="fragment">OOP vs FP</li>
+                        <li class="fragment">AJAX, NPM, Scope, CRUD, and other terms</li>
+                        <li class="fragment">How to speak about JS for interviews, etc.</li>
                     </ul>
                     <aside class="notes">
                         <p>Add any stuff you may want to do that's in scope</p>
@@ -166,13 +170,13 @@
                 <section>
                     <h2>Fundamentals of the web</h2>
                     <ul>
-                        <li>
+                        <li class="fragment">
                             <u>Web Development</u>: The process of building sites and applications for the Web
                         </li>
-                        <li>
+                        <li class="fragment">
                             <u>Front-End Development</u>: The development of client/browser code (HTML, CSS, JS), i.e., what the user interacts with and sees
                         </li>
-                        <li>
+                        <li class="fragment">
                             <u>Back-End Development</u>: The development of server-side code that handles such functions as routing, data handling, and databases behind the scenes. Ruby, Python, and Java (+ Node!) are all useful here.
                         </li>
                     </ul>
@@ -180,10 +184,10 @@
                 <section>
                     <h2>Object Oriented & Functional Programming</h2>
                     <ul>
-                        <li>
+                        <li class="fragment">
                             <u>OOP</u>: focuses on structuring imperative code. It creates models of various concepts in a given problem area, then applies them. These models ("objects") are given functionality ("methods") that enable them to perform various actions; each object can also hold information. The fundamental unit in OOP is the object, which can itself contain further objects, like a Russian Matryoshka doll. The idea is to make it easier for human programmers to visualize the program by tying the program to concrete things, which helps the programmer group things logically. The fundamental thing to remember is that in object-oriented programming, everything is an object and every object has methods that allow the programmer to access its functionality
                         </li>
-                        <li>
+                        <li class="fragment">
                             <u>FP</u>: treats the problem area as a sequence of equations ("functions")--essentially, a progression of definitions that lead to the answer. The information begins as a number of axioms and culminates in the answer. (Think of it as a logical argument that ends in what you see on the screen.) Functional programming borrows many concepts from formal mathematics, and, as in mathematics (and unlike imperative programming or OOP), it usually does not save data between steps. The fundamental unit in functional programming is the function, which can perform operations as well as produce further functions
                         </li>
                     </ul>
@@ -372,10 +376,10 @@
                 </section>
                 <section>
                     <h2>Checking versions</h2>
-                    <blockquote style="font-size: 22px;">git --version</blockquote>
-                    <blockquote style="font-size: 22px;">brew --version</blockquote>
-                    <blockquote style="font-size: 22px;">node -v</blockquote>
-                    <blockquote style="font-size: 22px;">npm -v</blockquote>
+                    <code style="font-size: 22px;">git --version</code> or <code style="font-size: 22px;">git -v</code> <br>
+                    <code style="font-size: 22px;">brew --version</code> or <code style="font-size: 22px;">brew -v</code><br>
+                    <code style="font-size: 22px;">node --version</code> or <code style="font-size: 22px;">node -v</code><br>
+                    <code style="font-size: 22px;">npm --version</code> or <code style="font-size: 22px;">npm -v</code>
                 </section>
                 <section>
                     <h2>Code Editors (IDE)</h2>
@@ -412,21 +416,21 @@
                     <ul>
                         <li>Imagine a dot with three different-colored buttons below it. When a user touches one of the buttons, the dot changes to the corresponding color. If the selected color is touched again, the dot turns off</li>
                     </ul>
-                    <span class="dot"></span>
+                    <span class="dot fragment"></span>
                     <br>
-                    <button id="red" style="font-size: 24px;" onclick="addRed()">Red</button>
-                    <button style="font-size: 24px;" onclick="addYellow()">Yellow</button>
-                    <button style="font-size: 24px;" onclick="addBlue()">Blue</button>
+                    <button class="fragment" id="red" style="font-size: 24px;" onclick="addRed()">Red</button>
+                    <button class="fragment" style="font-size: 24px;" onclick="addYellow()">Yellow</button>
+                    <button class="fragment" style="font-size: 24px;" onclick="addBlue()">Blue</button>
                 <aside class="notes"><p>how can this be improved further?</p></aside>
                   </section>
                 <section>
                     <h2>Sample Answer</h2>
                     <p>Conditional: If the red button is tapped (event listener):</p>
                     <ul>
-                        <li>
+                        <li class="fragment">
                             If the dot is not red, turn the dot red and set the dot color (variable) to red
                         </li>
-                        <li>
+                        <li class="fragment">
                             If the dot is red, turn the dot off and set the dot color to initial color
                         </li>
                     </ul>
@@ -449,7 +453,7 @@
                     <p>Q&A</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
                     <a href="../index.html">Back to TOCs</a>
-               ›</section>
+               </section>
             </section>
             </section>
         </div>
