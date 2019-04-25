@@ -139,27 +139,128 @@
             </section>
             <section>
               <p>In this lab, we will be creating a page that displays a random update of two dice every time the user hits the "Roll Dice" button</p>
-            </section>
+            <p class="fragment">To get started, <a href="https://github.com/joncancode/dice" target="_blank">clone</a> this repo to your machine</p>
+          <hr class="fragment">
+          <li class="fragment">You may need to check out <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById" target="_blank">getElementById </a>if you get stuck</li> 
+          </section>
           </section>
           
-        <section>
           <section>
-            <h2 class="title">Under Construction</h2>
-          </section>
-          <section>
-            <p>Please come back soon</p>
-          </section>
-        </section>
-        <section>
+
+            <section>
+         
+               <h2 class="title">The Return Statement</h2>
+         
+            </section>
+         
+            <section>
+               <li> Sometimes we don't want to print to the console or update the DOM, but instead update a variable or even call another function </li>
+               <li> When we return something, it ENDS the function's execution and "spits out" what we are returning. We can then store this returned value in another variable...
+               </li>
+               <pre> 
+         function sum (x, y) {
+           return x + y;
+         }
+         
+         let z = sum(3, 4);
+         => 7
+         </pre>
+            </section>
+            <section>
+               <li>Keep in mind that information we put after a return statement will not run</li>
+               <pre>
+         function speak (words) {
+           return words;
+         
+           // The following statements will not run:
+         
+           let x = “No one will”;
+           let y = “see this message”;
+         
+           console.log(x + y)
+         }
+         </pre>
+         
+            </section>
+         </section>
+         <section>
+            <section>
+               <h2 class="title">Scope</h2>
+            </section>
+            <section>
+               <p> Scope is the set of variables you have access to </p>
+               <p> Indentation may be a good clue as to where in scope you may be</p>
+            </section>
+            <section>
+               <p>what will log from the code below?</p>
+               <pre>
+         
+      let a = "this is the global scope";
+         
+      function myFunction() {
+        let b = "this variable is defined in the local scope";
+      }
+         
+      myFunction();
+         
+      console.log(b);
+         </pre>
+         
+            </section>
+         
+            <section>
+         
+               <li>But bear in mind, what is in the global can be accessible to local scopes farther down the scope chain</li>
+               <pre>
+         let a = 1;
+         
+         function getScore () {
+         
+           var b = 2,
+         
+           c = 3;
+         
+              function add() {
+         
+                  return a + b + c;
+         
+              }
+         
+           return add();
+         
+         }
+         
+         getScore();
+         
+         => 6
+         
+         </pre>
+         
+            </section>
+         </section>
+         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
-           <section data-background="#003366">
-                <p>Q&A</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
-              <a href="../index.html">Back to TOCs</a>
-           </section>
-        </section>
+         
+            <section>
+         
+               <p>What is the difference between local and global variables?</p>
+               <p class="fragment">How do parameters and arguments relate to functions?</p>
+               <p class="fragment">What is Return?</p>
+               <p class="fragment">What is Hoisting?</p>
+            </section>
+         
+            <section data-background="#003366">
+         
+               <p>Q&A</p>
+         
+               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
+               <a href="../index.html">Back to TOCs</a>
+         
+            </section>
+         
+         </section>
          </section>
       </div>
     </div>
