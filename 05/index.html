@@ -36,7 +36,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="#003366">
-          <h2>JS class 05 - In Class Lab - Hubot</h2>
+          <h2>JS class 05 - In Class Lab - Slackbots</h2>
           <br />
           <a href="../index.html">Back to TOCs</a>
           <hr>
@@ -51,10 +51,9 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p>Describe how parameters and arguments relate to functions</p>
+              <p class="fragment">Return a value from a function using the return keyword</p>
+              <p class="fragment">Determine the scope of local and global variables</p>
           </section>
         </section>
         <section>
@@ -62,12 +61,108 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>Install and configure all utilities needed to run a Hubot</p>
+            <p class="fragment">Write scripts that allow a Hubot to interact with users of the class Slack room</p>
             </section>
           </section>
+
+          <section>
+            <section>
+              <h2 class="title">Today's Structure</h2>
+            </section>
+            <section>
+              <p>- First half of the class: Practice with Hubot / Heroku</p>
+              <p>- Second half of the class: Unit 1 project</p>
+            </section>
+            <section>
+              <p>Some useful terms</p>
+              <li><a href="https://api.slack.com/bot-users" target="_blank">Slack bot user</a>: script that is programmed to interact with users as if it's a person (like Slackbot). In this lab, we'll begin creating our own bots for use in the class Slack team</li>
+              <li><a href="https://hubot.github.com/" target="_blank">Hubot</a>: framework built by GitHub to speed up the process of developing bot users on a variety of platforms, including Slack. It's built using Node.js and CoffeeScript, and it includes built-in functionality for performing common bot tasks (posting images, etc.) </li>
+              <li><a href="https://coffeescript.org/" target="_blank">CoffeeScript</a>: variant of JS. Because only JS can run in browsers and in Node, CoffeeScript has to go through an extra step to be translated into JS so that it can be run. CoffeeScript is often used with Hubot (you won't need to know how to write CoffeeScript for this class, but be aware that it will come up in Hubot docs). If you encounter a CoffeeScript file (e.g., the "example.coffee" file included with Hubot) and want to better understand what it's doing, you can use a CoffeeScript convertor like JS2Coffee to translate it into JavaScript</li>
+              <li><a href="https://www.heroku.com/" target="_blank">Heroku</a>: platform for hosting and running apps in the cloud. We'll be using Heroku to host the code for our Hubot, so it can run independently of our machines</li>
+              <li><a href="https://yeoman.io/" target="_blank">Yeoman</a>: set of tools that provides a scaffolding for getting web apps up and running quickly. We'll be using of a Yeoman tool called yo, which takes care of things like dependencies, build tasks, and configuration, so you don’t have to </li>
+            </section>
+          </section>
+
+          <section>
+            <section>
+              <h2 class="title">Part 1: Hubot Practice</h2>
+            </section>
+            <section>
+              <li>Break into teams of two or three. Then let's download some important stuff</li>
+              <li>Then, configure a new <a href="https://my.slack.com/services/new/hubot" target="_blank">Hubot</a></li>
+           <li>You will also need a <a href="https://www.heroku.com/" target="_blank">Heroku</a> account and the <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">Heroku toolbelt</a></li>
+              <br>
+              <li>Create your hubot directory: <code>mkkdir myHubot</code></li>
+              <li>CD into it: <code>cd myHubot</code></li>
+              <li>Install Hubot and its dependencies (CoffeeScript, Yeoman, and the Hubot generator): <code>npm install -g hubot coffeescript yo generator-hubot@next</code></li>
+              <li>Using Yeoman, generate a Hubot bot:  <code>yo hubot --adapter="slack"</code></li>
+              <li>CD into it: <code>cd myHubot</code></li>
+              <li>Answer the prompts like the bot's name (don't use spaces)</li>
+            </section>
+            <section>
+                <p>Npm and Git</p>
+                <li>Install hubot-slack dependency and save it to your package.json: <code>npm install hubot-slack</code></li>
+                <li>Initialize your local repository: <code>git init</code></li>
+                <li><code>git add .</code></li>
+                <li><code>git add .</code></li>
+                <li><code>git commit -m "first commit" </code></li>
+                <br>
+                <li>Create a new app on Heroku: <code>heroku login</code></li>
+                <li><code>heroku create myhubot-(your-bot-name)</code></li>
+                  <li>Check that your local repository is correctly connected to Heroku: <code>git remote show heroku</code></li>
+
+              </section>
+
+              <section>
+                  <li>Add the following configs for Slack: <code>heroku config:add HEROKU_URL=https://myhubot-(your-bot-name).herokuapp.com</code></li>
+                  <li><code>heroku config:add HUBOT_SLACK_TOKEN=YourTokenGoesHere</code></li>
+                  <li>Push all your code up to Heroku: <code>git push heroku master</code></li>
+                  <li>Turn on your bot: <code>heroku ps:scale web:1</code></li>
+                  <li>Test your bot locally to make sure it's working: <code>HUBOT_SLACK_TOKEN=TOKEN-GOES-HERE ./bin/hubot --adapter slack</code></li>
+                  <li>Now Hubot should be ready to roll. To create instructions for your Hubot, you need to add a JavaScript file to the <code>scripts</code> folder</li>
+                </section>
+                <section>
+                    <p><code>.hear</code> command</p>
+                  <pre>
+              bot.hear(/Hello!/, function(res) {
+                return res.send("Hi there!");
+              });
+                  </pre>
+                  <p><code>.respond</code> command</p>
+                  <pre>
+   bot.respond(/What's your favorite food?/, function(res) {
+        return res.send("I'm a robot--I don't eat food!");
+   });
+                  </pre>
+                  <li>For more info on why we use /, check out <a href="https://regexone.com/" target="_blank">Regex</a></li>
+                  </section>
+                  <section>
+                    <p>A more complicated <code>.respond</code> command using switch</p>
+                    <pre>
+  bot.respond(/what is your favorite (.*)/, function(msg) {
+    var fav;
+    fav = msg.match[1];
+    console.log(fav);
+    switch (fav) {
+      case "food":
+        return msg.reply("I'm a robot--I don't eat food!");
+        break;
+      case "band":
+        return msg.reply("The Beatles");
+        break;
+      case "programming language":
+        return msg.reply("Javascript, of course!");
+        break;
+      default:
+        return msg.reply("I don't have a favorite " + fav);
+    }
+  });
+                    </pre>
+                    </section>
+          </section>
+
+
 
         <section>
           <section>
