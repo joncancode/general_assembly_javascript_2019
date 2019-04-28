@@ -8,11 +8,11 @@
 
 [03-conditionals-and-loops](https://joncancode.github.io/general_assembly_javascript_2019/03/index.html "conditionals-and-loops")
 
-<!-- 
 [04-functions-and-scope](https://joncancode.github.io/general_assembly_javascript_2019/04/index.html "functions-and-scope")
+ 
+[05-in-class-lab](https://joncancode.github.io/general_assembly_javascript_2019/05/index.html "in-class-lab - Hubot")
 
-[05-in-class-lab](https://joncancode.github.io/general_assembly_javascript_2019/05/index.html "in-class-lab")
-
+<!--
 [06-objects-and-json](https://joncancode.github.io/general_assembly_javascript_2019/06/index.html "objects-and-json")
 
 [07-intro-to-dom-and-jquery](https://joncancode.github.io/general_assembly_javascript_2019/07/index.html "intro-to-dom-and-jquery")

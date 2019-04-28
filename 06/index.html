@@ -48,13 +48,12 @@
 
         <section>
           <section>
-            <h2 class="title">Review of Last Class</h2>
+            <h2 class="title">Review of Last Unit</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p >We should now know all about data types</p>
+              <p class="fragment">Executing functions and understand scope</p>
+              <p class="fragment">Use control flow to manage the flow of information in our programs</p>
           </section>
         </section>
         <section>
@@ -62,12 +61,99 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <li>Identify likely objects, attributes, and methods in real-world scenarios</li>
+            <li class="fragment">Write a constructor for a JavaScript object</li>
+            <li class="fragment">Write a prototype method for a JavaScript object</li>
+            <li class="fragment">Implement and interface with JSON data</li>
             </section>
           </section>
+
+          <section>
+            <section>
+              <h2 class="title">Objects</h2>
+            </section>
+            <section>
+              <p>-Objects a simple data store, like arrays. Unlike arrays, they are not ordered, but instead, are accessed by key-value pairs</p>
+              <p>-Objects are a fundamental programming paradigm that helps us structure and categorize our code</p>
+            </section>
+            <section>
+              <li>There are two ways to create an obj</li>
+              <pre>
+                  <code class="fragment">let myObj = {};</code>
+                  <code class="fragment">let myObj = new Object();</code>
+              </pre>
+
+              <li class="fragment">You can also store it with data from the start</li>
+              <li class="fragment">Notice the different data types being used</li>
+              <pre class="fragment">
+                  <code>let myDelorean = {
+                    wheels: 4,
+                    color: "gray",
+                    timeMachine: true,
+                    owners: ["Doc Brown", "Marty"],
+                    move: function(){
+                      console.log('vroom vroom')
+                    }
+                  }</code>
+              </pre>
+            </section>
+            <section>
+                <p>You can then add properties with dot notation or square brackets (if more than one word, for example)</p>
+                <li><code>myDelorean.doors = 2</code></li>
+                <li><code>myDelorean['max speed'] = 88</code></li>
+                <br>
+                <div class="fragment">
+                <p>You can even update current properties</p>
+                <li><code>myDelorean.color = "blue"</code></li>
+                <li><code>myDelorean.owners.push('Biff')</code></li>
+              </div>
+              </section>
+              <section>
+                <p>Properties are copied by reference</p>
+                <pre>
+                  <code>
+            let suCasa = {};
+            miCasa = suCasa
+            miCasa.doors = 2
+            suCasa.doors; // returns 2
+          </code>
+          <code class="fragment">miCasa.doors = 4;</code>
+            <code class="fragment">suCasa.doors; // returns 4</code>         
+                </pre>
+              </section>
+
+              <section>
+                  <li>You can iterate through objs, but be careful because this hinders performance</li>
+                  <pre>
+                    <code>
+    for (var i in myDelorean) {
+      if (myDelorean.hasOwnProperty(i)) { 
+          console.log(i + " = " + myDelorean[i] + "\n");
+      }
+    }
+            </code>         
+                  </pre>
+              <li>The "hasOwnProperty" method returns true if an object property has a certain key</li>
+                </section>
+
+          </section>
+          <section>
+              <section>
+                <h2 class="title">Objs in Real Life</h2>
+              </section>
+              <section>
+                <p>Let's break into groups of 2-3</p>
+                <li class="fragment">Where would objects be useful for a website you visit everyday?</li>
+                <li class="fragment">Make some objects for that site/app that may be useful</li>
+                <li class="fragment">Add object properties, methods, and anything else you may need</li>
+                <li class="fragment">For a hint, remember back to where we  might have seen JSON objects. What was being stored?</li>
+              <hr class="fragment">
+              <li class="fragment">Some good websites to consider: Amazon, IMDB, Seamless, Twitter</li>
+              
+              </section>
+            </section>
+
+
 
         <section>
           <section>
