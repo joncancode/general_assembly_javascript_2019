@@ -36,7 +36,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="#003366">
-          <h2>JS class 08 - Intro to the DOM and jQuery</h2>
+          <h2>JS class 07 - Intro to the DOM and jQuery</h2>
           <br />
           <a href="../index.html">Back to TOCs</a>
           <hr>
@@ -51,10 +51,9 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p >Understanding fundamental data types</p>
+              <p class="fragment">Implementing object oriented programming in JavaScript</p>
+              <p class="fragment">How to create and modify JavaScript objects</p>
           </section>
         </section>
         <section>
@@ -62,25 +61,126 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>-Identify differences between the DOM and HTML</p>
+            <p class="fragment">-Explain the methods and use the DOM in JS</p>
+            <p class="fragment">-Manipulate the DOM by using jQuery selectors and functions</p>
+            <p class="fragment">-Register and trigger event handlers for jQuery events</p>
             </section>
           </section>
 
-        <section>
           <section>
-            <h2 class="title">Under Construction</h2>
-          </section>
-          <section>
-            <p>Please come back soon</p>
-          </section>
-        </section>
+              <section>
+                <h2 class="title">The DOM</h2>
+              </section>
+              <section>
+                <li>First, let's understand how <a href="https://www.youtube.com/watch?v=n1cKlKM3jYI" target="_blank">browsers</a> work</li>
+                <li class="fragment">Basically, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" target="_blank">DOM</a> is a large object that describes the structure of our content</li>
+              <li class="fragment">Since it's an object, we can use normal techniques to get and set data</li>
+              <li class="fragment">JS specifies some built-in methods that make using the DOM easier (e.g. <code>Document.getElementById</code></li>
+            </section>
+            <section>
+              <p>Different ways to manipulate the DOM (1)</p>
+              <li class="fragment">Inline JavaScript (least desirable)</li>
+              <img  class="fragment" width="80%" src="one.png" alt="one" />
+              
+</section><section>
+    <p>Different ways to manipulate the DOM (2)</p>
+              <li class="fragment">Include script tags in our HTML documents. This technique is used primarily when generating content/properties through a back-end language.</li>
+
+              <img  class="fragment" width="60%" src="two.png" alt="two" />
+            </section>
+            <section>
+                <p>Different ways to manipulate the DOM (3)</p>
+              <li class="fragment">Including the JavaScript file [at the footer] of our site/app</li>
+              <img  class="fragment" width="80%" src="three.png" alt="three" />
+            <li class="fragment">There's a lot to take in here but these are the steps:</li>
+            <ol class="fragment">
+            <li>We first create the new H1 element through the document.createElement method</li>
+            <li>We create the text through the createTextNode method</li>
+            <li>The text is added to the newly created H1 element</li>
+            <li>H1 element is added to body. Steps 3 and 4 use appendChild method to the respective element. Think of appendChild as an array of elements belonging to the element we are adding to</li>
+            </ol>
+            </section>
+            </section>
+
+            <section>
+                <section>
+                  <h2 class="title">Let's <a target="_blank" href="https://gist.github.com/joncancode/56ba27961832e50a1115c77e0b801337">Practice</a></h2>
+                </section>
+              </section>
+
+              <section>
+                  <section>
+                    <h2 class="title">jQuery</h2>
+                  </section>
+                  <section>
+                    <p>-The DOM's API (application programming interface) give us access to a couple of different methods that allow us to select elements from the DOM</p>
+                  <p class="fragment">-However, these options are somewhat limiting. What if we wanted to retrieve the first <code>li</code> on a particular list with class <code>specialList</code></p>
+               <br>
+                  <code class="fragment">jQuery(".specialList li:first-child")</code>
+                  <hr class="fragment">
+                  <li class="fragment">Note: jQuery can also be written as $</li>  
+                </section>
+                <section>
+                  <li>The majority of jQuery follows the same pattern:</li>
+                  <pre>
+                    <code>
+  $('.myButton').click(function(){
+
+    $(.myBackground).css('background', 'blue');
+
+  })
+                    </code>
+                  </pre>
+                </section>
+                <section>
+                  Common jQuery API functions:
+                  <li><a href="http://api.jquery.com/find" target="_blank">find()</a></li>
+                  <li><a href="http://api.jquery.com/hide" target="_blank">hide()</a></li>
+                  <li><a href="http://api.jquery.com/show" target="_blank">show()</a></li>
+                  <li><a href="http://api.jquery.com/html" target="_blank">html()</a></li>
+                  <li><a href="http://api.jquery.com/append" target="_blank">append()</a></li>
+                  <li><a href="http://api.jquery.com/prepend" target="_blank">prepend()</a></li>
+                  <li><a href="http://api.jquery.com/on" target="_blank">on()</a></li>
+                </section>
+                <section>
+                    Common jQuery API functions (continued):
+                    <li><a href="http://api.jquery.com/off" target="_blank">off()</a></li>
+                    <li><a href="http://api.jquery.com/css" target="_blank">css()</a></li>
+                    <li><a href="http://api.jquery.com/attr" target="_blank">attr()</a></li>
+                    <li><a href="http://api.jquery.com/val" target="_blank">val()</a></li>
+                    <li><a href="http://api.jquery.com/text" target="_blank">text()</a></li>
+                    <li><a href="http://api.jquery.com/each" target="_blank">each()</a></li>
+                  </section>
+                </section>
+
+                <section>
+                    <section>
+                      <h2 class="title">jQuery <a href="https://gist.github.com/joncancode/5228df12ea364e15b883544befa24c92" target="_blank">Practice</a></h2>
+                    </section>
+                  </section>
+                  <section>
+                      <section>
+                        <h2 class="title">Homework</h2>
+                      </section>
+                      <section>
+                      <li>Remember when we did 99 Bottles of Beer? We'll now put the lyrics on the browser</li>
+                      <li>You'll need to create both an .html file and a .js file (or add a script inside your .html file)</li>
+                          <li>In the html file, you'll want to have an unordered list (<code>ul</code>) that contains all of your lyrics</li>
+                          <li>Each line of the song should appear inside of a list item (<code>li</code>) within that unordered list</li>
+                          <li>Your JavaScript file should programatically append each line of the song to the page--no hard-coding lyrics in HTML</li>
+                    <li>Remember <code>for</code> loops... They may come in handy here</li>
+                    </section>
+                    </section>
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <p>-Understand how HTML parses and creates the object model, the DOM</p>
+                <p>-Use selectors and methods to access and update HTML using the DOM</p>
+                <p>-Register and trigger event handlers for jQuery events</p>
+             </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>

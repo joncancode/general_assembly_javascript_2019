@@ -152,21 +152,133 @@
               
               </section>
             </section>
+            <section>
+              <section>
+                <h2 class="title">Under the Hood - What Happens when an Obj is Created</h2>
+              </section>
+              <section>
+                <pre><code>let Person = function () {};</code> </pre>
+                <li>When an obj is created, it essentially uses a function called a <a href="https://www.quora.com/What-is-a-constructor-in-JavaScript" target="_blank">Constructor</a></li>
+                <li class="fragment">From that constructor, we are able to create <u>instances</u> of that original object</li>
+              <pre  class="fragment"><code>
+let clark = new Person();
+let bruce = new Person();
+              </code></pre>
+              </section>
+              <section>
+                  <li>The constructor is called at the moment that our new object is instantiated. The constructor is most often used to set the object's properties or to call methods for the object to use</li>
+<pre><code>let Superhero = function () {
+    console.log('Superhero instance created');
+  };
 
+let clark = new Superhero(); // logs "Superhero instance created"
+let bruce = new Superhero(); // logs "Superhero instance created"</code></pre>
+              </section>
+              <section>
+                <li>The point of our objects/classes is to create blueprints of our data models, so when we create a new instance, we wouldn't need to reset all the keys, but just change particular properties</li>
+              <li class="fragment">Properties can be set <u>IN</u> the constructor, so they are set specifically for each instance. This simply means that we pass them as parameters in our constructor function</li>
+              <pre class="fragment"><code>
+let Superhero = function (firstName, superheroName) {
+  // Important to understand here that the object properties firstName and superheroName
+  // are set through the this keyword with the value passed through the constructor function
+  this.firstName = firstName;
+  this.superheroName = superheroName;
+  console.log('Superhero instantiated');
+};
 
+let superman = new Superhero('Clark', 'Superman');
+console.log(superman.firstName + ' is ' + superman.superheroName);
+              </code></pre>
+            <li class="fragment">Note: 'this' keyword above. We'll talk about that later</li>
+            </section>
+            <section>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions" target="_blank">Methods</a> are functions grouped together in our objects. We can call our object methods the same way we call our object properties through the dot notation, with the main difference being that we add () at the end of our statement</li>
+              <li class="fragment">To define a method, we assign a function to the named property of the class's prototype property</li>
+<pre class="fragment"><code>
+Superhero.prototype.identity = function() {
+  console.log(this.firstName + ' is ' +this.superheroName);
+}
 
-        <section>
-          <section>
-            <h2 class="title">Under Construction</h2>
-          </section>
-          <section>
-            <p>Please come back soon</p>
-          </section>
+var superman = new Person('Clark', 'Superman');
+superman.identity();
+</code></pre>
+<li class="fragment">Every object in JavaScript has a prototype, connected to the constructor that created it</li>
+           <li class="fragment">If <code>superman</code> is an object, and you ask JavaScript to invoke the method <code>superman.fly()</code>, JS looks first to see if the object has a property called <code>fly</code> that contains a function. If it does, JS invokes that function. If not, JavaScript looks for the prototype object on its constructor and sees if that object has an appropriate method</li>
+            </section>
+<section>
+  <p>Getters and Setters</p>
+  <li class="fragment">These act as restrictions in case an object has to be a certain value</li>
+  <li class="fragment">In the example below, we see that a person cannot be a negative age, so it is enforced in the prototype</li>
+  <pre class="fragment"><code>
+Person.prototype.setAge = function (newAge) {
+  if (newAge < 0) {
+    console.error("A person cannot be negative years old!");
+  }
+  else if (newAge > 150) {
+    console.error("People do not generally live to the age of 150");
+  }
+  else {
+    this.age = newAge;
+  }
+};
+
+Person.prototype.getAge = function () {
+  return this.age;
+};
+      </code></pre>
+</section>
+        
         </section>
+        <section>
+            <section>
+              <h2 class="title">Animal Exercise</h2>
+            </section>
+            <section>
+              <a href="https://gist.github.com/joncancode/036cae96f604bdd3838494c5dc87293c" target="_blank"><img src="monkey.jpg" alt="monkey"></a>
+            <li>click above</li>
+            <li><a href="https://gist.github.com/joncancode/1222587395b1f457e0fe673551dfdccf" target="_blank">One more assignment,</a> in case you finish early</li>
+            </section>
+          </section>
+
+          <section>
+              <section>
+                <h2 class="title"><a href="http://json.org/" target="_blank">JSON</a></h2>
+              </section>
+              <section>
+                <li>We've touched on JSON before, but basically it's a way of storing data (like in APIs) that is simultaneously both easy for humans to read and write AND easy for programs to parse and generate</li>
+             <li class="fragment">To keep everything consistent, all JSON code must follow a number of strict conventions (stricter even than normal JavaScript!) in order to be syntactically correct:</li>
+              <br>
+              <ol class="fragment">
+              <li>Property names must be double-quoted strings</li>
+              <li>Trailing commas are forbidden</li>
+              <li>Leading zeroes are prohibited</li>
+              <li>In numbers, a decimal point must be followed by at least one digit</li>
+              <li>Most characters are allowed in strings; however, certain characters (such as ', ", \, and newline/tab) must be 'escaped' with a preceding backslash (\) in order to be read as characters (as opposed to JSON control code)</li>
+              <li>All strings must be double-quoted</li>
+              <li>No comments!</li>
+            </ol>
+            <li class="fragment">Use the rules above to try <a href="https://gist.github.com/joncancode/dfc57429691f2f944de19fadb8a92cd8" target="_blank">this exercise</a></li>
+            </section>
+            </section>
+
+            <section>
+                <section>
+                  <h2 class="title">Homework</h2>
+                </section>
+                <section>
+                  <p>Use a JSON formatter to guide you through this <a href="https://gist.github.com/joncancode/e2779654ac7d9f39827a4a0fc9e150e8" target="_blank">assignment</a></p>
+                <li>Try putting the code in an HTML file wrapped in a <code>script</code> tag</li>
+                </section>
+              </section>
+
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <p>We should now be able to code objects using constructors and prototypes</p>
+             <p>We should now be able to understand how JSON transfers data between programs</p>
+              </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
