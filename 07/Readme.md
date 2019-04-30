@@ -12,3 +12,8 @@
 
 [jQuery events](https://learn.jquery.com/events/ "jQuery events")
 
+<h2>Practice</h2>
+
+[Dom Practice](https://gist.github.com/joncancode/56ba27961832e50a1115c77e0b801337 "Dom Practice")
+
+[jQuery Practice](https://gist.github.com/joncancode/5228df12ea364e15b883544befa24c92 "jQuery Practice")
