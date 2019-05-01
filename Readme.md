@@ -1,4 +1,4 @@
-
+[List of Gists](https://gist.github.com/joncancode "Gists")
 
 [00-installfest](https://joncancode.github.io/general_assembly_javascript_2019/00/index.html "installfest")
 
@@ -12,13 +12,13 @@
  
 [05-in-class-lab](https://joncancode.github.io/general_assembly_javascript_2019/05/index.html "in-class-lab - Hubot")
 
-<!--
 [06-objects-and-json](https://joncancode.github.io/general_assembly_javascript_2019/06/index.html "objects-and-json")
 
 [07-intro-to-dom-and-jquery](https://joncancode.github.io/general_assembly_javascript_2019/07/index.html "intro-to-dom-and-jquery")
 
 [08-dom-and-jquery-continued](https://joncancode.github.io/general_assembly_javascript_2019/08/index.html "dom-and-jquery-continued")
 
+<!--
 [09-ajax-and-apis](https://joncancode.github.io/general_assembly_javascript_2019/09/index.html "ajax-and-apis")
 
 [10-asynchronous-javascript-and-callbacks](https://joncancode.github.io/general_assembly_javascript_2019/10/index.html "asynchronous-javascript-and-callbacks")
