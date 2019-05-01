@@ -8,7 +8,7 @@
 
 [Youtube video: browser rendering flow](https://www.youtube.com/watch?v=n1cKlKM3jYI/ "Youtube video: browser rendering flow")
 
-[jQuery documentation](http://api.jquery.com// "jQuery documentation")
+[jQuery documentation](http://api.jquery.com/ "jQuery documentation")
 
 [jQuery events](https://learn.jquery.com/events/ "jQuery events")
 

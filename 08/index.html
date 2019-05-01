@@ -51,10 +51,8 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p >Register and trigger event handles for jQuery click event</p>
+              <p class="fragment">Manipulate the DOM by using jQuery selectors and functions</p>
           </section>
         </section>
         <section>
@@ -62,25 +60,153 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>-Implement advanced jQuery events</p>
+            <p class="fragment">-Use event delegation to manage dynamic content</p>
+            <p class="fragment">-Use implicit iteration to update elements of a jQuery. selection and chaining to place methods on selectors</p>
+            <p class="fragment">-Add a templating language to our projects for better and more abstracted content manipulation</p>
             </section>
           </section>
 
-        <section>
           <section>
-            <h2 class="title">Under Construction</h2>
-          </section>
-          <section>
-            <p>Please come back soon</p>
-          </section>
-        </section>
+              <section>
+                <h2 class="title">Events</h2>
+              </section>
+              <section>
+                <li>jQuery gives us the ability to listen to a ton of events, in addition to clicks</li>
+                <ul class="fragment">
+                  <p>Mouse Events</p>
+                <li>click</li>
+                <li>dblclick</li>
+                <li>mouseenter</li>
+                <li>mouseleave</li>
+              </ul>
+              <ul class="fragment">
+                  <p>Keyboard Events</p>
+                <li>keypress</li>
+                <li>keydown</li>
+                <li>keyup</li>
+              </ul>
+              <ul class="fragment">
+                <p>Form Events</p>
+                <li>submit</li>
+                <li>change</li>
+                <li>focus</li>
+                <li>blur</li>
+              </ul>
+              <ul class="fragment">
+                  <p>Document/Window Events</p>
+                  <li>load</li>
+                  <li>resize</li>
+                  <li>scroll</li>
+                  <li>unload</li>
+                </ul>
+              </section>
+            </section>
+
+            <section>
+                <section>
+                  <h2 class="title">Event Delegation</h2>
+                </section>
+                <section>
+                  <p>Mouse events work just like click events</p>
+                  <pre class="fragment">
+                    <code>
+  let $thingListItems = $('#fav-list li');
+
+  $thingListItems.on('mouseenter', function(e) {
+    $(this).removeClass('inactive');
+    $(this).siblings().addClass('inactive');
+  });
+
+  $thingListItems.on('mouseleave', function(e) {
+    $(this).siblings().removeClass('inactive');
+  });
+                    </code>
+                  </pre>
+            <li class="fragment">Unfortunately, this code doesn't help if we want to we add new elements to the DOM</li>
+                </section>
+                <section>
+                    <li>To get around this, we create a delegated event, which requires us to add the element our event handler executes for, to the right side</li>
+                    <pre class="fragment">
+                        <code>
+  let $thingList = $('#fav-list');
+
+  $thingList.on('mouseenter', 'li', function(e) {
+    $(this).removeClass('inactive');
+    $(this).siblings().addClass('inactive');
+  });
+
+  $thingList.on('mouseleave', 'li', function(e) {
+    $(this).siblings().removeClass('inactive');
+  });
+                        </code>
+                      </pre>
+                  </section>
+                  <section>
+                      <li>Let's get rid of duplicate code even further with <code>if</code></li>
+                      <pre class="fragment">
+                          <code>
+    let $thingList = $('#fav-list');
+
+    $thingList.on('mouseenter mouseleave', 'li', function(event) {
+         if (event.type == 'mouseenter') {
+           $(this).removeClass('inactive');
+           $(this).siblings().addClass('inactive');
+        } else if (event.type == 'mouseleave') {
+            $(this).siblings().removeClass('inactive');
+        }
+    });
+                          </code>
+                        </pre>
+                    </section>
+                    <section>
+                      <p>Try this for extra <a href="https://gist.github.com/joncancode/cc2a2d9c5b535ab6f8d354689b8b85fa" target="_blank">Practice</a></p>
+                    </section>
+              </section>
+
+              <section>
+                  <section>
+                    <h2 class="title">Separation of Concerns and Templating</h2>
+                  </section>
+                  <section>
+                    <p>As our applications get bigger, it's usually a good idea to separate our logic from our view.</p>
+                    <li class="fragment">We can still use jQuery to interact with the DOM and listen for user events, however our business rules (data) should be kept separate from the view. This is where templating becomes very useful</li>
+                    <li class="fragment">Templating lets us reference a snippet of code, and populate it with data we store in actual JavaScript objects, before adding it to the DOM. There are many JavaScript templating libraries like <a href="http://handlebarsjs.com/" target="_blank">Handlebars</a>, <a href="http://mustache.github.io/" target="_blank">Mustache</a>, and <a href="https://underscorejs.org/" target="_blank">Underscore</a> templates</li>
+                  </section>
+                  <section>
+                      <li>Let's try Handlebars. We create our element surrounded in script tags with a reference id and a type of handlebars template. We surround the content that's to be replaced by double curly brackets</li>
+<pre class="fragment"><code><script id="hello-world-template">
+    <h1>{{helloTitle}}</h1>
+    <p>{{helloContent}}</p>
+  </script></code></pre>
+<li class="fragment">We then use jQuery to reference the newly created template and pass that reference to Handlebars</li>
+<pre class="fragment">
+    <code>  let source = $('#hello-world-template').html();
+  let template = Handlebars.compile(source);
+
+  let helloStatement = 
+  { helloTitle: "Hello world", 
+    helloContent: "This is a string"};
+
+  let compiledTemplate = template(helloStatement);
+  $('body').append(compiledTemplate);</code>
+  </pre>            
+</section>
+<section>
+    <p>How can we use templates to make our <a href="https://gist.github.com/joncancode/cc2a2d9c5b535ab6f8d354689b8b85fa" target="_blank">Shopping List</a> more DRY?</p>
+    <p>Hint: You have to change the JS as usual, but the HTML also has to be adjusted</p>
+  </section>
+                </section>
+
+
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <p>-Why would we want to use templating?</p>
+                <p>-What is event delegation? Why would we use it?</p>
+              </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
