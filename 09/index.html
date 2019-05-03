@@ -36,7 +36,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="#003366">
-          <h2>JS class 09 - AJAX and APIs </h2>
+          <h2>JS class 09 - AJAX and APIs</h2>
           <br />
           <a href="../index.html">Back to TOCs</a>
           <hr>
@@ -47,40 +47,271 @@
         </section>
 
         <section>
-          <section>
-            <h2 class="title">Review of Last Class</h2>
+            <section>
+              <h2 class="title">Review of Last Class</h2>
+            </section>
+            <section>
+                <p>-Implement advanced jQuery events </p>
+                <p class="fragment">-Use event delegation to manage dynamic content </p>
+                <p class="fragment">-Update elements of a jQuery selection and chaining to place methods on selectors </p>
+            </section>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-          </section>
-        </section>
+  
+              <section>
+                  <h2 class="title">Today's Objectives</h2>
+                </section>
+                <section>
+              <p>-Identify all the HTTP Verbs & their uses </p>
+              <p class="fragment">-Describe APIs and how to make calls access API data </p>
+              <p class="fragment">-Implement an AJAX request with Vanilla JS </p>
+              <p class="fragment">-Implement a jQuery AJAX client for a simple REST service </p>
+              <p class="fragment">-Separation of concerns – API vs. Client </p>
+              </section>
+            </section>
+
+            <section>
+                <section>
+                  <h2 class="title">APIs</h2>
+                </section>
+                <section>
+                  <p>-API calls are basically a fancy term for making HTTP requests to a server and sending/receiving structured data from that endpoint </p>
+                  <p class="fragment">-If that data is structured as JSON, we can easily start reacting and communicating with it thanks to the provided JSON methods </p>
+                  <p class="fragment">-Best practice is to separate DOM logic from our data models (especially outside data!). This not only allows for cleaner code, but is an easier way to manipulate our layouts and interactions </p>
+                </section>
+                <section>
+                    <p>Some Tips</p>
+                    <li class="fragment">Certain APIs require authentication, and we need to provide an API key either as a request parameter, in the header, or in the body of the call</li>
+                    <li class="fragment">When we make an API call after a user action, we need to give the user feedback that something is happening</li>
+                    <li class="fragment"><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">Representational state transfer (REST)</a> is the most common architecture style for passing information to and from these API endpoints</li>
+                    <li class="fragment">Before we start consuming these services however, it's important to understand the fundamentals of the underlying communication layer. This communication layer (HTTP) will be responsible for transporting our API calls</li>
+                  </section>
+              </section>
+
+              <section>
+                <section>
+                  <h2 class="title">A Recap of HTTP</h2>
+                </section>
+                <section>
+                  <p>-HTTP is a protocol - a system of rules - that determines how web pages (see:'hypertext') get sent (see:'transferred') from one place to another</p>
+                  <p class="fragment">-Among other things, it defines the format of the messages passed between HTTP clients and HTTP servers</p>
+                  <p class="fragment">-Remember, clients make requests and servers receive requests and send back responses</p>
+                </section>
+                <section>
+                    <p>HTTP Client</p>
+                    <li class="fragment">-HTTP Clients make or generate HTTP Requests</li>
+                    <li class="fragment">-The most common example -> Browsers like Chrome, Firefox, and Safari</li>
+                    <li class="fragment">-Also, command Line programs - curl and wget</li>
+                    <li class="fragment">-HTTP Clients respond to HTTP Responses from a Web Server. They process the data being returned form a Web Server, aka HTTP Server</li>
+                  </section>
+                  <section>
+                    <p>HTTP Web Server</p>
+                    <li class="fragment">Two of the most popular HTTP or Web servers are Apache and Nginx, But there are lots different web servers out there. Some web servers are written in Ruby, while others are written in other languages</li>
+                    <li class="fragment">All Web Servers receive HTTP Requests and generate HTTP Responses</li>
+                    <li class="fragment">Often Web Servers are just the middleman, passing HTTP Request and Responses between the client and web application</li>
+                  </section>
+                  <section>
+                    <img width="50%" src="req.gif" alt="req" />
+                <ol>
+                    <li class="fragment">Client sends a HTTP Request to a HTTP Server running on a remote machine</li>
+                    <li class="fragment">The HTTP server processes the HTTP Request. This may entail passing the request to some Web Application, which creates a HTTP Response</li>
+                    <li class="fragment">The response gets sent back to the client</li>
+                    <li class="fragment">The client processes the response</li>
+                </ol>
+                  </section>
+                  <section>
+                    <img width="70%" src="url-structure.png" alt="structure" />
+                    <p>How does the server know what the request is asking for? This is specified by the URL, a special kind of path that specifies where a resource can be found on the web</p>
+                  </section>
+              </section>
+
+              <section>
+                <section>
+                  <h2 class="title">HTTP: A Demo</h2>
+                </section>
+                <section>
+                  <p>Let's check out Chrome and see how HTTP works under the hood</p>
+                  <img width="60%" src="req_res.jpg" alt="req_res" />
+                <li>Right click, press inspect, then go to the Network tab</li>
+                </section>
+                <section>
+                  <p>List of Request Methods</p>
+                  <li class="fragment">GET => Retrieve a resource</li>
+                  <li class="fragment">POST => Create a resource</li>
+                  <li class="fragment">PUT/PATCH => Update an existing resource</li>
+                  <li class="fragment">DELETE => Delete a resource</li>
+                  <li class="fragment">HEAD => Retrieve the headers for a resource.</li>
+                </section>
+                <section>
+                  <p>All about <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">Status Codes</a></p>
+                  <table>
+                      <tr>
+                          <th>Code</th>
+                          <th>Reason</th> 
+                        </tr>
+                        <tr>
+                          <td>200</td>
+                          <td>Ok</td> 
+                        </tr>
+                      <tr>
+                          <td>301</td>
+                          <td>Moved Permanently</td> 
+                      </tr>   
+                        <tr>
+                            <td>302</td>
+                            <td>Moved Temporarily</td> 
+                        </tr>  
+                        <tr>
+                            <td>400</td>
+                            <td>Bad Request</td> 
+                        </tr> 
+                        <tr>
+                            <td>404</td>
+                            <td>Not Found</td> 
+                        </tr> 
+                        <tr>
+                            <td>500</td>
+                            <td>Internal Server Error</td> 
+                        </tr>                     
+                  </table>
+                </section>
+              </section>
+
+
+
+
+            <section>
+                <section>
+                  <h2 class="title"><a href="https://www.w3schools.com/xml/ajax_intro.asp" target="_blank">AJAX</a> and JavaScript</h2>
+                </section>
+                <section>
+                  <li>AJAX stands for Asynchronous JavaScript and XML (although JSON has become more useful than XML)</li>
+                  <li class="fragment">To make an HTTP request with AJAX we need to first create an instance of <code>XMLHttpRequest</code> and then decide how we want to handle the response by setting the <code>onreadystatechange</code> method of the XMLHTTPRequest object to a custom function</li>
+                <pre class="fragment"><code>
+// Create instance of XMLHTTPRequest
+var httpRequest = new XMLHttpRequest();
+
+// Set a custom function to handle the request
+httpRequest.onreadystatechange = responseMethod;
+
+function responseMethod() {
+    // Request logic
+}
+
+// Alternative method:
+// httpRequest.onreadystatechange = function() {
+//   
+// }
+
+                </code></pre>
+                </section>
+                <section>
+                <li>Before we do anything with the request, we need to first check its state. If the state tells us that the request is done, we can then handle the return of the request.</li>
+                <ol>
+                <li>We check for a success and update our application logic</li>
+                <li>We check for an error and notify the user</li>
+                </ol>
+<pre><code>
+function responseMethod() {
+
+  // Check if our state is "DONE"
+  if (httpRequest.readyState === XMLHttpRequest.DONE) {
+
+    // If our request was successful we get a return code/status of 200
+    if (httpRequest.status === 200) {
+
+      // This is where we update our UI accordingly. Our data is available to us through the responseText parameter
+      console.log(httpRequest.responseText);
+    } else {
+
+      // This is the scenario that there was an error with our request
+      console.log('There was a problem with the request.');
+    }
+  }
+}
+</code></pre>
+                </section>
+                <section>
+              <li>After we have defined what happens in both successful and erroneous scenarios, we finally open and send our request</li>
+              <pre><code>
+var httpRequest = new XMLHttpRequest();
+
+httpRequest.onreadystatechange = responseMethod;
+
+// Open method accepts 3 parameter:
+// 1. Request type: these are all the HTTP verbs we covered above
+// 2. The URL
+// 3. Optional boolean third parameter, that dictates wether this is an asynchronous call (default is true)
+httpRequest.open('GET', 'http://data.consumerfinance.gov/api/views.json');
+
+// The send method takes an optional parameter. If our API request allows additional parameters or JSON objects to be passed through (primarily through POST requests), we pass them in the send method.
+httpRequest.send();
+
+// NOTE: certain APIs may require us to pass additional header data, including setting the MIME type of the request. We can do this through the setRequestHeader method.
+// httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                  </code></pre>
+                </section>
+              </section>
+
         <section>
             <section>
-                <h2 class="title">Today's Objectives</h2>
-              </section>
-              <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+              <h2 class="title">jQuery AJAX: much easier</h2>
             </section>
+            <section>
+            <li>Vanilla JavaScript AJAX functionality gives us everything we need to make http requests, however it takes 4-5 steps to make the call and get the information back</li>
+            <li>jQuery has some useful convenience methods to interact with cross platform requests</li>
+            <pre><code>
+// All we need to create a get or post request is use the get or post method
+$.get( 'https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD', function( r ) {
+    // We get the data back from the request in the parameter we pass in the function
+    console.log(r);
+});
+            </code></pre>
+        </section>
+            <section>
+            <li>Get and post methods are very useful and easy to work with, however there will be scenarios where we need more granularity to handle our requests. The <code>$.ajax()</code> method allows us significantly more granularity</li>
+<pre><code>
+$.ajax({
+    url: "https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD",
+
+    // What we want and how we want it(JSON)
+    data: {
+        // q: "select title,abstract,url from search.news where query=\"cat\"",
+        format: "json"
+    },
+
+    // Work with the response
+    success: function( response ) {
+        console.log( response ); // server response
+    }
+})
+</code></pre> 
+        </section>
           </section>
 
         <section>
-          <section>
-            <h2 class="title">Under Construction</h2>
+            <section>
+              <h2 class="title">Weather Map Practice</h2>
+            </section>
+            <section>
+              <p>Let's make a <a href="SOME WEATHER GIST" target="_blank">Weather app</a></p>
+              <li class="fragment">Sign up for openweathermap.org and generate an API key</li>
+              <li class="fragment">User either $.ajax or $.get to pull weather current data for Washington DC (hint: <code>http://api.openweathermap.org/data/2.5/weather?q=...</code>).</li>
+              <li class="fragment">Print the temperature in console</li>
+              <li class="fragment">Bonus 1: add a form prompting user for the city and state</li>
+              <li class="fragment">Bonus 2: convert answer from kelvin to fahrenheit</li>
+            </section>
           </section>
-          <section>
-            <p>Please come back soon</p>
-          </section>
-        </section>
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <p>-Separation of concerns – API vs. Client</p>
+                <p class="fragment">-Identify all the HTTP Verbs & their uses</p>
+                <p class="fragment">-Implement an AJAX request with Vanilla JS</p>
+                <p class="fragment">-Implement a jQuery AJAX client for a simple REST service</p>
+              </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
@@ -107,4 +338,3 @@
       });
     </script>
   </body>
-</html>
