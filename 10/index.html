@@ -51,10 +51,10 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p >Implement an AJAX request with Vanilla JS</p>
+              <p class="fragment">Reiterate the benefits of separation of concerns – API vs. Client</p>
+              <p class="fragment">Understand the difference between function declarations and function expressions</p>
+              <p class="fragment">Understand scope and hoisting</p>
           </section>
         </section>
         <section>
@@ -62,12 +62,35 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>-Store and use anonymous functions in variables</p>
+            <p class="fragment">-Pass functions as arguments to functions that expect them</p>
+            <p class="fragment">-Write functions that take other functions as arguments</p>
+            <p class="fragment">-Return functions from functions</p>
             </section>
           </section>
+
+          <section>
+            <section>
+              <h2 class="title">Asynchronous JavaScript</h2>
+            </section>
+            <section>
+              <p>Remember early in the class when we were first introduced to Node?</p>
+            <pre><code>
+      setTimeout( function(){
+        console.log("Hello world");
+      }, 1000 );
+            </code></pre>
+            <li>Let's run this example again</li>
+            </section>
+            <section>
+              <p>Remember the Restaurant Analogy?</p>
+              <li class="fragment">When you order your food, the waiter goes to the kitchen and tells the chef your order</li>
+              <li class="fragment">He then returns to take more orders</li>
+              <li class="fragment">In Asynchronous code, the code continues while requests are being processed</li>
+              <img class="fragment" width="50%" src="../01/stack.png" alt="stack" />
+            </section>
+          </section>
+
 
         <section>
           <section>
@@ -77,9 +100,16 @@
             <p>Please come back soon</p>
           </section>
         </section>
+
+        
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
+            </section>
+            <section>
+              <li>Callbacks and closures are the bread and butter of asynchronous programming</li>
+              <li class="fragment">Looking back at our DOM and APIs lessons, our interfaces update on user interactions and/or once we receive data from remote locations. Best practices in JS call for these reactions to be handled in the form of callbacks</li>
+              <li class="fragment">Callbacks, closures, and IIFEs allow us to better organize our code for each scenario, as well as make our functions significantly more dynamic</li>
             </section>
            <section data-background="#003366">
                 <p>Q&A</p>
