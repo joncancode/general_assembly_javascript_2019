@@ -77,10 +77,13 @@
               <p>Remember early in the class when we were first introduced to Node?</p>
             <pre><code>
       setTimeout( function(){
-        console.log("Hello world");
+        console.log("This runs second");
       }, 1000 );
+
+      console.log("This runs first");
             </code></pre>
             <li>Let's run this example again</li>
+            <li>Asynchronous program is basically 'now and later' programming</li>
             </section>
             <section>
               <p>Remember the Restaurant Analogy?</p>
@@ -89,19 +92,170 @@
               <li class="fragment">In Asynchronous code, the code continues while requests are being processed</li>
               <img class="fragment" width="50%" src="../01/stack.png" alt="stack" />
             </section>
+            <section>
+              <li>We have worked with numerous scenarios where we have run a block of code after a user has performed an action. Take the following scenario from our DOM and jQuery continued lesson</li>
+              <pre><code>
+    let $thingList = $('#fav-list');
+
+    $thingList.on('mouseleave', 'li', function(e) {
+      ...
+    }); 
+              </code></pre>
+              <li class="fragment">Taking a close look at the jQuery <code>on()</code> method, we notice two very important overlooked concepts:</li>
+            <ol class="fragment">
+              <li>The <code>on()</code> method is taking a function as one of its parameters</li>
+              <li>The function we are passing into the <code>on()</code> method does not have a name, we are just passing a raw function: the function keyword, a parameter list, and a function body inside curly braces</li>
+            </ol>
+            </section>
           </section>
 
+          <section>
+            <section>
+              <h2 class="title">Functions as First-Class Objects</h2>
+            </section>
+            <section>
+              <li>By "first-class objects", we just mean that they can be used in any part of the code that strings, arrays, or data of any other type can be used</li>
+              <li class="fragment">This means we can store functions as variables, pass them as arguments to other functions, return them from other functions, or just run them ad-hoc without the need to assign them to anything</li>
+              <li class="fragment"> A function that takes another function as an argument, or returns a function, is called a higher-order function</li>
+              <li class="fragment">Functions being passed as parameters:</li>
+              <pre class="fragment"><code>
+              setTimeout( function(){
+                console.log("Hello world");
+              }, 1000 );
+            </code></pre>
+            <li class="fragment">In this scenario setTimeout is taking a function as its first parameter, and the time (in milliseconds) to wait before running that function, as its second parameter</li>
+            </section>
+
+            <section>
+
+              <pre><code>
+      var blastOff = function() {
+        console.log("Blasting off!");
+      }
+    
+      function launchRocket(rocketName, blastOffCallback) {
+        console.log("Launching " + rocketName);
+        console.log("3... 2... 1...");
+        blastOffCallback();
+      }
+    
+      launchRocket("Viking", blastOff);
+    
+      // => Launching Viking
+      // => 3... 2... 1...
+      // => Blasting off!
+              </code></pre>
+
+            <li>In the above example, the function being passed into <code>launchRocket</code> is acting as a "callback", which basically means a function that is designed to be executed by the code of another function</li>
+            <li>Keep in mind, we can also pass functions as arguments to other functions, and to return functions from other functions</li>
+            <li>We'll cover <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">Closures</a> in a few classes</li>
+          </section>
+          </section>
+
+          <section>
+              <section>
+                <h2 class="title">Callback Assignment</h2>
+              </section>
+              <section>
+                <li>Make a js file and try this <a href="https://gist.github.com/joncancode/5be8f099ae2da3d6f30cc962acec38da" target="_blank">assignment</a> on Callbacks</li>
+                <li>Write a function, <code>makeCountingFunction()</code>, that returns another function. The function returned by <code>makeCountingFunction()</code> should take an array as an argument, and return the number of odd integers in the array</li>
+                <li><code>makeCountingFunction()</code> itself should take as its only argument something called a "predicate function", a function designed to run a test on each item in an array</li>
+                <li>Test your code by running it in the command line using node</li>
+              
+              </section>
+            </section>
 
         <section>
           <section>
-            <h2 class="title">Under Construction</h2>
+            <h2 class="title">Anonymous Functions and IIFEs</h2>
           </section>
           <section>
-            <p>Please come back soon</p>
+              <li>Remember this:</li>
+              <pre><code>
+              setTimeout( function(){
+                console.log("Hello world");
+              }, 1000 );
+            </code></pre>
+            <li class="fragment">The function being passed into setTimeout() above is called an anonymous function expression because it is not named in any way -- it is not a function expression that got assigned to a variable name, and neither is it a function that got its name in a function declaration</li>
           </section>
+
+        <section>
+          <li>Note that you don't have to pass anonymous functions as callbacks in cases like this -- you can pass named functions as well, no matter how they got their names</li>
+          <pre><code>
+    function sayHi() {
+      console.log("Hello world");
+    }
+  
+    var sayBye = function() {
+      console.log("Goodbye world");
+    }
+  
+    setTimeout(sayHi, 1000 );
+    setTimeout(sayBye, 1261440000000);
+  
+    // (1,261,440,000,000 milliseconds is 40 years)
+            </code></pre>
+        <li>Just remember: Anonymous functions are great, but they may give you some trouble when debugging, if you're looking at a stack trace and it shows a big column of unnamed functions</li>
         </section>
 
+    <section>
+      <p>Immediately-invoked function expressions (IIFEs - "iffy's")</p>
+    <li class="fragment">We have the ability to execute our function expressions as soon as they are declared. Notice the () at the end of the following:</li>
+    <pre class="fragment"><code>
+  let countDown = function() {
+    let counter;
+    for(counter = 3; counter > 0; counter--) {
+      console.log(counter);
+    }
+  }();
+                </code></pre>
+  </section>
+<section>
+<li>A bit less common, but we can also pass arguments into them</li>
+    <pre><code>
+  let counterStartPoint = 3;
+
+  (function countDown( global ){
+    let counter;
+    for(counter = global.counterStartPoint; counter > 0; counter--) {
+      console.log(counter)
+    }
+
+  })( window );
+
+  console.log( counterStartPoint ); // 3
+                      </code></pre>
+</section>
+        </section>
+
+        <section>
+          <section>
+            <h2 class="title">IIFE: Independent Practice</h2>
+          </section>
+          <section>
+            <p>Invoking Function Expressions Practice</p>
+            <li>Create a new file (html, js)</li>
+            <li>Write an IIFE function that takes a timer argument</li>
+            <li>The function will automatically execute and count up every second until the specified argument</li>
+            <li>Use the setTimeout function to count up</li>
+            <li>Hint: a second is the timer passed * 1000 (milliseconds)</li>
+          </section>
+        </section>
         
+
+        <section>
+          <section>
+            <h2 class="title">Homework</h2>
+          </section>
+          <section>
+              <p>Try these <a href="http://reactivex.io/learnrx/" target="_blank">exercises</a> to get extra practice with functional programming</p>
+           <li>Some of these exercises use methods and syntax that we haven't covered in class and which you will likely need to look up on your own</li>
+            </section>
+        <section>
+
+      </section>
+        </section>
+
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
