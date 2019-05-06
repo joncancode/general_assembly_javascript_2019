@@ -18,7 +18,6 @@
 
 [08-dom-and-jquery-continued](https://joncancode.github.io/general_assembly_javascript_2019/08/index.html "dom-and-jquery-continued")
 
-<!--
 [09-ajax-and-apis](https://joncancode.github.io/general_assembly_javascript_2019/09/index.html "ajax-and-apis")
 
 [10-asynchronous-javascript-and-callbacks](https://joncancode.github.io/general_assembly_javascript_2019/10/index.html "asynchronous-javascript-and-callbacks")
@@ -27,6 +26,7 @@
 
 [12-in-class-lab](https://joncancode.github.io/general_assembly_javascript_2019/12/index.html "in-class-lab")
 
+<!--
 [13-prototypal-inheritance](https://joncancode.github.io/general_assembly_javascript_2019/13/index.html "prototypal-inheritance")
 
 [14-closures-and-this](https://joncancode.github.io/general_assembly_javascript_2019/14/index.html "closures-and-this")
