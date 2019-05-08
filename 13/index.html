@@ -51,10 +51,8 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p >-We know how to write JavaScript functions</p>
+              <p class="fragment">-We know how to describe the difference between functions and methods in JavaScript</p>
           </section>
         </section>
         <section>
@@ -62,25 +60,228 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>-Prototypal Inheritance and its purpose</p>
+            <p class="fragment">-Distinguish the difference between prototypal from classical inheritance</p>
+            <p class="fragment">-Create and extend prototypes</p>
+            <p class="fragment">-Explain the difference literal and constructed objects</p>
             </section>
           </section>
 
         <section>
           <section>
-            <h2 class="title">Under Construction</h2>
+            <h2 class="title">Prototypal Inheritance</h2>
           </section>
           <section>
-            <p>Please come back soon</p>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank">Prototype-based programming</a> is a style of object-oriented programming in which behavior reuse (known as inheritance) is performed via a process of cloning existing objects that serve as prototypes. This model can also be known as prototypal, prototype-oriented, classless, or instance-based programming. Delegation is the language feature that supports prototype-based programming</li>
+            <img class="fragment" width="50%" src="sf.jpg" alt="sf" />
+            <li class="fragment">Imagine we have a fighting game like Street Fighter. Each character has a punch, kick, and jump. This solution is best performed with prototypal inheritance</li>
+            <li class="fragment">This is also an important way to stay DRY</li>
           </section>
+          <section>
+          <p>Class vs Prototype</p>
+          <li class="fragment">The purpose of prototypal inheritance is to offer a modeling object, which contains certain behaviors, to other objects to be prototyped off of, inheriting the model's behaviors</li>
+          <li class="fragment">In object-oriented languages like Ruby, this would be the function of a Class</li>
+          <li class="fragment">Javascript has two different features, constructors and prototypes, which accomplish these tasks:</li>
+       <ol class="fragment">
+         <li>a <u>constructor</u> function manufactures new objects</li>
+         <li>a <u>prototype</u> property defines the behavior of new objects manufactured by the constructor</li>
+       </ol>
         </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2 class="title">Constructor & Prototype</h2>
+          </section>
+          <section>
+            <li>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor" target="_blank">Constructor</a> is just an ordinary function no different than any function you've coded up to this point. However, what does distinguish this function from the rest is when it is used with the <code>new</code> operator</li>
+         <pre><code>
+    function Vehicle(color) {
+      this.color = color
+    }
+    
+    let car = new Vehicle('red')
+         </code></pre>
+         <li class="fragment">The constructor sets a special internal constructor property of the object to the constructor function that created it</li>
+         <li class="fragment">This means in our example <code>car.constructor === Vehicle</code>. Something to note is that the constructor property is unique in that if you try to enumerate the car object it will not show up</li>  
+        </section>
+        <section>
+          <li>To assert the reference of a constructor, use the <code>instanceof</code> operator</li>
+          <pre><code>
+      let myColor = new String("blue") // "blue"
+
+      myColor instanceof String // true
+          </code></pre>
+        </section>
+      <section>
+          <li>Same goes for arrays</li>
+          <pre><code>
+  let myColors = new Array('red', 'green', 'yellow') 
+  // ['red', 'green', 'yellow']
+
+  myColors instanceof Array // true
+                </code></pre>
+                <li class="fragment">...or if you even tried with your own hand rolled constructor</li>
+                <pre class="fragment"><code>
+        function Foo () {
+
+        }
+        
+        let f = new Foo()
+        
+        f instanceof Foo // true
+              </code></pre>
+              </section>
+              <section>
+                <p>Under the hood</p>
+              <li class="fragment">So basically, since functions are essentially objects, any instance receives what had constructed it</li> 
+              <pre class="fragment">
+                <code>
+    function Vehicle(color) {
+      this.color = color
+    }
+
+    Vehicle.prototype.wheels = 4
+
+    car.wheels //4
+                </code>
+              </pre>
+              <li class="fragment">Check this out in your console</li>
+            </section>
+            <section>
+              <p>The Prototype Chain</p>
+              <img  width="90%" src="car.png" alt="car" />
+            </section>
+            <section>
+                <p>There are two ways to set properties on an object: instance property and prototype</p>
+                <p>One benefit of constructing an object over creating a literal object is memory performance</p>
+            </section>
+            <section>
+              <li>ES6 now allows us to create Classes with JS. This wasn't the case before</li>
+              <pre class="fragment">
+                  <code>
+      function Vehicle(color) {
+        this.color = color
+      }
+      
+      var car = new Vehicle()
+                  </code>
+                </pre>
+                <li class="fragment">With ES6, this becomes the below</li>
+                <pre class="fragment">
+                    <code>
+      class Vehicle {
+        constructor(color) {
+        this.color = color
+        }
+      }
+                    </code>
+                  </pre>
+            </section>
+        </section>
+
+        <section>
+          <section>
+            <h2 class="title">Building Constructors</h2>
+          </section>
+          <section>
+            <li>Discuss with a partner what exactly is happening line by line</li>
+            <img  width="70%" src="console.png" alt="console" />
+          </section>
+          <section>
+              <li>Let's take 10 minutes to create a constructor function that will allow for two instances and then prototype at least one method onto your constructor</li>
+              <li>Some examples of what you can make: types of birds, countries, etc.</li>
+            </section>
+        </section>
+
+        <section>
+            <section>
+              <h2 class="title">Subclasses</h2>
+            </section>
+            <section>
+              <li>Building off of our Vehicle constructor, let's extend Vehicle to make another constructor for hybrid cars</li>
+              <pre class="fragment">
+                  <code>
+    function Vehicle(color) {
+      this.color = color
+    }
+    
+    function HybridCar(color) {
+      Vehicle.call(this, color)
+    }
+    
+    HybridCar.prototype = new Vehicle()
+    
+    var prius = new HybridCar('white')
+    
+    prius.color // "white"
+                  </code>
+                </pre>
+                <li class="fragment">It's a bit like Inception</li>
+            </section>
+          </section>
+
+          <section>
+              <section>
+                <h2 class="title">Object.create()</h2>
+              </section>
+              <section>
+                <li>So far we have practiced constructing new objects using the new keyword. However, this is not the only way</li> 
+                <li>Object has a method create which allows us to create a new object with a specified prototype object and its properties</li>
+                <pre class="fragment"><code>
+  function Vehicle(color) {
+    this.color = color
+  }
+  
+  function HybridCar(color) {
+    Vehicle.call(this, color)
+  }
+  
+  HybridCar.prototype = Object.create(Vehicle.prototype)
+  
+  var prius = new HybridCar('white')
+  
+  prius.color // "white"
+                    </code>
+                  </pre>
+              </section>
+              <section>
+                  <li><code>new</code> and <code>Object.create()</code> are not totally synonymous in their functionality</li>
+                  <li>If you pass a second argument to <code>Object.create()</code> it will serve as the object's property descriptor</li>
+                  <li>A <a href="https://stackoverflow.com/questions/9167181/what-is-a-descriptor" target="_blank">descriptor</a> is an object that can be one of two types, Data Descriptor or Accessor Descriptor. We won't be going too in-depth with descriptors, but just know that they provide developers the ability to have more control over how their objects are used</li>
+                  <li></li>
+              </section>
+            </section>
+
+        <section>
+            <section>
+              <h2 class="title">Build a Virtual Farm</h2>
+            </section>
+            <section>
+              <li>Make a new file and create a farm</li>
+              <li>Must have one <code>FarmAnimal</code> prototype that all other objects extend</li>
+              <li><code>FarmAnimal</code> must have name instance properties as well as a talk instance method</li>
+              <li>You should create at least five different animals for your farm</li>
+              <li>At least two animals must have subclasses. For example, if you create a Cow prototype it would have two types of cow objects extend from it (i.e. Angus & Texas Longhorn)</li>
+              <li>Use vanilla JS or jQuery to create elements based off your FarmAnimal objects and bind them to the DOM. add the class animal to each element</li>
+              <li>Try some stuff... When you click on an animal button, an alert should show display the sound it makes</li>
+              <li>Work with a neighbor to get new ideas</li>
+            </section>
+          </section>
+
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <li>What is the difference between class-based and prototype based languages?</li>
+                <li>When would you want to declare a literal object and when would you want to construct an object?</li>
+                <li>When would you want to implement a "subclass"?</li>
+                <li>What is the purpose of a constructor function?</li>
+                <li>What is the purpose of the prototype property?</li>
+                <li>How does the prototype chain work?</li>
+              </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
