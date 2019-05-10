@@ -36,7 +36,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="#003366">
-          <h2>JS class 11 - Advanced APIs </h2>
+          <h2>JS class 11 - In Class Lab: Feedr</h2>
           <br />
           <a href="../index.html">Back to TOCs</a>
           <hr>
@@ -47,166 +47,56 @@
         </section>
 
         <section>
-          <section>
-            <h2 class="title">Review of Last Class</h2>
-          </section>
-          <section>
-              <p >Skills that will come in handy:</p>
-              <p class="fragment">-Have solid grasp on HTTP fundamentals</p>
-              <p class="fragment">-Know how to manipulate the DOM with jQuery</p>
-              <p class="fragment">-Understand what callback functions are and why they're useful</p>
-          </section>
-        </section>
-        <section>
             <section>
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-Implement a geolocation API to request a location</p>
-            <p class="fragment">-Process a third-party API response and share location data on your website</p>
-            <p class="fragment">-Search documentation needed to make and customize third-party API requests</p>
+            <p>Feedr Project</p>
+            <li class="fragment">Familiarize yourself with the API documentation news sources</li>
+            <li class="fragment">Learn how to parse through API documentation</li>
+            <li class="fragment">Understand how to successfully retrieve information from APIs</li>
+            <li class="fragment">Fork and clone your starter code</li>
+            <li class="fragment">Strategize ways to hide the loader and replace the content of the #main container with that of the API</li>
+            <li class="fragment">Look up other news sources that might be useful for the project</li>
+            <li class="fragment">Understand how to implement handlebars in the project (optional for the final product)</li>
             </section>
           </section>
 
-        <section>
           <section>
-            <h2 class="title">APIs and Locations</h2>
-          </section>
-          <section>
-            <li>Today, we want to find landscape photos based on a user’s location</li>
-            <li class="fragment">We're using Flickr. It's not as widely used as it was a few years ago, but the API is still pretty good</li>
-            <li class="fragment">With what we learn today, we can tackle a lot of other APIs, like Google Maps, etc.</li>
-            <li class="fragment"><a href="https://www.flickr.com/services/api/" target="_blank">Try to find</a> what would be the most useful endpoint</li>
-              <li class="fragment">We can return a list of photos matching <a href="https://www.flickr.com/services/api/flickr.photos.search.html" target="_blank">some criteria</a></li>
-              <li class="fragment">As long as we pass certain query values (latitude, longitude, radius and category), we will be given a response containing the photos we want</li>
-            </section>
-            <section>
-              <p>Get credentials</p>
-              <li class="fragment">The first step is to register your application with the API and get a key</li>
-              <li class="fragment">You'll need a Flickr and a Yahoo account</li>
-              <li class="fragment">Next we're going to go to the <a href="https://www.flickr.com/services/apps/create/" target="_blank">App Garden</a> page and register an application and get an API key</li>
-              <li class="fragment">You can see your apps <a href="https://www.flickr.com/services/apps/create/" target="_blank">here</a></li>
-              <li class="fragment">Remember not to share the API key. The best thing to do is to store it in a secret file (<a href="https://medium.com/@thejasonfile/using-dotenv-package-to-create-environment-variables-33da4ac4ea8f" target="_blank">like dot-env</a>) then make it a usable variable. We will create a keys.js file</li>
-            </section>
-            <section>
-                <p>The Setup</p>
-                <li class="fragment">Set up a code like we usually do - index.html, then a CSS folder with our styles, plus a JS folder with an app.js</li>
-                <li class="fragment">In the JS folder, let's include a keys.js file as well</li>
-                <li class="fragment">In app.js, we want to wait until the DOM has finished loading before our code is parsed and run</li>
-                <li class="fragment">Add jQuery (with a cdn), then add the following code to wait for the DOM</li>
-              <pre><code>
-        // app.js
-        $(function() {
-          // DOM is now ready
-        
-          
-        });
+              <section>
+                <h2 class="title">Overview</h2>
+              </section>
+              <section>
+                <p>We will have plenty of classtime to work on this project</p>
+                <li class="fragment">The feed reader will pull feeds from our favorite blogs and display them on the browser (remember getElementById)</li>
+                <li class="fragment">The user will be able to filter between publications through the dropdown on the header menu. Clicking/tapping on one of the articles will load a pop up with more information. The user from that point will be able to either dismiss the additional information or go to the referenced article</li>
+                <li class="fragment">You'll give the user the ability to pull from 2-3 news sources. You can select the three provided news sources and/or add your own:</li>
+                <li class="fragment"><a href="https://mashable.com/stories.json" target="_blank">Mashable</a>, <a href="https://www.reddit.com/top.json" target="_blank">Reddit</a>, <a href="http://digg.com/api/news/popular.json" target="_blank">Digg</a> are three options</li>
+              </section>
+              <section>
+                  <p>Fork the <a href="https://github.com/joncancode/ga_feedr" target="_blank">starter code</a></p>
+                  <li>Once complete, clone the repository to your computer by running the following commands</li>
+                <pre><code>
+  git clone https://github.com/(your-username-here)/feedr.git
+  cd feedr
               </code></pre>
-              </section>
-        </section>
+                </section>
+            </section>
 
         <section>
-            <section>
-              <h2 class="title">Getting the User's Location</h2>
-            </section>
-            <section>
-              <li>Remember in <a href="https://www.flickr.com/services/api/flickr.photos.search.html" target="_blank">this section</a>, we saw that location search requires latitude, longitude, and radius</li>
-              <li class="fragment">To specify that we want landscapes, we need to use the <code>tags</code> parameter</li>
-              <li class="fragment">Modern browsers offer a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator" target="_blank">navigator</a> object which we can use to get location data</li>
-            <li class="fragment">Start with if/else, then fill in <code>getCurrentPosition</code> code</li>
-    <pre class="fragment"><code>if (navigator.geolocation) {
-    // if it is use the getCurrentPosition method to retrieve the Window's location
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log('lat: ' + position.coords.latitude);
-      console.log('lon: ' + position.coords.longitude);
-
-})
-  } else {
-    $('.images').append('Browser does not support geolocation');
-  }</code></pre>
-        <li class="fragment">First we check if the browser has the <code>navigator.geolocation</code> object we need</li>
-        <li class="fragment">Then if it does we can go ahead and call on its method <code>getCurrentPosition</code></li>
-      </section>
-      <section>
-          <li class="fragment"><code>getCurrentPosition</code> takes a callback as an argument which will return a <code>position</code> objec</li>
-          <li class="fragment"><code>position</code> contains a <code>coords</code> object which will have the latitude and longitude values we're looking for</li>
-         <li class="fragment">check your console for the <code>console.log</code> statements</li>
-        </section>
-          </section>
-
           <section>
-              <section>
-                <h2 class="title">Call Flickr Endpoint</h2>
-              </section>
-              <section>
-                <p>-So far, we can get user's lat and long</p>
-                <p>-Now that we have the info we need to ping our Flickr endpoint (lat, long), let's make an API request for local photos</p>
-              </section>
-              <section>
-                <li>Open Postman, paste in the base URL, then add properties one by one and test the results</li>
-                <li class="fragment">Examine the format for geo then construct the property</li>
-                <li class="fragment">Examine the format for only then construct the property</li>
-                <li class="fragment">Look at the structure of returned data</li>
-                <li class="fragment">Navigate through together to find the info we want: <code>photos.photo.length</code></li>
-              </section>
-              <section><pre><code>
-    console.log('lat: ' + position.coords.latitude);
-    console.log('lon: ' + position.coords.longitude);
-
-// All code from here on down is new code, including the closing });
-
-    // Now that we have the user's location, let's search the API for landscape photos nearby
-    let url = 'https://api.flickr.com/services/rest/?'; // base URL
-    // Object storing each key and value we need in our query.
-    // This makes it clear what options we're choosing, and makes it easier
-    // to change the values or add/remove options.
-    let searchOptions = {
-      method: 'flickr.photos.search', // endpoint
-      api_key: apiKey, // stored in js/keys.js
-      tags: 'landscape',
-      media: 'photos',
-      lat: position.coords.latitude,
-      lon: position.coords.longitude,
-      radius: 10,
-      radius_units: 'mi',
-      format: 'json',
-      nojsoncallback: 1,
-      extras: 'url_n',
-      content_type: 1,
-      safe_search: 1,
-      sort: 'relevance',
-    };
-    // loop through the searchOptions object and append each key and value
-    // to the url variable to build the full search URL
-    for (let key in searchOptions) {
-      url += '&' + key + '=' + searchOptions[key];
-    }
-    console.log(url);
-
-    // Now that we've built our URL, we can send our GET request
-    $.get(url).done(function(response) {
-      console.log(response);
-      if (response.stat === 'fail') {
-        console.log(response.message); // point out that for end users, we'll want to use DOM manipulation, but this is a quick and dirty
-    // way of seeing if there's an error while we're building the app
-      } else if (response.photos.photo.length === 0) {
-        console.log('No photos found!'); // same as previous
-      } else {
-        // Handle the successful response here
-        console.log('Request succeeded!');// note that we will replace this with code to handle the data when it's received; this is just
-        // to make sure our code is working to this point
-      }
-    });</code></pre></section>
-            </section>
-
-        <section>
-            <section>
-              <h2 class="title">Under Construction</h2>
-            </section>
-            <section>
-              <p>Please come back soon</p>
-            </section>
+            <h2 class="title">Suggested Ways to Start</h2>
           </section>
+          <section>
+            <li>Start by adding all the DOM functionality first</li>
+            <li>Map out all of the needed fields/properties from each respective feed</li>
+            <li>Start by doing a console.log of the incoming feeds to confirm you have a successful transaction before you start mapping anything out</li>
+            <li>Use good tools like the <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en" target="_blank">JSON View chrome extension</a></li>
+            <li>Think about ways to best standardize all of your incoming data</li>
+            <li>Test small pieces of functionality frequently, to make sure everything is working</li>
+            <li>Use tools such as Stack Overflow, Google and documentation resources to solve problems</li>
+          </section>
+        </section>
 
         <section>
             <section>
