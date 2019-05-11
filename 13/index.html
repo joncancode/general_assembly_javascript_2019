@@ -83,30 +83,213 @@
     
     console.log(a) // a is not defined
                 </code></pre>
+                <li>Inner functions can access variables in the scope of their outer function, but outer functions cannot access the scope of an inner function</li>
               </section>
-            </section>
+              <section>
+                <li>
+                  Global variables live as long as your application (your window / your web page) lives
+                </li>
+                  <li>
+                Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished
+                </li>
+                <pre>
+                  <code>
+function add() {
+  let counter = 0; 
+  counter += 1;
+  return counter;
+}
 
-          <section>
-            <section>
-              <h2 class="title">Closures and context</h2>
-            </section>
-            <section>
-                <p>Closures and context are not exclusive to Javascript, but the way JS handles these two concepts is what makes them unique</p>
+add();
+add();
+add();
+                  </code>
+                </pre>
+                <li>
+                  We want to get 3, but we reset the local counter every time we call the function
+                  </li>
+              </section>
+              <section>
+              <li>Now let's try with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">closure</a></li>
+              <pre>
+                <code>
+  let add = (function () {
+    let counter = 0
+    return function () {
+      counter += 1 
+      return counter
+    }
+  })();
+  
+  function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+  }
+                </code>
+              </pre>
+              <li>Closures are functions that refer to independent (free) variables. In other words, the function defined in the closure ‘remembers’ the environment in which it was created</li>
             </section>
           </section>
+          <section>
+            <section>
+              <h2 class="title">Closures Practice</h2>
+            </section>
+            <section>
+            <p><a href="https://repl.it/@JonHaines/Closures" target="_blank">Closures exercise</a></p>
+          </section>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2 class="title">The Module Pattern</h2>
+          </section>
+          <section>
+            <li>Now that we have seen scope and closures, how are they useful?</li>
+            <div class="fragment">
+            <li>They can help us hide state by creating modules</li>
+          <pre><code>
+let car;
+function carFactory(kind) {
+  var wheelCount, start;
+  wheelCount = 4;
+  start = function() {
+    console.log(`started the ${wheelCount} wheel ${kind}.`);
+  };
+
+  return {
+    make: kind,
+    wheels: wheelCount,
+    startEngine: start
+  };
+}
+
+car = carFactory('Tesla');
+
+// => started the 4 wheel Tesla.
+car.startEngine();
+          </code></pre></div>
+          </section>
+          <section>
+            <li>Unlike true object-oriented languages, Javascript doesn't have a true concept of private context</li>
+            <li>Closures allow us to abstract away private variables and functions so that the public doesn't need to worry about the complicated details of how the program works, they can use the module pattern to get what they need done accomplished</li>
+            <li>In the Tesla example, wheelCount and start expressions are private. The module is solely concerned with returning an object for the public to use while hiding how the values for the object properties were created</li>
+            <li>This is the main idea behind the module pattern, that it returns an object literal which through its use, is the only way to access the private functions and variables</li>
+          </section>
+        </section>
 
         <section>
           <section>
-            <h2 class="title">Under Construction</h2>
+            <h2 class="title">This</h2>
           </section>
           <section>
-            <p>Please come back soon</p>
+            <code>this === window</code>
           </section>
+          <section>
+            <p>-The keyword <code>this</code> is a reference to the object that "owns" the currently executing code</p>
+            <pre><code>
+    let user = {
+      firstName: 'Peter',
+      lastName: 'Parker',
+      showFullName: function() {
+        console.log(this.firstName, this.lastName)
+      }
+    }
+    
+    user.showFullName() // Peter Parker
+            </code></pre>
+          </section>
+          <section>
+            <li>There are a few gotchas... including the <a href="https://dev.to/wangonya/this-and-arrow-functions-a67" target="_blank">arrow function</a> exception</li>
+          <div class="fragment">
+            <li>Another example is below. We are getting undefined because the context of <code>this</code> has changed</li>
+           <li><code>.button</code> doesn't have any <code>firstName</code> or <code>lastName</code> properties itself</li>
+            <pre><code>
+let user = {
+  firstName: 'Peter',
+  lastName: 'Parker',
+  showFullName: function() {
+    console.log(this.firstName, this.lastName)
+  }
+}
+
+$('.button').click(user.showFullName) // undefined undefined
+            </code></pre>
+          </div>
+          </section>
+          
         </section>
+
+        <section>
+          <section>
+             <h2 class="title">Call, Apply, and Bind</h2>
+          </section>
+        <section>
+          <li>To fix this context issue, we have three methods that can manipulate context</li>
+          <ol class="fragment">
+            <li>call: The call() method calls a function with a given this value and arguments provided individually</li>
+            <li>apply: The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object)</li>
+              <li>bind: The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called</li>
+            </ol>
+            </section>
+            <section>
+              <div>
+              <pre><code>
+    let user = {
+      firstName: 'Peter',
+      lastName: 'Parker',
+      showFullName: function(one, two, three) {
+        console.log(this.firstName, this.lastName, one, two, three)
+      }
+    }
+    
+    $('.button').click(function() {
+      user.showFullName.call(user, 1, 2, 3) // Peter Parker 1 2 3
+    })
+    
+    $('.button').click(function() {
+      user.showFullName.apply(user, [1, 2, 3]) // Peter Parker 1 2 3
+    })
+                            </code></pre>
+            </div>
+              <li class="fragment"><code>call</code> and <code>apply</code> are identical in their service, but they differ in how many arguments they take. <code>call</code> can accept many arguments, the first argument always being the setting context and the rest being arguments that are to be passed to the function whose context is being set in a respective order. <code>apply</code> only accepts two arguments, like call the first argument is the setting context, but the second argument is an array of all the arguments to be passed to the function whose context you are setting.</li>
+
+            </section>
+            <section>
+                <li><code>bind</code> is different than <code>call</code> and <code>apply</code> in the sense that it doesn't set the context of a function, but rather bind creates a whole new function with the context you supply it</li>
+                <li><code>bind</code> is also not immediately invoked</li>
+                <pre><code>
+  let user = {
+    firstName: 'Peter',
+    lastName: 'Parker',
+    showFullName: function() {
+      console.log(this.firstName, this.lastName)
+    }
+  }
+  
+  // declare a new variable whose value is the user.showFullName function with a context set to user
+  var contextSetUser = user.showFullName.bind(user)
+  $('.button').click(contextSetUser) // Peter Parker
+  
+  $('.button').click(user.showFullName) // undefined undefined
+                      </code></pre>  
+              </section>
+          </section>
+          <section>
+              <h2 class="title">Brain Teaser</h2>
+          </section>
+          <section>
+        <li><a href="https://repl.it/@JonHaines/thiscontext" target="_blank">Explain this code</a></li>
+
+          </section>
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <li>What is the purpose of the module pattern and what are its benefits</li>
+                <li>When is context determined</li>
+                <li>Why would you want to manually change context of a function</li>
+                <li>How does closure work</li>
+              </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
