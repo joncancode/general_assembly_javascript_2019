@@ -95,9 +95,9 @@
             <section>
               <li>We have worked with numerous scenarios where we have run a block of code after a user has performed an action. Take the following scenario from our DOM and jQuery continued lesson</li>
               <pre><code>
-    let $thingList = $('#fav-list');
+    let thingList = $('#fav-list');
 
-    $thingList.on('mouseleave', 'li', function(e) {
+    thingList.on('mouseleave', 'li', function(e) {
       ...
     }); 
               </code></pre>
@@ -152,19 +152,6 @@
           </section>
           </section>
 
-          <section>
-              <section>
-                <h2 class="title">Callback Assignment</h2>
-              </section>
-              <section>
-                <li>Make a js file and try this <a href="https://gist.github.com/joncancode/5be8f099ae2da3d6f30cc962acec38da" target="_blank">assignment</a> on Callbacks</li>
-                <li>Write a function, <code>makeCountingFunction()</code>, that returns another function. The function returned by <code>makeCountingFunction()</code> should take an array as an argument, and return the number of odd integers in the array</li>
-                <li><code>makeCountingFunction()</code> itself should take as its only argument something called a "predicate function", a function designed to run a test on each item in an array</li>
-                <li>Test your code by running it in the command line using node</li>
-              
-              </section>
-            </section>
-
         <section>
           <section>
             <h2 class="title">Anonymous Functions and IIFEs</h2>
@@ -186,7 +173,7 @@
       console.log("Hello world");
     }
   
-    var sayBye = function() {
+    let sayBye = function() {
       console.log("Goodbye world");
     }
   
@@ -230,15 +217,14 @@
 
         <section>
           <section>
-            <h2 class="title">IIFE: Independent Practice</h2>
+            <h2 class="title">IIFE: Quick Independant Practice</h2>
           </section>
           <section>
-            <p>Invoking Function Expressions Practice</p>
-            <li>Create a new file (html, js)</li>
-            <li>Write an IIFE function that takes a timer argument</li>
-            <li>The function will automatically execute and count up every second until the specified argument</li>
-            <li>Use the setTimeout function to count up</li>
-            <li>Hint: a second is the timer passed * 1000 (milliseconds)</li>
+            
+            <li>How would you create an IIFE to make a page alert on load?</li>
+            <!-- (function() {
+              alert("here's an alert!!");
+          }()); -->
           </section>
         </section>
         

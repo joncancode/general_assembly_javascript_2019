@@ -1,0 +1,49 @@
+
+<!-- saved from url=(0070)file:///Users/jonathanhaines/Documents/GA_inclass/may20/dom/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom practice</title>
+</head>
+<body>
+    <div id="main">
+        <h1 id="header-title" style="border-bottom: 5px dotted orange;">This is our page</h1>
+        <h2 class="title">changed</h2>
+        <ul class="list">
+            <li class="item" style="background-color: yellow;">Item 1</li>
+            <li class="item">hello</li>
+            <li class="item" style="background-color: yellow;">Item 3</li>
+            <li class="item">Item 4</li>
+            <li class="item" style="background-color: yellow;">Item 5</li>
+            <li class="item">Item 6</li>
+        </ul>
+
+    </div>
+
+    <script>
+    //getElementById
+    let headerTitle = document.getElementById("header-title").style.borderBottom = '5px dotted orange'
+     //headerTitle.style.borderBottom = '2px solid green'
+
+     //getElementsByClassName
+     let items = document.getElementsByClassName("item")
+    //  for (let i = 0; i < items.length; i++){
+    //      if (i % 2 === 0){
+    //         items[i].style.backgroundColor = 'lightgreen'
+    //      }
+    //  }
+    //querySelector
+    let title = document.querySelector(".title")
+    title.innerHTML = "changed"
+
+    //querySelectorAll
+    let oddNum = document.querySelectorAll("li:nth-child(odd)")
+
+    for(let i = 0; i <oddNum.length; i++){
+        oddNum[i].style.backgroundColor = "yellow"
+    }
+    
+    </script>
+
+</body></html>
