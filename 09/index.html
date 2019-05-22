@@ -51,9 +51,8 @@
               <h2 class="title">Review of Last Class</h2>
             </section>
             <section>
-                <p>-Implement advanced jQuery events </p>
-                <p class="fragment">-Use event delegation to manage dynamic content </p>
-                <p class="fragment">-Update elements of a jQuery selection and chaining to place methods on selectors </p>
+                <p>Implement advanced jQuery events </p>
+                <p class="fragment">Update elements of a jQuery selection and chaining to place methods on selectors </p>
             </section>
           </section>
           <section>
@@ -62,11 +61,11 @@
                   <h2 class="title">Today's Objectives</h2>
                 </section>
                 <section>
-              <p>-Identify all the HTTP Verbs & their uses </p>
-              <p class="fragment">-Describe APIs and how to make calls access API data </p>
-              <p class="fragment">-Implement an AJAX request with Vanilla JS </p>
-              <p class="fragment">-Implement a jQuery AJAX client for a simple REST service </p>
-              <p class="fragment">-Separation of concerns – API vs. Client </p>
+              <p>Identify all the HTTP Verbs & their uses </p>
+              <p class="fragment">Describe APIs and how to make calls access API data </p>
+              <p class="fragment">Implement an AJAX request with Vanilla JS </p>
+              <p class="fragment">Implement a jQuery AJAX client for a simple REST service </p>
+              <p class="fragment">Separation of concerns – API vs. Client </p>
               </section>
             </section>
 
@@ -75,13 +74,13 @@
                   <h2 class="title">APIs</h2>
                 </section>
                 <section>
-                  <p>-API calls are basically a fancy term for making HTTP requests to a server and sending/receiving structured data from that endpoint </p>
-                  <p class="fragment">-If that data is structured as JSON, we can easily start reacting and communicating with it thanks to the provided JSON methods </p>
-                  <p class="fragment">-Best practice is to separate DOM logic from our data models (especially outside data!). This not only allows for cleaner code, but is an easier way to manipulate our layouts and interactions </p>
+                  <p>API calls are basically a fancy term for making HTTP requests to a server and sending/receiving structured data from that endpoint </p>
+                  <p class="fragment">If that data is structured as JSON, we can easily start reacting and communicating with it thanks to the provided JSON methods </p>
+                  <p class="fragment">Best practice is to separate DOM logic from our data models (especially outside data!). This not only allows for cleaner code, but is an easier way to manipulate our layouts and interactions </p>
                 </section>
                 <section>
                     <p>Some Tips</p>
-                    <li class="fragment">Certain APIs require authentication, and we need to provide an API key either as a request parameter, in the header, or in the body of the call</li>
+                    <li class="fragment">Certain APIs require authentication (CORS), and we need to provide an API key either as a request parameter, in the header, or in the body of the call</li>
                     <li class="fragment">When we make an API call after a user action, we need to give the user feedback that something is happening</li>
                     <li class="fragment"><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">Representational state transfer (REST)</a> is the most common architecture style for passing information to and from these API endpoints</li>
                     <li class="fragment">Before we start consuming these services however, it's important to understand the fundamentals of the underlying communication layer. This communication layer (HTTP) will be responsible for transporting our API calls</li>
@@ -99,10 +98,10 @@
                 </section>
                 <section>
                     <p>HTTP Client</p>
-                    <li class="fragment">-HTTP Clients make or generate HTTP Requests</li>
-                    <li class="fragment">-The most common example -> Browsers like Chrome, Firefox, and Safari</li>
-                    <li class="fragment">-Also, command Line programs - curl and wget</li>
-                    <li class="fragment">-HTTP Clients respond to HTTP Responses from a Web Server. They process the data being returned form a Web Server, aka HTTP Server</li>
+                    <li class="fragment">HTTP Clients make or generate HTTP Requests</li>
+                    <li class="fragment">The most common example -> Browsers like Chrome, Firefox, and Safari</li>
+                    <li class="fragment">Also, command Line programs - curl and wget</li>
+                    <li class="fragment">HTTP Clients respond to HTTP Responses from a Web Server. They process the data being returned form a Web Server, aka HTTP Server</li>
                   </section>
                   <section>
                     <p>HTTP Web Server</p>
@@ -177,116 +176,87 @@
                 </section>
               </section>
 
-
-
-
             <section>
                 <section>
                   <h2 class="title"><a href="https://www.w3schools.com/xml/ajax_intro.asp" target="_blank">AJAX</a> and JavaScript</h2>
                 </section>
                 <section>
                   <li>AJAX stands for Asynchronous JavaScript and XML (although JSON has become more useful than XML)</li>
-                  <li class="fragment">To make an HTTP request with AJAX we need to first create an instance of <code>XMLHttpRequest</code> and then decide how we want to handle the response by setting the <code>onreadystatechange</code> method of the XMLHTTPRequest object to a custom function</li>
-                <pre class="fragment"><code>
-// Create instance of XMLHTTPRequest
-var httpRequest = new XMLHttpRequest();
-
-// Set a custom function to handle the request
-httpRequest.onreadystatechange = responseMethod;
-
-function responseMethod() {
-    // Request logic
-}
-
-// Alternative method:
-// httpRequest.onreadystatechange = function() {
-//   
-// }
-
-                </code></pre>
-                </section>
-                <section>
-                <li>Before we do anything with the request, we need to first check its state. If the state tells us that the request is done, we can then handle the return of the request.</li>
-                <ol>
-                <li>We check for a success and update our application logic</li>
-                <li>We check for an error and notify the user</li>
-                </ol>
-<pre><code>
-function responseMethod() {
-
-  // Check if our state is "DONE"
-  if (httpRequest.readyState === XMLHttpRequest.DONE) {
-
-    // If our request was successful we get a return code/status of 200
-    if (httpRequest.status === 200) {
-
-      // This is where we update our UI accordingly. Our data is available to us through the responseText parameter
-      console.log(httpRequest.responseText);
-    } else {
-
-      // This is the scenario that there was an error with our request
-      console.log('There was a problem with the request.');
-    }
-  }
-}
-</code></pre>
-                </section>
-                <section>
-              <li>After we have defined what happens in both successful and erroneous scenarios, we finally open and send our request</li>
-              <pre><code>
-var httpRequest = new XMLHttpRequest();
-
-httpRequest.onreadystatechange = responseMethod;
-
-// Open method accepts 3 parameter:
-// 1. Request type: these are all the HTTP verbs we covered above
-// 2. The URL
-// 3. Optional boolean third parameter, that dictates wether this is an asynchronous call (default is true)
-httpRequest.open('GET', 'http://data.consumerfinance.gov/api/views.json');
-
-// The send method takes an optional parameter. If our API request allows additional parameters or JSON objects to be passed through (primarily through POST requests), we pass them in the send method.
-httpRequest.send();
-
-// NOTE: certain APIs may require us to pass additional header data, including setting the MIME type of the request. We can do this through the setRequestHeader method.
-// httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                  </code></pre>
+                  <li >To make an HTTP request with AJAX we need to first create an instance of <code>XMLHttpRequest</code> and then decide how we want to handle the response by setting the <code>onreadystatechange</code> method of the XMLHTTPRequest object to a custom function</li>
+                <a href="https://www.w3schools.com/xml/dom_httprequest.asp" target="blank">w3schools: XMLHttpRequest</a>
                 </section>
               </section>
-
         <section>
             <section>
               <h2 class="title">jQuery AJAX: much easier</h2>
             </section>
             <section>
             <li>Vanilla JavaScript AJAX functionality gives us everything we need to make http requests, however it takes 4-5 steps to make the call and get the information back</li>
-            <li>jQuery has some useful convenience methods to interact with cross platform requests</li>
-            <pre><code>
-// All we need to create a get or post request is use the get or post method
-$.get( 'https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD', function( r ) {
-    // We get the data back from the request in the parameter we pass in the function
-    console.log(r);
-});
-            </code></pre>
-        </section>
+            <li>jQuery has some useful methods to interact with cross platform requests</li>
+          </section>
+          <section>
+            <p><a href="http://api.jquery.com/jquery.ajax/" target="_blank">.ajax</a> is the main method</p>
+            <p><a href="http://api.jquery.com/jquery.get/" target="_blank">.get</a>, <a href="http://api.jquery.com/jquery.post/" target="_blank">.post</a>, and <a href="http://api.jquery.com/jquery.ajax/" target="_blank">.getJSON</a> are shortcut methods</p>
+          </section>
             <section>
             <li>Get and post methods are very useful and easy to work with, however there will be scenarios where we need more granularity to handle our requests. The <code>$.ajax()</code> method allows us significantly more granularity</li>
 <pre><code>
-$.ajax({
-    url: "https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD",
+  $.ajax({
+    method:'GET',
+    url: 'https://jsonplaceholder.typicode.com/posts',
+    dataType: 'json'
+  })
+  .done(function(data){
 
-    // What we want and how we want it(JSON)
-    data: {
-        // q: "select title,abstract,url from search.news where query=\"cat\"",
-        format: "json"
-    },
+  //log out the data
+  console.log(data);
 
-    // Work with the response
-    success: function( response ) {
-        console.log( response ); // server response
-    }
-})
+  });
 </code></pre> 
         </section>
+        <section>
+            <li>.get</li>
+          <pre><code>
+
+$.get('https://jsonplaceholder.typicode.com/posts', function(data) {
+  console.log(data);
+});
+          </code></pre>
+      </section>
+
+      <section>
+          <li>.post</li>
+        <pre><code>
+    $('#postForm').submit(function(e){
+      e.preventDefault();
+      let title = $('#title').val();
+      let body = $('#body').val();
+      let url = $(this).attr('action');
+      $.post(url, {title:title, body:body}).done(function(data){
+        console.log(data);
+      });
+    });
+        </code></pre>
+    </section>
+          </section>
+
+          <section>
+              <section>
+                  <h2 class="title">Practice Requests</h2>
+                </section>
+                <section>
+            <p>Make some requests</p>
+            <li>Similar to today's first exercise, make another HTML page, then a few buttons</li>
+            <li>Have one button use .ajax, one use .get, and another use .getJSON to retrieve some data from online</li>
+            <li>Just try to console.log the data</li>
+            <li>Another hint: Chrome add-on - <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en" target="_blank">JSON view</a></li>
+            <hr>
+            <p>Some examples below:</p>
+            <li>https://api.github.com/users</li>
+            <li>https://mashable.com/stories.json</li>
+            <li>https://www.reddit.com/top.json</li>
+            <li>http://digg.com/api/news/popular.json</li>
+          </section>
           </section>
 
         <section>
@@ -295,11 +265,12 @@ $.ajax({
             </section>
             <section>
               <p>Let's make a <a href="https://gist.github.com/joncancode/51784cf773a69556dc04d2e40276d1fa" target="_blank">Weather app</a></p>
-              <li class="fragment">Sign up for openweathermap.org and generate an API key</li>
-              <li class="fragment">User either $.ajax or $.get to pull weather current data for Washington DC (hint: <code>http://api.openweathermap.org/data/2.5/weather?q=...</code>).</li>
-              <li class="fragment">Print the temperature in console</li>
-              <li class="fragment">Bonus 1: add a form prompting user for the city and state</li>
-              <li class="fragment">Bonus 2: convert answer from kelvin to fahrenheit</li>
+              <li >Try this challenge for next class (after Memorial Day)</li>
+              <li >Sign up for openweathermap.org and generate an API key</li>
+              <li >User either $.ajax or $.get to pull weather current data for Washington DC (hint: <code>http://api.openweathermap.org/data/2.5/weather?q=...</code>).</li>
+              <li >Print the temperature in console</li>
+              <li >Bonus 1: add a form prompting user for the city and state</li>
+              <li >Bonus 2: convert answer from kelvin to fahrenheit</li>
             </section>
           </section>
         <section>
