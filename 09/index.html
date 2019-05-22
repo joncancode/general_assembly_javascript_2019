@@ -75,15 +75,15 @@
                 </section>
                 <section>
                   <p>API calls are basically a fancy term for making HTTP requests to a server and sending/receiving structured data from that endpoint </p>
-                  <p class="fragment">If that data is structured as JSON, we can easily start reacting and communicating with it thanks to the provided JSON methods </p>
-                  <p class="fragment">Best practice is to separate DOM logic from our data models (especially outside data!). This not only allows for cleaner code, but is an easier way to manipulate our layouts and interactions </p>
+                  <p >If that data is structured as JSON, we can easily start reacting and communicating with it thanks to the provided JSON methods </p>
+                  <p >Best practice is to separate DOM logic from our data models (especially outside data!). This not only allows for cleaner code, but is an easier way to manipulate our layouts and interactions </p>
                 </section>
                 <section>
                     <p>Some Tips</p>
-                    <li class="fragment">Certain APIs require authentication (CORS), and we need to provide an API key either as a request parameter, in the header, or in the body of the call</li>
-                    <li class="fragment">When we make an API call after a user action, we need to give the user feedback that something is happening</li>
-                    <li class="fragment"><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">Representational state transfer (REST)</a> is the most common architecture style for passing information to and from these API endpoints</li>
-                    <li class="fragment">Before we start consuming these services however, it's important to understand the fundamentals of the underlying communication layer. This communication layer (HTTP) will be responsible for transporting our API calls</li>
+                    <li >Certain APIs require authentication (CORS), and we need to provide an API key either as a request parameter, in the header, or in the body of the call</li>
+                    <li >When we make an API call after a user action, we need to give the user feedback that something is happening</li>
+                    <li ><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">Representational state transfer (REST)</a> is the most common architecture style for passing information to and from these API endpoints</li>
+                    <li >Before we start consuming these services however, it's important to understand the fundamentals of the underlying communication layer. This communication layer (HTTP) will be responsible for transporting our API calls</li>
                   </section>
               </section>
 
@@ -93,29 +93,29 @@
                 </section>
                 <section>
                   <p>-HTTP is a protocol - a system of rules - that determines how web pages (see:'hypertext') get sent (see:'transferred') from one place to another</p>
-                  <p class="fragment">-Among other things, it defines the format of the messages passed between HTTP clients and HTTP servers</p>
-                  <p class="fragment">-Remember, clients make requests and servers receive requests and send back responses</p>
+                  <p >-Among other things, it defines the format of the messages passed between HTTP clients and HTTP servers</p>
+                  <p >-Remember, clients make requests and servers receive requests and send back responses</p>
                 </section>
                 <section>
                     <p>HTTP Client</p>
-                    <li class="fragment">HTTP Clients make or generate HTTP Requests</li>
-                    <li class="fragment">The most common example -> Browsers like Chrome, Firefox, and Safari</li>
-                    <li class="fragment">Also, command Line programs - curl and wget</li>
-                    <li class="fragment">HTTP Clients respond to HTTP Responses from a Web Server. They process the data being returned form a Web Server, aka HTTP Server</li>
+                    <li >HTTP Clients make or generate HTTP Requests</li>
+                    <li >The most common example -> Browsers like Chrome, Firefox, and Safari</li>
+                    <li >Also, command Line programs - curl and wget</li>
+                    <li >HTTP Clients respond to HTTP Responses from a Web Server. They process the data being returned form a Web Server, aka HTTP Server</li>
                   </section>
                   <section>
                     <p>HTTP Web Server</p>
-                    <li class="fragment">Two of the most popular HTTP or Web servers are Apache and Nginx, But there are lots different web servers out there. Some web servers are written in Ruby, while others are written in other languages</li>
-                    <li class="fragment">All Web Servers receive HTTP Requests and generate HTTP Responses</li>
-                    <li class="fragment">Often Web Servers are just the middleman, passing HTTP Request and Responses between the client and web application</li>
+                    <li >Two of the most popular HTTP or Web servers are Apache and Nginx, But there are lots different web servers out there. Some web servers are written in Ruby, while others are written in other languages</li>
+                    <li >All Web Servers receive HTTP Requests and generate HTTP Responses</li>
+                    <li >Often Web Servers are just the middleman, passing HTTP Request and Responses between the client and web application</li>
                   </section>
                   <section>
                     <img width="50%" src="req.gif" alt="req" />
                 <ol>
-                    <li class="fragment">Client sends a HTTP Request to a HTTP Server running on a remote machine</li>
-                    <li class="fragment">The HTTP server processes the HTTP Request. This may entail passing the request to some Web Application, which creates a HTTP Response</li>
-                    <li class="fragment">The response gets sent back to the client</li>
-                    <li class="fragment">The client processes the response</li>
+                    <li >Client sends a HTTP Request to a HTTP Server running on a remote machine</li>
+                    <li >The HTTP server processes the HTTP Request. This may entail passing the request to some Web Application, which creates a HTTP Response</li>
+                    <li >The response gets sent back to the client</li>
+                    <li >The client processes the response</li>
                 </ol>
                   </section>
                   <section>
