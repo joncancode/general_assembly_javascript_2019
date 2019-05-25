@@ -189,38 +189,7 @@
             <li>Discuss with a partner what exactly is happening line by line</li>
             <img  width="70%" src="console.png" alt="console" />
           </section>
-          <section>
-              <li>Let's take 10 minutes to create a constructor function that will allow for two instances and then prototype at least one method onto your constructor</li>
-              <li>Some examples of what you can make: types of birds, countries, etc.</li>
-            </section>
         </section>
-
-        <section>
-            <section>
-              <h2 class="title">Subclasses</h2>
-            </section>
-            <section>
-              <li>Building off of our Vehicle constructor, let's extend Vehicle to make another constructor for hybrid cars</li>
-              <pre class="fragment">
-                  <code>
-    function Vehicle(color) {
-      this.color = color
-    }
-    
-    function HybridCar(color) {
-      Vehicle.call(this, color)
-    }
-    
-    HybridCar.prototype = new Vehicle()
-    
-    var prius = new HybridCar('white')
-    
-    prius.color // "white"
-                  </code>
-                </pre>
-                <li class="fragment">It's a bit like Inception</li>
-            </section>
-          </section>
 
           <section>
               <section>
@@ -250,7 +219,6 @@
                   <li><code>new</code> and <code>Object.create()</code> are not totally synonymous in their functionality</li>
                   <li>If you pass a second argument to <code>Object.create()</code> it will serve as the object's property descriptor</li>
                   <li>A <a href="https://stackoverflow.com/questions/9167181/what-is-a-descriptor" target="_blank">descriptor</a> is an object that can be one of two types, Data Descriptor or Accessor Descriptor. We won't be going too in-depth with descriptors, but just know that they provide developers the ability to have more control over how their objects are used</li>
-                  <li></li>
               </section>
             </section>
 

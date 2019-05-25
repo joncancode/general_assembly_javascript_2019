@@ -87,26 +87,12 @@
             </section>
             <section>
               <p>Remember the Restaurant Analogy?</p>
-              <li class="fragment">When you order your food, the waiter goes to the kitchen and tells the chef your order</li>
-              <li class="fragment">He then returns to take more orders</li>
-              <li class="fragment">In Asynchronous code, the code continues while requests are being processed</li>
-              <img class="fragment" width="50%" src="../01/stack.png" alt="stack" />
+              <li >When you order your food, the waiter goes to the kitchen and tells the chef your order</li>
+              <li >He then returns to take more orders</li>
+              <li >In Asynchronous code, the code continues while requests are being processed</li>
+              <img  width="50%" src="../01/stack.png" alt="stack" />
             </section>
-            <section>
-              <li>We have worked with numerous scenarios where we have run a block of code after a user has performed an action. Take the following scenario from our DOM and jQuery continued lesson</li>
-              <pre><code>
-    let thingList = $('#fav-list');
 
-    thingList.on('mouseleave', 'li', function(e) {
-      ...
-    }); 
-              </code></pre>
-              <li class="fragment">Taking a close look at the jQuery <code>on()</code> method, we notice two very important overlooked concepts:</li>
-            <ol class="fragment">
-              <li>The <code>on()</code> method is taking a function as one of its parameters</li>
-              <li>The function we are passing into the <code>on()</code> method does not have a name, we are just passing a raw function: the function keyword, a parameter list, and a function body inside curly braces</li>
-            </ol>
-            </section>
           </section>
 
           <section>
@@ -115,9 +101,9 @@
             </section>
             <section>
               <li>By "first-class objects", we just mean that they can be used in any part of the code that strings, arrays, or data of any other type can be used</li>
-              <li class="fragment">This means we can store functions as variables, pass them as arguments to other functions, return them from other functions, or just run them ad-hoc without the need to assign them to anything</li>
-              <li class="fragment"> A function that takes another function as an argument, or returns a function, is called a higher-order function</li>
-              <li class="fragment">Functions being passed as parameters:</li>
+              <li >This means we can store functions as variables, pass them as arguments to other functions, return them from other functions, or just run them ad-hoc without the need to assign them to anything</li>
+              <li > A function that takes another function as an argument, or returns a function, is called a higher-order function</li>
+              <li >Functions being passed as parameters:</li>
               <pre class="fragment"><code>
               setTimeout( function(){
                 console.log("Hello world");
@@ -173,16 +159,9 @@
       console.log("Hello world");
     }
   
-    let sayBye = function() {
-      console.log("Goodbye world");
-    }
-  
     setTimeout(sayHi, 1000 );
-    setTimeout(sayBye, 1261440000000);
-  
-    // (1,261,440,000,000 milliseconds is 40 years)
+
             </code></pre>
-        <li>Just remember: Anonymous functions are great, but they may give you some trouble when debugging, if you're looking at a stack trace and it shows a big column of unnamed functions</li>
         </section>
 
     <section>
@@ -198,45 +177,20 @@
                 </code></pre>
   </section>
 <section>
-<li>A bit less common, but we can also pass arguments into them</li>
-    <pre><code>
-  let counterStartPoint = 3;
-
-  (function countDown( global ){
-    let counter;
-    for(counter = global.counterStartPoint; counter > 0; counter--) {
-      console.log(counter)
-    }
-
-  })( window );
-
-  console.log( counterStartPoint ); // 3
-                      </code></pre>
+  <p>How would you create an IIFE to make a page alert on load?</p>
 </section>
-        </section>
-
-        <section>
-          <section>
-            <h2 class="title">IIFE: Quick Independant Practice</h2>
-          </section>
-          <section>
-            
-            <li>How would you create an IIFE to make a page alert on load?</li>
-            <!-- (function() {
-              alert("here's an alert!!");
-          }()); -->
-          </section>
         </section>
         
 
         <section>
           <section>
-            <h2 class="title">Homework</h2>
+            <h2 class="title">Extra Practice</h2>
           </section>
           <section>
               <p>Try these <a href="http://reactivex.io/learnrx/" target="_blank">exercises</a> to get extra practice with functional programming</p>
            <li>Some of these exercises use methods and syntax that we haven't covered in class and which you will likely need to look up on your own</li>
-            </section>
+           <li>We will be seeing more OOP later in the class, so having some functional programming knowledge helps</li>
+          </section>
 
         </section>
 
@@ -245,7 +199,7 @@
                <h2 class="title">Conclusion</h2>
             </section>
             <section>
-              <li>Callbacks and closures are the bread and butter of asynchronous programming</li>
+              <li>Callbacks and closures are the bread and butter of asynchronous programming (especially when we get to Node)</li>
               <li class="fragment">Looking back at our DOM and APIs lessons, our interfaces update on user interactions and/or once we receive data from remote locations. Best practices in JS call for these reactions to be handled in the form of callbacks</li>
               <li class="fragment">Callbacks, closures, and IIFEs allow us to better organize our code for each scenario, as well as make our functions significantly more dynamic</li>
             </section>
