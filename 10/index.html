@@ -68,6 +68,25 @@
             <p class="fragment">-Return functions from functions</p>
             </section>
           </section>
+          <section>
+            <section>
+              <h2 class="title">Review: The Call Stack</h2>
+            </section>
+    <section>
+        <p>The Stack runs last in, first out (LIFO)</p>
+      <pre><code>
+    function second() {
+      console.log('This runs second!');
+    }
+    function first() {
+      console.log('This runs first!');
+      second();
+      console.log('This runs last');
+    }
+    first();
+    </code></pre>
+  </section>
+        </section>
 
           <section>
             <section>
