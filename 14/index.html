@@ -72,7 +72,8 @@
             <h2 class="title">Node Review</h2>
           </section>
           <section>
-            <p>We used Node before to run text in our terminals</p>
+            <p>We used Node before to run JavaScript in our terminals</p>
+            <p>It's how we run JS outside the browser</p>
             <p class="fragment">We can also use it to start our very own server</p>
           </section>
           <section>
@@ -80,7 +81,6 @@
             <li class="fragment">After creating a file, run node, then the file name</li>
             <li class="fragment">This gets even easier with <a href="https://expressjs.com/" target="_blank">Express</a></li>
           </section>
-          
           </section>
 
         </section>
@@ -92,7 +92,7 @@
           <section>
             <li>Back in class 09, we looked at what goes on in the Network tab and saw examples of different requests</li>
             <li class="fragment">In addition to GET, there are a few other key requests to remember</li>
-            <li class="fragment">These are commonly referred to collectively as CRUD</li>
+            <li class="fragment">These are commonly referred to collectively as CRUD - or the RESTful architecture</li>
           <ol class="fragment">
             <li>Create (POST)</li>
             <li>Read (GET)</li>
@@ -101,7 +101,55 @@
           </ol>
           </section>
           <section>
+            <li>To create a server with Node, it's as easy as the below</li>
+          <pre><code>
+const http = require('http');
+
+const server = http.createServer(function(req, res) {
+  if (req.url === '/'){
+    res.write('this is the route')
+    res.end();
+  }
+  if (req.url === '/users'){
+    res.write(JSON.stringify([1, 2, 3]))
+    res.end();
+  }
+})
+
+server.listen(3000)
+
+console.log('listening on port 3000')
+          </code></pre>
+          <li>However, this code is already a bit crowded and may be tough to add different routes</li>
+          <li>This is where Express comes in. Let's compare</li>
+          <pre><code>
+  const express = require('express')
+  const app = express();
+  
+  app.get('/', (req, res) => {
+      res.send('hello from the route')
+  })
+  
+  app.get('/api/users', (req, res) => {
+      res.send([1, 2, 3])
+  })
+  
+  app.listen(3000, function(){
+      console.log('listening on port 3000')
+  })
+                      </code></pre>
+          </section>
+          <section>
             <p><a href="https://expressjs.com/en/starter/basic-routing.html" target="_blank">Routing</a> with Express</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2 class="title">Nodemon</h2>
+          </section>
+          <section>
+            <p><a href="https://www.npmjs.com/package/nodemon" target="_blank">Nodemon</a> is another good library to download, so that you don't have to keep starting and stopping</p>
           </section>
         </section>
 
