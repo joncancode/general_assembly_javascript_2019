@@ -73,7 +73,7 @@
           </section>
           <section>
             <p>We used Node before to run JavaScript in our terminals</p>
-            <p>It's how we run JS outside the browser</p>
+            <p class="fragment">It's how we run JS outside the browser</p>
             <p class="fragment">We can also use it to start our very own server</p>
           </section>
           <section>
@@ -90,10 +90,10 @@
             <h2 class="title">What the CRUD?</h2>
           </section>
           <section>
-            <li>Back in class 09, we looked at what goes on in the Network tab and saw examples of different requests</li>
+            <li>Back in a previous class, we looked at what goes on in the Network tab and saw examples of different requests</li>
             <li class="fragment">In addition to GET, there are a few other key requests to remember</li>
             <li class="fragment">These are commonly referred to collectively as CRUD - or the RESTful architecture</li>
-          <ol class="fragment">
+        <ol class="fragment">
             <li>Create (POST)</li>
             <li>Read (GET)</li>
             <li>Update (PUT/PATCH)</li>
@@ -101,6 +101,9 @@
           </ol>
           </section>
           <section>
+              <li>To help understand how this will work, let's remember the <a href="https://swapi.co" target="_blank">Star Wars api</a></li>
+<hr>
+<div class="fragment">
             <li>To create a server with Node, it's as easy as the below</li>
           <pre><code>
 const http = require('http');
@@ -121,6 +124,8 @@ server.listen(3000)
 console.log('listening on port 3000')
           </code></pre>
           <li>However, this code is already a bit crowded and may be tough to add different routes</li>
+        </div>
+        </section><section>
           <li>This is where Express comes in. Let's compare</li>
           <pre><code>
   const express = require('express')
@@ -131,7 +136,7 @@ console.log('listening on port 3000')
   })
   
   app.get('/api/users', (req, res) => {
-      res.send([1, 2, 3])
+      res.send(users)
   })
   
   app.listen(3000, function(){
@@ -155,16 +160,34 @@ console.log('listening on port 3000')
 
         <section>
           <section>
-            <h2 class="title">NEW SECTION</h2>
+            <h2 class="title">Postman</h2>
           </section>
           <section>
-            <p>TEXT</p>
+            <p>Postman is a tool used to test API send requests</p>
+            <li>Insomnia is another popular tool that does the same thing</li>
           </section>
         </section>
+
+        <section>
+            <section>
+              <h2 class="title">Mongo</h2>
+            </section>
+            <section>
+              <li>MongoDB is a tool we can use to create Databases</li>
+              <li>In order to get started, we can create a free DB at <a href="https://mlab.com/" target="_blank">mLab</a></li>
+            <li>An extensive walkthrough is found <a href="https://zellwk.com/blog/crud-express-mongodb/" target="_blank">here</a>. Mongo is definitely something that will take some time to get used to</li>
+            <li>Let's take some time to follow this to set up Mongo and add our remaining routes (update and delete)</li>
+          </section>
+          </section>
+
         <section>
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+            <section>
+                <li>Node allows us to create a server and route to different urls</li>
+                <li>It will serve as our backend for applications we build</li>
+              </section>
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>

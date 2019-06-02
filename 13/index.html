@@ -36,7 +36,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-background="#003366">
-          <h2>JS class 13 - Closures and This</h2>
+          <h2>JS class 13 - ES6, Closures, and This</h2>
           <br />
           <a href="../index.html">Back to TOCs</a>
           <hr>
@@ -61,10 +61,63 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-Understand and explain Javascript context</p>
+            <p>-See some examples of ES6 code</p>
+            <p class="fragment">-Understand and explain Javascript context</p>
             <p class="fragment">-Understand and explain closures</p>
             <p class="fragment">-Implement the module pattern in code</p>
             </section>
+          </section>
+
+
+          <section>
+              <section>
+                <h2 class="title">ES6</h2>
+              </section>
+              <section>
+                  <p><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank">ES6</a> is a major update to JavaScript introduced in 2015</p>
+                <li>We've already seen some examples of ES6 like the usage of <code>let</code>, sometimes <code>const</code> and the <code>${template literals}</code></li>
+                <li>We also now have <code>Classes</code> - something new to JS</li>
+              </section>
+                <section>
+                    <p>Array functions</p>
+                    <pre><code>
+    //  ES5 
+    function doSomething() {
+      return 'hello';
+    }
+    //  ES6 
+    const doSomething = () => 'hello';
+                    </code></pre>
+                  </section>
+                  <section>
+                      <p>Spread Operators for merging</p>
+                      <pre><code>
+  let obj1 = { a: 1, b: 2 };
+  let obj2 = { c: 3, d: 4 };
+
+  //  ES5 
+  let obj3 = Object.assign(obj1, obj2);
+
+  //  ES6 
+  let obj3 = { ...obj1, ...obj2 };
+                      </code></pre>
+                    </section>
+                    <section>
+                        <p>Destructuring Objects</p>
+                        <pre><code>
+  const person = {
+    first: 'Kobe',
+    last: 'Bryant',
+  };
+
+  //  ES5 
+  const first = person.first;
+  const last = person.last;
+
+  //  ES6 
+  const { first, last } = person;
+                        </code></pre>
+                      </section>
           </section>
 
           <section>
