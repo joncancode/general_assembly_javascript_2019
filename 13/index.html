@@ -88,6 +88,7 @@
     //  ES6 
     const doSomething = () => 'hello';
                     </code></pre>
+                   <li><a href="https://frontarm.com/james-k-nelson/when-to-use-arrow-functions/" target="_blank">Array functions in React</a></li> 
                   </section>
                   <section>
                       <p>Spread Operators for merging</p>
@@ -101,6 +102,7 @@
   //  ES6 
   let obj3 = { ...obj1, ...obj2 };
                       </code></pre>
+                      <li><a href="https://codeburst.io/a-simple-guide-to-destructuring-and-es6-spread-operator-e02212af5831" target="_blank">More on the Spread Operator and Destructuring</a></li> 
                     </section>
                     <section>
                         <p>Destructuring Objects</p>
@@ -166,25 +168,45 @@ add();
               <li>Now let's try with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">closure</a></li>
               <pre>
                 <code>
-  let add = (function () {
-    let counter = 0
-    return function () {
-      counter += 1 
-      return counter
+  function counter(){
+    let count = 0;
+    return function inner(){
+      count++;
+      return count
     }
-  })();
-  
-  function myFunction(){
-    document.getElementById("demo").innerHTML = add();
   }
+
+  let counter1 = counter();
+  let counter2 = counter();
                 </code>
               </pre>
               <li>Closures are functions that refer to independent (free) variables. In other words, the function defined in the closure ‘remembers’ the environment in which it was created</li>
             </section>
+          <section>
+            <li>PRACTICE: How would you separate colors into different groups?</li>
+            <li>Primary colors: Red, Yellow, Blue</li>
+            <li>Secondary colors: Green, Orange, Purple</li>
+            <pre>
+                <code>
+  function makeColor(){
+    var colors = [];
+    return {
+      getColors: function(){
+        return colors;
+      },
+      addColor: function(color){
+        colors.push(color);
+        return colors
+      }
+    }
+  }
+                </code>
+              </pre>
+          </section>
           </section>
           <section>
             <section>
-              <h2 class="title">Closures<a href="https://coderbyte.com/algorithm/3-common-javascript-closure-questions" target="_blank"> examples</a></h2>
+              <h2 class="title">Closures: <a href="https://coderbyte.com/algorithm/3-common-javascript-closure-questions" target="_blank"> Try to Understand This Code</a></h2>
             </section>
           </section>
         </section>
@@ -320,7 +342,8 @@ $('.button').click(user.showFullName) // undefined undefined
   $('.button').click(contextSetUser) // Peter Parker
   
   $('.button').click(user.showFullName) // undefined undefined
-                      </code></pre>  
+                      </code></pre> 
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">More on call(), apply(), and bind()</a></li> 
               </section>
           </section>
           <section>
@@ -328,7 +351,7 @@ $('.button').click(user.showFullName) // undefined undefined
               <h2 class="title">Brain Teaser</h2>
           </section>
           <section>
-        <li><a href="https://repl.it/@JonHaines/thiscontext" target="_blank">Explain this code</a></li>
+        <p><a href="https://repl.it/@JonHaines/thiscontext" target="_blank">Explain this code</a></p>
       </section>
           </section>
         <section>
