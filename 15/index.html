@@ -51,10 +51,9 @@
             <h2 class="title">Review of Last Class</h2>
           </section>
           <section>
-              <p >.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
-              <p class="fragment">.</p>
+              <p >What is the DOM</p>
+              <p class="fragment">How Node works on the backend / server</p>
+              <p class="fragment">JavaScript can emulate Classes</p>
           </section>
         </section>
         <section>
@@ -62,12 +61,70 @@
                 <h2 class="title">Today's Objectives</h2>
               </section>
               <section>
-            <p>-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
-            <p class="fragment">-</p>
+            <p>-Introduce <a href="https://reactjs.org/" target="_blank">React</a>, a JS library for creating interfaces</p>
+            <p class="fragment">-JSX</p>
+            <p class="fragment">-React Components</p>
             </section>
           </section>
+
+          <section>
+              <section>
+                <h2 class="title">The ~Virtual~ DOM</h2>
+              </section>
+              <section>
+                <p>We've seen the DOM already. React introduces us to the <a href="https://www.codecademy.com/articles/react-virtual-dom" target="_blank">Virtual DOM</a>, a lightweight copy that only updates when it sees a difference in state</p>
+              <li>This is a huge concept in React - nothing is mutated, only updated</li>
+              <li>The 'state' is what the present data looks like. If you want to change the state, you need to update the virtual dom (think map() function)</li>
+            
+          </section>
+            </section>
+
+          <section>
+              <section>
+                <h2 class="title">JSX</h2>
+              </section>
+              <section>
+                <p>While not required, React is best done with <a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a>, a combination of HTML and JavaScript</p>
+              <li>Compare how the example with JSX is written with a lot more ease</li>
+              <li>JSX is made possible by ES6, meaning it's combiled code that is easier to read</li>
+           <li>The React docs describe JSX as such: <pre><p>Fundamentally, JSX just provides syntactic sugar for the React.createElement(component, props, ...children) function</p></pre></li>
+            
+          </section>
+            </section>
+
+            <section>
+                <section>
+                  <h2 class="title">Components</h2>
+                </section>
+                <section>
+                  <p>What is a component</p>
+                  <img width="80%" src="comp.png" alt="comp" />
+                </section>
+                <section>
+                    <li>Components are basically JavaScript 'classes' that are attached to the HTML from a root div</li>
+                    <li>Their re-usability is the main benefit</li>
+                    <li>They work like Russian nesting dolls</li>
+                    <li>Best practice: Create a folder for your components (aside from App and Index)</li>
+                  </section>
+              </section>
+<section>
+    <section>
+        <h2 class="title">Where NPM Comes In</h2>
+      </section>
+      <section>
+        <p>By using NPM, we can use a script to run our project <code>npm run start</code></p>
+        <p>Take a look at your package.json to figure out how run your app</p>
+      </section>
+    </section>
+    <section>
+        <section>
+          <h2 class="title">React Dev Tools</h2>
+        </section>
+        <section>
+            <p><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en" target="_blank">React Dev Tools</a> is a great add-on for understanding what's happening in your code</p>
+        </section>
+      </section>
+
 
         <section>
           <section>
