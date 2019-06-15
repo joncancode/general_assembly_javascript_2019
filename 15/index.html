@@ -68,6 +68,16 @@
           </section>
 
           <section>
+            <section>
+              <h2 class="title">Why React</h2>
+            </section>
+            <section>
+              <img width="80%" src="frames.jpg" alt="frames" />
+          
+        </section>
+          </section>
+
+          <section>
               <section>
                 <h2 class="title">The ~Virtual~ DOM</h2>
               </section>
@@ -88,7 +98,10 @@
               <li>Compare how the example with JSX is written with a lot more ease</li>
               <li>JSX is made possible by ES6, meaning it's combiled code that is easier to read</li>
            <li>The React docs describe JSX as such: <pre><p>Fundamentally, JSX just provides syntactic sugar for the React.createElement(component, props, ...children) function</p></pre></li>
-            
+           <hr>
+           <li><a href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA" target="_blank">Babel in Action</a></li>
+           <li><a href="https://reactjs.org/docs/react-without-jsx.html" target="_blank">Without JSX</a></li>
+           <li><a href="https://www.w3schools.com/jsref/met_document_createelement.asp" target="_blank">Remember <code>createElement</code>?</a></li>
           </section>
             </section>
 
@@ -105,17 +118,23 @@
                     <li>Their re-usability is the main benefit</li>
                     <li>They work like Russian nesting dolls</li>
                     <li>Best practice: Create a folder for your components (aside from App and Index)</li>
+                    <li>When a component has no need for State (we'll visit that later), we can even create a simpler 'Stateless' or 'Dumb' component as seen <a href="https://itnext.io/react-component-class-vs-stateless-component-e3797c7d23ab" target="_blank">in this article</a></li>
+                  
                   </section>
               </section>
-<section>
-    <section>
-        <h2 class="title">Where NPM Comes In</h2>
-      </section>
-      <section>
-        <p>By using NPM, we can use a script to run our project <code>npm run start</code></p>
-        <p>Take a look at your package.json to figure out how run your app</p>
-      </section>
-    </section>
+
+              <section>
+                  <section>
+                      <h2 class="title">The LifeCycle of a component</h2>
+                    </section>
+                    <section>
+                        <img width="80%" src="lifecycle.png" alt="lifecycle" />
+                    </section>
+                    <section>
+                        <p>Every time there is a change in a component, the virtual DOM will go update once again in these steps</p>
+                    </section>
+                  </section>
+
     <section>
         <section>
           <h2 class="title">React Dev Tools</h2>
@@ -125,6 +144,31 @@
         </section>
       </section>
 
+
+      <section>
+        <section>
+            <h2 class="title">Where NPM Comes In</h2>
+          </section>
+          <section>
+              <li>As we have seen, we can run React straight from an HTML file. However, npm makes things easier</li>
+              <li>By using NPM, we can use a script to run our project <code>npm run start</code></li>
+            <li>In addition to that, React has a ton of good libraries we can use with an npm download (React-Router, Redux, etc)</li>
+         <br>
+         <li>Let's try using <a href="https://www.npmjs.com/package/create-react-app" target="_blank"><code>create-react-app</code></a> and see what it gives us</li>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2 class="title">State and Props</h2>
+          </section>
+          <section>
+            <li>Both state and props can trigger a render update</li>
+            <li>The <strong>state</strong> is an object used to store data in your current component</li>
+            <li><strong>Props</strong> (or properties) are used to pass data & event handlers down to your child components</li>
+            <li>Let's see <a href="https://stackoverflow.com/questions/27991366/what-is-the-difference-between-state-and-props-in-react" target="_blank">more here</a></li>
+          </section>
+        </section>
 
         <section>
           <section>
@@ -138,6 +182,12 @@
             <section>
                <h2 class="title">Conclusion</h2>
             </section>
+
+            <section>
+              <p>-React is complicated at first, but eventually, you'll see it follows a similar pattern, always</p>
+              <p>-Go through our <code>create-react-app</code> project and see how the components are working together
+            </section>
+
            <section data-background="#003366">
                 <p>Q&A</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz5enV0RqSZWfL34THwDXzt7NkMsUE1qIaFQhL_WE68_KcFQ/viewform" target="_blank">Exit Ticket</a><br>
