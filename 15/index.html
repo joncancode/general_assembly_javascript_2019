@@ -123,24 +123,16 @@
                 <section>
                     <li>Components are basically JavaScript 'classes' that are attached to the HTML from a root div</li>
                     <li>Their re-usability is the main benefit</li>
-                    <li>They work like Russian nesting dolls</li>
+                    <li>They work like Russian nesting dolls, but <a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank">you can structure them</a> however you like</li>
                     <li>Best practice: Create a folder for your components (aside from App and Index)</li>
                     <li>When a component has no need for State (we'll visit that later), we can even create a simpler 'Stateless' or 'Dumb' component as seen <a href="https://itnext.io/react-component-class-vs-stateless-component-e3797c7d23ab" target="_blank">in this article</a></li>
-                  
                   </section>
-              </section>
-
-              <section>
                   <section>
-                      <h2 class="title">The LifeCycle of a component</h2>
-                    </section>
-                    <section>
+                      <p>The LifeCycle of a component</p>
                         <img width="80%" src="lifecycle.png" alt="lifecycle" />
+                        <li>Every time there is a change in a component, the virtual DOM will go update once again in these steps</li>
                     </section>
-                    <section>
-                        <p>Every time there is a change in a component, the virtual DOM will go update once again in these steps</p>
-                    </section>
-                  </section>
+              </section>
 
     <section>
         <section>
@@ -164,6 +156,18 @@
          <li>Let's try using <a href="https://www.npmjs.com/package/create-react-app" target="_blank"><code>create-react-app</code></a> and see what it gives us</li>
           </section>
         </section>
+
+        <section>
+            <section>
+              <h2 class="title">Try Out Nesting</h2>
+            </section>
+            <section>
+              <li>Using Create React App, create an application that uses nesting to make the below example from <a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank">Thinking in React</a></li>
+              <li>The <a href="https://reactjs.org/docs/getting-started.html" target="_blank">React docs</a> may be useful</li>
+              <li>Don't worry about functionality just yet. We just want to get used to how components work inside one another</li>
+              <img width="40%" src="nesting.png" alt="nesting" />
+            </section>
+          </section>
 
         <section>
           <section>
